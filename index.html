@@ -26,6 +26,9 @@
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
+  /* Language toggle: show only active language spans */
+  html[lang="es"] [lang="en"]{display:none!important}
+  html[lang="en"] [lang="es"]{display:none!important}
   body{margin:0;background:var(--white);color:var(--ink);font-family:var(--font);font-size:var(--step);line-height:1.7;-webkit-font-smoothing:antialiased}
   h1,h2,h3{font-weight:400;line-height:1.08;letter-spacing:-.02em;margin:0;text-wrap:pretty}
   p{margin:0}
@@ -60,6 +63,8 @@
   .nav-links a{font-weight:600;color:var(--muted);font-size:.95rem;transition:color .15s}
   .nav-links a:hover{color:var(--ink)}
   .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:10px;padding:8px 10px;cursor:pointer}
+  .lang-btn{background:none;border:1px solid var(--line);border-radius:56px;padding:8px 16px;cursor:pointer;font:inherit;font-weight:700;font-size:.82rem;letter-spacing:.08em;color:var(--muted);transition:background .15s,color .15s}
+  .lang-btn:hover{background:var(--celeste-soft);color:var(--celeste-deep)}
 
   /* HERO — full-bleed editorial, long, no cards */
   .hero{position:relative;overflow:hidden}
@@ -264,22 +269,23 @@
 </head>
 <body>
 
-<div class="announce">Sitio en construcción. Estamos armando el laboratorio; sumate a la conversación <a href="#contacto">acá</a>.</div>
+<div class="announce"><span lang="es">Sitio en construcción. Estamos armando el laboratorio; sumate a la conversación <a href="#contacto">acá</a>.</span><span lang="en">Site under construction. We're building the lab; join the conversation <a href="#contacto">here</a>.</span></div>
 
 <header class="site">
   <div class="wrap nav">
     <a class="brand" href="#top"><span class="mark"></span>IA para el Bien<span class="loc">UY</span></a>
     <nav class="nav-links" id="navlinks">
-      <a href="#mision">Misión</a>
-      <a href="#enfoque">Enfoque</a>
-      <a href="#contribucion">Contribución</a>
-      <a href="#videos">Videos</a>
-      <a href="#profundizar">Para profundizar</a>
-      <a href="#faq">FAQ</a>
-      <a class="btn btn-primary nav-cta-mobile" href="#contacto" style="display:none;margin-top:10px">Sumate</a>
+      <a href="#mision"><span lang="es">Misión</span><span lang="en">Mission</span></a>
+      <a href="#enfoque"><span lang="es">Enfoque</span><span lang="en">Approach</span></a>
+      <a href="#contribucion"><span lang="es">Contribución</span><span lang="en">Contribution</span></a>
+      <a href="#videos"><span lang="es">Videos</span><span lang="en">Videos</span></a>
+      <a href="#profundizar"><span lang="es">Para profundizar</span><span lang="en">Go deeper</span></a>
+      <a href="#faq"><span lang="es">FAQ</span><span lang="en">FAQ</span></a>
+      <a class="btn btn-primary nav-cta-mobile" href="#contacto" style="display:none;margin-top:10px"><span lang="es">Sumate</span><span lang="en">Join</span></a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn-primary" href="#contacto">Sumate</a>
+      <a class="btn btn-primary" href="#contacto"><span lang="es">Sumate</span><span lang="en">Join</span></a>
+      <button class="lang-btn" id="langBtn" aria-label="Cambiar idioma / Switch language"><span lang="es">EN</span><span lang="en">ES</span></button>
       <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
@@ -292,25 +298,25 @@
   <!-- HERO -->
   <section class="hero">
     <div class="wrap">
-      <p class="kicker">Laboratorio independiente · hecho en Uruguay</p>
-      <h1>La seguridad en IA nos afecta a <span class="hl"><b>tod@s</b></span></h1>
-      <p class="lead">Democratizamos una inteligencia artificial ética, segura y accesible para los países de habla hispana. Somos un laboratorio independiente con base en Uruguay, y participar no exige credenciales académicas.</p>
+      <p class="kicker"><span lang="es">Laboratorio independiente · hecho en Uruguay</span><span lang="en">Independent lab · made in Uruguay</span></p>
+      <h1><span lang="es">La seguridad en IA nos afecta a <span class="hl"><b>tod@s</b></span></span><span lang="en">AI safety affects <span class="hl"><b>all of us</b></span></span></h1>
+      <p class="lead"><span lang="es">Democratizamos una inteligencia artificial ética, segura y accesible para los países de habla hispana. Somos un laboratorio independiente con base en Uruguay, y participar no exige credenciales académicas.</span><span lang="en">We democratize ethical, safe and accessible AI for Spanish-speaking countries. We're an independent lab based in Uruguay, and no academic credentials are needed to take part.</span></p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#enfoque">Conocé nuestro enfoque</a>
-        <a class="btn btn-line" href="#contribucion">Nuestra contribución</a>
+        <a class="btn btn-primary" href="#enfoque"><span lang="es">Conocé nuestro enfoque</span><span lang="en">Our approach</span></a>
+        <a class="btn btn-line" href="#contribucion"><span lang="es">Nuestra contribución</span><span lang="en">Our contribution</span></a>
       </div>
-      <div class="hero-foot"><span class="dot"></span> Sin fines de lucro · dirigido por la comunidad · abierto a todos los niveles</div>
+      <div class="hero-foot"><span class="dot"></span><span lang="es">Sin fines de lucro · dirigido por la comunidad · abierto a todos los niveles</span><span lang="en">Non-profit · community-driven · open to all levels</span></div>
     </div>
   </section>
 
   <!-- IMPACT -->
   <section class="impact">
     <div class="wrap">
-      <p class="kicker">Nuestro impacto</p>
+      <p class="kicker"><span lang="es">Nuestro impacto</span><span lang="en">Our impact</span></p>
       <div class="impact-row">
-        <div class="istat"><div class="n">100<span class="u">%</span></div><div class="l">independiente y sin fines de lucro</div></div>
-        <div class="istat"><div class="n">UY</div><div class="l">con base en Uruguay, para el mundo hispano</div></div>
-        <div class="istat"><div class="n">2</div><div class="l">áreas de enfoque, abiertas a todos</div></div>
+        <div class="istat"><div class="n">100<span class="u">%</span></div><div class="l"><span lang="es">independiente y sin fines de lucro</span><span lang="en">independent and non-profit</span></div></div>
+        <div class="istat"><div class="n">UY</div><div class="l"><span lang="es">con base en Uruguay, para el mundo hispano</span><span lang="en">based in Uruguay, for the Spanish-speaking world</span></div></div>
+        <div class="istat"><div class="n">2</div><div class="l"><span lang="es">áreas de enfoque, abiertas a todos</span><span lang="en">focus areas, open to everyone</span></div></div>
       </div>
     </div>
   </section>
@@ -318,12 +324,12 @@
   <!-- MISION + VISION -->
   <section class="mission band" id="mision">
     <div class="wrap mission-statement">
-      <p class="kicker">Nuestra misión</p>
-      <h2>Que la seguridad en IA deje de ser un privilegio de <b>unos pocos</b> y sea un bien de todos, empezando por nuestra región.</h2>
-      <p>Somos un laboratorio independiente en Uruguay dedicado a la seguridad de la IA (AI Safety). Para participar no hace falta tener credenciales académicas. Acercamos la seguridad de la IA a los países de habla hispana: educamos, investigamos y construimos herramientas. Queremos una IA segura, transparente y controlable, en español y desde el contexto local.</p>
+      <p class="kicker"><span lang="es">Nuestra misión</span><span lang="en">Our mission</span></p>
+      <h2><span lang="es">Que la seguridad en IA deje de ser un privilegio de <b>unos pocos</b> y sea un bien de todos, empezando por nuestra región.</span><span lang="en">AI safety should stop being a privilege for <b>a few</b> and become a common good, starting with our region.</span></h2>
+      <p><span lang="es">Somos un laboratorio independiente en Uruguay dedicado a la seguridad de la IA (AI Safety). Para participar no hace falta tener credenciales académicas. Acercamos la seguridad de la IA a los países de habla hispana: educamos, investigamos y construimos herramientas. Queremos una IA segura, transparente y controlable, en español y desde el contexto local.</span><span lang="en">We are an independent lab in Uruguay dedicated to AI safety. No academic credentials are needed to take part. We bring AI safety to Spanish-speaking countries: we educate, research and build tools. We want safe, transparent and controllable AI, in Spanish and grounded in local context.</span></p>
       <div class="vision">
-        <p class="kicker">Nuestra visión</p>
-        <p class="vision-text">Una región que entienda y gobierne su propia IA. Que la seguridad no se decida solo en laboratorios lejanos, también desde acá, con personas y organizaciones locales que puedan influir en cómo la IA nos afecta. A futuro queremos auditar sistemas de IA reales para proteger a las personas más vulnerables.</p>
+        <p class="kicker"><span lang="es">Nuestra visión</span><span lang="en">Our vision</span></p>
+        <p class="vision-text"><span lang="es">Una región que entienda y gobierne su propia IA. Que la seguridad no se decida solo en laboratorios lejanos, también desde acá, con personas y organizaciones locales que puedan influir en cómo la IA nos afecta. A futuro queremos auditar sistemas de IA reales para proteger a las personas más vulnerables.</span><span lang="en">A region that understands and governs its own AI. A place where safety is not decided only in distant labs, but also here, with local people and organizations able to influence how AI affects us. In the future we want to audit real AI systems to protect the most vulnerable.</span></p>
       </div>
     </div>
   </section>
@@ -331,14 +337,14 @@
   <!-- VALORES -->
   <section class="valores band band--cream" id="valores">
     <div class="wrap">
-      <p class="kicker">Nuestros valores</p>
-      <h2 style="font-size:clamp(1.9rem,4vw,2.8rem);max-width:22ch">Cómo trabajamos, cada día</h2>
+      <p class="kicker"><span lang="es">Nuestros valores</span><span lang="en">Our values</span></p>
+      <h2 style="font-size:clamp(1.9rem,4vw,2.8rem);max-width:22ch"><span lang="es">Cómo trabajamos, cada día</span><span lang="en">How we work, every day</span></h2>
       <div class="steps" style="margin-top:clamp(36px,5vw,52px)">
-        <div class="value"><div><h3>Independencia</h3><p>Nos dirigimos por nuestra cuenta: no dependemos de ninguna empresa ni laboratorio, pero colaboramos con quien comparte nuestros valores.</p></div></div>
-        <div class="value"><div><h3>Transparencia abierta</h3><p>Compartimos lo que aprendemos en español y de forma abierta.</p></div></div>
-        <div class="value"><div><h3>Ciencia abierta</h3><p>Investigamos y publicamos de forma abierta; la técnica no es un privilegio, se aprende y se difunde.</p></div></div>
-        <div class="value"><div><h3>Contexto local</h3><p>La seguridad de la IA se vive distinto en los países de habla hispana; la encaramos desde acá.</p></div></div>
-        <div class="value"><div><h3>Agencia humana</h3><p>La IA debe ampliar lo que podemos hacer, no reemplazarnos ni controlarnos.</p></div></div>
+        <div class="value"><div><h3><span lang="es">Independencia</span><span lang="en">Independence</span></h3><p><span lang="es">Nos dirigimos por nuestra cuenta: no dependemos de ninguna empresa ni laboratorio, pero colaboramos con quien comparte nuestros valores.</span><span lang="en">We steer ourselves: we depend on no company or lab, but we collaborate with those who share our values.</span></p></div></div>
+        <div class="value"><div><h3><span lang="es">Transparencia abierta</span><span lang="en">Open transparency</span></h3><p><span lang="es">Compartimos lo que aprendemos en español y de forma abierta.</span><span lang="en">We share what we learn, in Spanish and openly.</span></p></div></div>
+        <div class="value"><div><h3><span lang="es">Ciencia abierta</span><span lang="en">Open science</span></h3><p><span lang="es">Investigamos y publicamos de forma abierta; la técnica no es un privilegio, se aprende y se difunde.</span><span lang="en">We research and publish openly; technical skill is not a privilege, it is learned and shared.</span></p></div></div>
+        <div class="value"><div><h3><span lang="es">Contexto local</span><span lang="en">Local context</span></h3><p><span lang="es">La seguridad de la IA se vive distinto en los países de habla hispana; la encaramos desde acá.</span><span lang="en">AI safety is experienced differently in Spanish-speaking countries; we face it from here.</span></p></div></div>
+        <div class="value"><div><h3><span lang="es">Agencia humana</span><span lang="en">Human agency</span></h3><p><span lang="es">La IA debe ampliar lo que podemos hacer, no reemplazarnos ni controlarnos.</span><span lang="en">AI should expand what we can do, not replace or control us.</span></p></div></div>
       </div>
     </div>
   </section>
@@ -346,32 +352,32 @@
   <!-- ENFOQUE -->
   <section class="mission band" id="enfoque">
     <div class="wrap mission-statement">
-      <p class="kicker">Nuestro enfoque</p>
-      <h2>Enfrentamos la seguridad de la IA desde donde estamos: <b>divulgación, comunidad y formación</b>, no desde un laboratorio aislado.</h2>
-      <p>Creemos que la seguridad de la IA no debería ser cosa de unos pocos. Nuestro enfoque junta conocimiento accesible, una comunidad que aprende en grupo y la formación de nuevas generaciones, todo en español y desde el contexto local.</p>
+      <p class="kicker"><span lang="es">Nuestro enfoque</span><span lang="en">Our approach</span></p>
+      <h2><span lang="es">Enfrentamos la seguridad de la IA desde donde estamos: <b>divulgación, comunidad y formación</b>, no desde un laboratorio aislado.</span><span lang="en">We face AI safety from where we are: <b>outreach, community and training</b>, not from an isolated lab.</span></h2>
+      <p><span lang="es">Creemos que la seguridad de la IA no debería ser cosa de unos pocos. Nuestro enfoque junta conocimiento accesible, una comunidad que aprende en grupo y la formación de nuevas generaciones, todo en español y desde el contexto local.</span><span lang="en">We believe AI safety should not be a matter for a few. Our approach brings together accessible knowledge, a community that learns together and the training of new generations, all in Spanish and grounded in local context.</span></p>
     </div>
   </section>
 
   <!-- AREAS -->
   <section class="areas band band--soft" id="areas">
     <div class="wrap">
-      <p class="kicker">Áreas de enfoque</p>
-      <h2 style="font-size:clamp(1.9rem,4vw,2.8rem);max-width:22ch">Nuestros frentes de trabajo</h2>
+      <p class="kicker"><span lang="es">Áreas de enfoque</span><span lang="en">Focus areas</span></p>
+      <h2 style="font-size:clamp(1.9rem,4vw,2.8rem);max-width:22ch"><span lang="es">Nuestros frentes de trabajo</span><span lang="en">Our lines of work</span></h2>
       <div class="steps" style="margin-top:clamp(36px,5vw,52px)">
         <div class="step">
           <div class="num">I</div>
           <div>
-            <h3>Soporte Comunitario</h3>
-            <p>Construimos una comunidad autodidacta para intercambiar ideas y apoyarnos en temas de seguridad de IA.</p>
-            <span class="tag">Abierto a todos · Online + presencial</span>
+            <h3><span lang="es">Soporte Comunitario</span><span lang="en">Community support</span></h3>
+            <p><span lang="es">Construimos una comunidad autodidacta para intercambiar ideas y apoyarnos en temas de seguridad de IA.</span><span lang="en">We build a self-taught community to exchange ideas and support each other on AI safety.</span></p>
+            <span class="tag"><span lang="es">Abierto a todos · Online + presencial</span><span lang="en">Open to all · Online + in person</span></span>
           </div>
         </div>
         <div class="step">
           <div class="num">II</div>
           <div>
-            <h3>Investigación y Divulgación</h3>
-            <p>Generamos y compartimos conocimientos accesibles sobre los desafíos y avances en la seguridad de IA.</p>
-            <span class="tag">Publicaciones · Público general</span>
+            <h3><span lang="es">Investigación y Divulgación</span><span lang="en">Research and outreach</span></h3>
+            <p><span lang="es">Generamos y compartimos conocimientos accesibles sobre los desafíos y avances en la seguridad de IA.</span><span lang="en">We create and share accessible knowledge about the challenges and advances in AI safety.</span></p>
+            <span class="tag"><span lang="es">Publicaciones · Público general</span><span lang="en">Publications · General public</span></span>
           </div>
         </div>
       </div>
@@ -381,13 +387,13 @@
   <!-- CONTRIBUCION -->
   <section class="contribucion band band--cream" id="contribucion">
     <div class="wrap">
-      <p class="kicker">Nuestra contribución</p>
-      <h2 style="font-size:clamp(1.9rem,4vw,2.8rem);max-width:24ch">Lo que aportamos a la comunidad hispana</h2>
+      <p class="kicker"><span lang="es">Nuestra contribución</span><span lang="en">Our contribution</span></p>
+      <h2 style="font-size:clamp(1.9rem,4vw,2.8rem);max-width:24ch"><span lang="es">Lo que aportamos a la comunidad hispana</span><span lang="en">What we give to the Spanish-speaking community</span></h2>
       <div class="steps" style="margin-top:clamp(36px,5vw,52px)">
-        <div class="value"><div class="vi">I</div><div><h3>Recursos educativos en español</h3><p>Desarrollamos guías y publicaciones accesibles para que la seguridad de la IA se entienda desde cualquier nivel.</p></div></div>
-        <div class="value"><div class="vi">II</div><div><h3>Comunidad regional de práctica</h3><p>Construimos una red de hablantes de español que se forman y colaboran en seguridad de IA.</p></div></div>
-        <div class="value"><div class="vi">III</div><div><h3>Talleres y formación</h3><p>Organizamos espacios prácticos para acercar la seguridad de la IA a quien quiera sumarse.</p></div></div>
-        <div class="value"><div class="vi">IV</div><div><h3>Mentoría para nuevas generaciones</h3><p>Acompañamos a personas que quieren iniciarse en carreras y proyectos de seguridad de IA.</p></div></div>
+        <div class="value"><div class="vi">I</div><div><h3><span lang="es">Recursos educativos en español</span><span lang="en">Educational resources in Spanish</span></h3><p><span lang="es">Desarrollamos guías y publicaciones accesibles para que la seguridad de la IA se entienda desde cualquier nivel.</span><span lang="en">We develop accessible guides and publications so AI safety can be understood from any level.</span></p></div></div>
+        <div class="value"><div class="vi">II</div><div><h3><span lang="es">Comunidad regional de práctica</span><span lang="en">Regional community of practice</span></h3><p><span lang="es">Construimos una red de hablantes de español que se forman y colaboran en seguridad de IA.</span><span lang="en">We build a network of Spanish speakers who train and collaborate on AI safety.</span></p></div></div>
+        <div class="value"><div class="vi">III</div><div><h3><span lang="es">Talleres y formación</span><span lang="en">Workshops and training</span></h3><p><span lang="es">Organizamos espacios prácticos para acercar la seguridad de la IA a quien quiera sumarse.</span><span lang="en">We organize hands-on spaces to bring AI safety closer to anyone who wants to join.</span></p></div></div>
+        <div class="value"><div class="vi">IV</div><div><h3><span lang="es">Mentoría para nuevas generaciones</span><span lang="en">Mentoring new generations</span></h3><p><span lang="es">Acompañamos a personas que quieren iniciarse en carreras y proyectos de seguridad de IA.</span><span lang="en">We support people who want to start careers and projects in AI safety.</span></p></div></div>
       </div>
     </div>
   </section>
@@ -396,14 +402,14 @@
   <section class="lab band" id="lab">
     <div class="wrap">
       <div class="videos-head">
-        <p class="kicker">Laboratorio técnico · además</p>
-        <h2 style="font-size:clamp(1.9rem,4vw,2.8rem);max-width:26ch">Detrás de la divulgación, también hacemos técnica</h2>
-        <p class="lead" style="margin-top:18px;max-width:60ch">Empezamos por la divulgación, pero también investigamos. Estas son las líneas en las que trabajamos. Lo que aprendemos, lo compartimos en español.</p>
+        <p class="kicker"><span lang="es">Laboratorio técnico · además</span><span lang="en">Technical lab · also</span></p>
+        <h2 style="font-size:clamp(1.9rem,4vw,2.8rem);max-width:26ch"><span lang="es">Detrás de la divulgación, también hacemos técnica</span><span lang="en">Behind the outreach, we also do technical work</span></h2>
+        <p class="lead" style="margin-top:18px;max-width:60ch"><span lang="es">Empezamos por la divulgación, pero también investigamos. Estas son las líneas en las que trabajamos. Lo que aprendemos, lo compartimos en español.</span><span lang="en">We start with outreach, but we also research. These are the lines we work on. What we learn, we share in Spanish.</span></p>
       </div>
-      <div class="cap"><div><h4>Interpretabilidad mecanicista</h4><p>Entender qué pasa dentro de las redes neuronales para poder inspeccionarlas.</p></div></div>
-      <div class="cap"><div><h4>Alineación de modelos de lenguaje</h4><p>Métodos para que los LLMs persigan objetivos alineados con los intencionados.</p></div></div>
-      <div class="cap"><div><h4>Entrenamiento robusto</h4><p>Formas de entrenar modelos que resistan fallas, manipulación y comportamientos no deseados.</p></div></div>
-      <div class="cap"><div><h4>Aprendizaje de valores</h4><p>Cómo los sistemas aprenden lo que valoramos y traducen preferencias humanas en comportamiento.</p></div></div>
+      <div class="cap"><div><h4><span lang="es">Interpretabilidad mecanicista</span><span lang="en">Mechanistic interpretability</span></h4><p><span lang="es">Entender qué pasa dentro de las redes neuronales para poder inspeccionarlas.</span><span lang="en">Understanding what happens inside neural networks so they can be inspected.</span></p></div></div>
+      <div class="cap"><div><h4><span lang="es">Alineación de modelos de lenguaje</span><span lang="en">Language model alignment</span></h4><p><span lang="es">Métodos para que los LLMs persigan objetivos alineados con los intencionados.</span><span lang="en">Methods so LLMs pursue goals aligned with the intended ones.</span></p></div></div>
+      <div class="cap"><div><h4><span lang="es">Entrenamiento robusto</span><span lang="en">Robust training</span></h4><p><span lang="es">Formas de entrenar modelos que resistan fallas, manipulación y comportamientos no deseados.</span><span lang="en">Ways to train models that resist failures, manipulation and unwanted behaviors.</span></p></div></div>
+      <div class="cap"><div><h4><span lang="es">Aprendizaje de valores</span><span lang="en">Value learning</span></h4><p><span lang="es">Cómo los sistemas aprenden lo que valoramos y traducen preferencias humanas en comportamiento.</span><span lang="en">How systems learn what we value and turn human preferences into behavior.</span></p></div></div>
     </div>
   </section>
 
@@ -411,14 +417,14 @@
   <section class="caps band" id="caps">
     <div class="wrap">
       <div class="caps-head">
-        <p class="kicker">Estado del arte · 2026</p>
-        <h2>La IA ya puede hacer esto</h2>
-        <p class="lead">Las capacidades avanzan rápido. Cada una abre posibilidades, pero también nuevos riesgos que la seguridad en IA busca anticipar y mitigar.</p>
+        <p class="kicker"><span lang="es">Estado del arte · 2026</span><span lang="en">State of the art · 2026</span></p>
+        <h2><span lang="es">La IA ya puede hacer esto</span><span lang="en">AI can already do this</span></h2>
+        <p class="lead"><span lang="es">Las capacidades avanzan rápido. Cada una abre posibilidades, pero también nuevos riesgos que la seguridad en IA busca anticipar y mitigar.</span><span lang="en">Capabilities advance fast. Each one opens possibilities, but also new risks that AI safety seeks to anticipate and mitigate.</span></p>
       </div>
-      <div class="cap"><div><h4>Robótica y manipulación</h4><p>Sistemas que ordenan espacios físicos de forma autónoma.</p></div></div>
-      <div class="cap"><div><h4>Uso de computadoras</h4><p>Agentes que operan software y completan tareas por cuenta propia.</p></div></div>
-      <div class="cap"><div><h4>Agentes en la web</h4><p>Navegación y acción autónoma en navegadores y servicios.</p></div></div>
-      <div class="cap"><div><h4>Generación de video</h4><p>Contenido audiovisual cada vez más indistinguible de lo real.</p></div></div>
+      <div class="cap"><div><h4><span lang="es">Robótica y manipulación</span><span lang="en">Robotics and manipulation</span></h4><p><span lang="es">Sistemas que ordenan espacios físicos de forma autónoma.</span><span lang="en">Systems that organize physical spaces autonomously.</span></p></div></div>
+      <div class="cap"><div><h4><span lang="es">Uso de computadoras</span><span lang="en">Computer use</span></h4><p><span lang="es">Agentes que operan software y completan tareas por cuenta propia.</span><span lang="en">Agents that operate software and complete tasks on their own.</span></p></div></div>
+      <div class="cap"><div><h4><span lang="es">Agentes en la web</span><span lang="en">Web agents</span></h4><p><span lang="es">Navegación y acción autónoma en navegadores y servicios.</span><span lang="en">Autonomous navigation and action in browsers and services.</span></p></div></div>
+      <div class="cap"><div><h4><span lang="es">Generación de video</span><span lang="en">Video generation</span></h4><p><span lang="es">Contenido audiovisual cada vez más indistinguible de lo real.</span><span lang="en">Audiovisual content increasingly indistinguishable from reality.</span></p></div></div>
     </div>
   </section>
 
@@ -426,26 +432,26 @@
   <section class="videos band" id="videos">
     <div class="wrap">
       <div class="videos-head">
-        <p class="kicker">Mirá lo que ya hace la IA</p>
-        <h2>Las capacidades en acción</h2>
-        <p class="lead">Estos son ejemplos reales de lo que la IA hace hoy. Son imponentes. Por eso necesitamos hablar de seguridad.</p>
+        <p class="kicker"><span lang="es">Mirá lo que ya hace la IA</span><span lang="en">See what AI already does</span></p>
+        <h2><span lang="es">Las capacidades en acción</span><span lang="en">Capabilities in action</span></h2>
+        <p class="lead"><span lang="es">Estos son ejemplos reales de lo que la IA hace hoy. Son imponentes. Por eso necesitamos hablar de seguridad.</span><span lang="en">These are real examples of what AI does today. They are impressive. That is why we need to talk about safety.</span></p>
       </div>
       <div class="vid-grid">
         <div class="vid">
           <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/CAdTjePDBfc" title="Robótica y manipulación" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-          <div class="cap"><span><b>Robótica y manipulación</b> — un sistema ordena un espacio físico por sí solo.</span></div>
+          <div class="cap"><span><b><span lang="es">Robótica y manipulación</span><span lang="en">Robotics and manipulation</span></b><span lang="es"> — un sistema ordena un espacio físico por sí solo.</span><span lang="en"> — a system organizes a physical space on its own.</span></span></div>
         </div>
         <div class="vid">
           <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/NAauIR6JFps" title="Uso de computadoras" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-          <div class="cap"><span><b>Uso de computadoras</b> — un agente opera software por cuenta propia.</span></div>
+          <div class="cap"><span><b><span lang="es">Uso de computadoras</span><span lang="en">Computer use</span></b><span lang="es"> — un agente opera software por cuenta propia.</span><span lang="en"> — an agent operates software on its own.</span></span></div>
         </div>
         <div class="vid">
           <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/rBJnWMD0Pho" title="Uso de la web" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-          <div class="cap"><span><b>Uso de la web</b> — navegación y acción autónoma en servicios.</span></div>
+          <div class="cap"><span><b><span lang="es">Uso de la web</span><span lang="en">Web use</span></b><span lang="es"> — navegación y acción autónoma en servicios.</span><span lang="en"> — autonomous navigation and action in services.</span></span></div>
         </div>
         <div class="vid">
           <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/3S7naW_KRyw" title="Generación de video realista" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-          <div class="cap"><span><b>Generación de video</b> — contenido audiovisual cada vez más indistinguible de lo real.</span></div>
+          <div class="cap"><span><b><span lang="es">Generación de video</span><span lang="en">Video generation</span></b><span lang="es"> — contenido audiovisual cada vez más indistinguible de lo real.</span><span lang="en"> — audiovisual content increasingly indistinguishable from reality.</span></span></div>
         </div>
       </div>
     </div>
@@ -455,20 +461,20 @@
   <section class="deep band band--soft" id="profundizar">
     <div class="wrap">
       <div class="deep-head">
-        <p class="kicker">Para profundizar · en español</p>
-        <h2>Ciudadanía e inteligencia artificial, por AGESIC</h2>
-        <p class="lead">La agencia de gobierno digital de Uruguay reunió una serie corta sobre gobernanza, transparencia, privacidad, seguridad y sesgos de la IA. Buena puerta de entrada para quien quiere pensar la IA desde lo público y desde acá.</p>
+        <p class="kicker"><span lang="es">Para profundizar · en español</span><span lang="en">Go deeper · in Spanish</span></p>
+        <h2><span lang="es">Ciudadanía e inteligencia artificial, por AGESIC</span><span lang="en">Citizenship and artificial intelligence, by AGESIC</span></h2>
+        <p class="lead"><span lang="es">La agencia de gobierno digital de Uruguay reunió una serie corta sobre gobernanza, transparencia, privacidad, seguridad y sesgos de la IA. Buena puerta de entrada para quien quiere pensar la IA desde lo público y desde acá.</span><span lang="en">Uruguay's digital government agency put together a short series on AI governance, transparency, privacy, security and bias. A good entry point for thinking about AI from the public sphere and from here.</span></p>
       </div>
       <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLKVWFoonm9Vc" title="IA y Ciudadanía — AGESIC" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-      <p class="src">Fuente: <a href="https://www.youtube.com/watch?v=QAiN164WQ-o&list=PLKVWFoonm9Vc" target="_blank" rel="noopener" style="color:var(--celeste-deep);text-decoration:underline">Playlist "IA y Ciudadanía" · AGESIC Uruguay</a></p>
+      <p class="src"><span lang="es">Fuente:</span><span lang="en">Source:</span> <a href="https://www.youtube.com/watch?v=QAiN164WQ-o&list=PLKVWFoonm9Vc" target="_blank" rel="noopener" style="color:var(--celeste-deep);text-decoration:underline"><span lang="es">Playlist "IA y Ciudadanía" · AGESIC Uruguay</span><span lang="en">Playlist "IA y Ciudadanía" · AGESIC Uruguay</span></a></p>
     </div>
   </section>
 
   <!-- TESTIMONIAL -->
   <section class="testimonial band" id="testimonio">
     <div class="wrap">
-      <blockquote>«La seguridad de la IA no debería quedarse reservada a unos pocos. Todos tenemos algo para aportar.»</blockquote>
-      <div class="who">Un miembro de nuestra comunidad</div>
+      <blockquote><span lang="es">«La seguridad de la IA no debería quedarse reservada a unos pocos. Todos tenemos algo para aportar.»</span><span lang="en">"AI safety should not stay reserved for a few. We all have something to contribute."</span></blockquote>
+      <div class="who"><span lang="es">Un miembro de nuestra comunidad</span><span lang="en">A member of our community</span></div>
       <div class="role">IA para el Bien · Uruguay</div>
     </div>
   </section>
@@ -476,23 +482,23 @@
   <!-- SAS -->
   <section class="sas band" id="sas">
     <div class="wrap">
-      <p class="kicker">Una distinción clave</p>
-      <h2>AI Safety vs AI Security</h2>
-      <p class="lead">Ambos se traducen como "seguridad" en español y suelen confundirse. Son campos distintos. Por eso trabajamos en AI Safety.</p>
+      <p class="kicker"><span lang="es">Una distinción clave</span><span lang="en">A key distinction</span></p>
+      <h2><span lang="es">AI Safety vs AI Security</span><span lang="en">AI Safety vs AI Security</span></h2>
+      <p class="lead"><span lang="es">Ambos se traducen como "seguridad" en español y suelen confundirse. Son campos distintos. Por eso trabajamos en AI Safety.</span><span lang="en">Both translate as "seguridad" in Spanish and are often confused. They are different fields. That is why we work on AI Safety.</span></p>
       <div class="sas-grid">
         <div class="sas-col safety">
           <h3>AI Safety</h3>
-          <div class="sub">Prevenir que la IA cause daño</div>
-          <p>Campo ocupado de que los sistemas de IA no causen daño a la humanidad. Propone que la IA podría fallar por sí misma al perseguir objetivos distintos a los intencionados.</p>
-          <p style="font-weight:600;color:var(--ink)">Ejemplos:</p>
-          <ul><li>Comportamiento imprevisto</li><li>Engaño</li><li>Capacidades peligrosas</li><li>Pérdida de control</li></ul>
+          <div class="sub"><span lang="es">Prevenir que la IA cause daño</span><span lang="en">Preventing AI from causing harm</span></div>
+          <p><span lang="es">Campo ocupado de que los sistemas de IA no causen daño a la humanidad. Propone que la IA podría fallar por sí misma al perseguir objetivos distintos a los intencionados.</span><span lang="en">A field concerned with AI systems not harming humanity. It holds that AI could fail on its own by pursuing goals other than the intended ones.</span></p>
+          <p style="font-weight:600;color:var(--ink)"><span lang="es">Ejemplos:</span><span lang="en">Examples:</span></p>
+          <ul><li><span lang="es">Comportamiento imprevisto</span><span lang="en">Unexpected behavior</span></li><li><span lang="es">Engaño</span><span lang="en">Deception</span></li><li><span lang="es">Capacidades peligrosas</span><span lang="en">Dangerous capabilities</span></li><li><span lang="es">Pérdida de control</span><span lang="en">Loss of control</span></li></ul>
         </div>
         <div class="sas-col security">
           <h3>AI Security</h3>
-          <div class="sub">Defender la IA de ataques</div>
-          <p>Subcampo de AI Safety enfocado en la defensa de un sistema de IA contra adversarios o atacantes. Propone que el sistema puede ser vulnerado por un tercero.</p>
-          <p style="font-weight:600;color:var(--ink)">Ejemplos:</p>
-          <ul><li>Prompts maliciosos</li><li>Robo de datos</li><li>Hackeo</li><li>Explotación por terceros</li></ul>
+          <div class="sub"><span lang="es">Defender la IA de ataques</span><span lang="en">Defending AI against attacks</span></div>
+          <p><span lang="es">Subcampo de AI Safety enfocado en la defensa de un sistema de IA contra adversarios o atacantes. Propone que el sistema puede ser vulnerado por un tercero.</span><span lang="en">A subfield of AI Safety focused on defending an AI system against adversaries or attackers. It holds that the system can be compromised by a third party.</span></p>
+          <p style="font-weight:600;color:var(--ink)"><span lang="es">Ejemplos:</span><span lang="en">Examples:</span></p>
+          <ul><li><span lang="es">Prompts maliciosos</span><span lang="en">Malicious prompts</span></li><li><span lang="es">Robo de datos</span><span lang="en">Data theft</span></li><li><span lang="es">Hackeo</span><span lang="en">Hacking</span></li><li><span lang="es">Explotación por terceros</span><span lang="en">Exploitation by third parties</span></li></ul>
         </div>
       </div>
     </div>
@@ -501,13 +507,13 @@
   <!-- ALLIES -->
   <section class="allies band" id="aliados">
     <div class="wrap">
-      <p class="kicker">Nuestra red</p>
-      <h2>Comunidades y espacios donde participamos</h2>
+      <p class="kicker"><span lang="es">Nuestra red</span><span lang="en">Our network</span></p>
+      <h2><span lang="es">Comunidades y espacios donde participamos</span><span lang="en">Communities and spaces where we take part</span></h2>
       <div class="ally-list">
-        <span class="ally">Comunidad autodidacta</span>
-        <span class="ally">Red de talleres</span>
-        <span class="ally">Espacios regionales</span>
-        <span class="ally">Interés común</span>
+        <span class="ally"><span lang="es">Comunidad autodidacta</span><span lang="en">Self-taught community</span></span>
+        <span class="ally"><span lang="es">Red de talleres</span><span lang="en">Workshop network</span></span>
+        <span class="ally"><span lang="es">Espacios regionales</span><span lang="en">Regional spaces</span></span>
+        <span class="ally"><span lang="es">Interés común</span><span lang="en">Common interest</span></span>
       </div>
     </div>
   </section>
@@ -515,24 +521,24 @@
   <!-- FAQ -->
   <section class="faq band" id="faq">
     <div class="wrap">
-      <p class="kicker" style="text-align:center">Preguntas frecuentes</p>
-      <h2 style="text-align:center;max-width:none">Dudas comunes</h2>
+      <p class="kicker" style="text-align:center"><span lang="es">Preguntas frecuentes</span><span lang="en">Frequently asked questions</span></p>
+      <h2 style="text-align:center;max-width:none"><span lang="es">Dudas comunes</span><span lang="en">Common questions</span></h2>
       <div class="faq-list">
         <div class="faq-item">
-          <button class="faq-q">¿Por qué es importante la seguridad en inteligencia artificial?<span class="plus"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span></button>
-          <div class="faq-a"><p>La seguridad en IA sirve para evitar riesgos y daños que puedan venir del uso indebido o del mal diseño de los sistemas. Proteger eso cuida a las personas y a las comunidades. Favorece un desarrollo responsable.</p></div>
+          <button class="faq-q"><span lang="es">¿Por qué es importante la seguridad en inteligencia artificial?</span><span lang="en">Why is AI safety important?</span><span class="plus"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="faq-a"><p><span lang="es">La seguridad en IA sirve para evitar riesgos y daños que puedan venir del uso indebido o del mal diseño de los sistemas. Proteger eso cuida a las personas y a las comunidades. Favorece un desarrollo responsable.</span><span lang="en">AI safety helps avoid risks and harm that can come from misuse or poor system design. Protecting that cares for people and communities. It supports responsible development.</span></p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q">¿Quiénes forman parte de IA para el Bien?<span class="plus"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span></button>
-          <div class="faq-a"><p>Personas de distintos orígenes, muchas autodidactas y sin credenciales académicas, que quieren trabajar por la seguridad y la democratización de la IA en beneficio de la sociedad. Para participar no hace falta ser especialista.</p></div>
+          <button class="faq-q"><span lang="es">¿Quiénes forman parte de IA para el Bien?</span><span lang="en">Who is part of IA para el Bien?</span><span class="plus"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="faq-a"><p><span lang="es">Personas de distintos orígenes, muchas autodidactas y sin credenciales académicas, que quieren trabajar por la seguridad y la democratización de la IA en beneficio de la sociedad. Para participar no hace falta ser especialista.</span><span lang="en">People of different backgrounds, many self-taught and without academic credentials, who want to work for AI safety and democratization for the benefit of society. You don't need to be a specialist to take part.</span></p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q">¿Cómo puedo colaborar o participar?<span class="plus"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span></button>
-          <div class="faq-a"><p>Podés contactarnos para proponer colaboraciones, participar en nuestros talleres o apoyar nuestras iniciativas. Estamos abiertos a alianzas que compartan nuestros valores y objetivos.</p></div>
+          <button class="faq-q"><span lang="es">¿Cómo puedo colaborar o participar?</span><span lang="en">How can I collaborate or take part?</span><span class="plus"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="faq-a"><p><span lang="es">Podés contactarnos para proponer colaboraciones, participar en nuestros talleres o apoyar nuestras iniciativas. Estamos abiertos a alianzas que compartan nuestros valores y objetivos.</span><span lang="en">You can contact us to propose collaborations, join our workshops or support our initiatives. We are open to alliances that share our values and goals.</span></p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q">¿AI Safety o AI Security?<span class="plus"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span></button>
-          <div class="faq-a"><p>AI Safety. Ambos son términos de origen inglés que en español se pisan porque pueden traducirse como "seguridad". AI Safety se ocupa de que los sistemas no causen daño a la humanidad; AI Security es un subcampo enfocado en defender sistemas contra adversarios. Trabajamos en AI Safety.</p></div>
+          <button class="faq-q"><span lang="es">¿AI Safety o AI Security?</span><span lang="en">AI Safety or AI Security?</span><span class="plus"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="faq-a"><p><span lang="es">AI Safety. Ambos son términos de origen inglés que en español se pisan porque pueden traducirse como "seguridad". AI Safety se ocupa de que los sistemas no causen daño a la humanidad; AI Security es un subcampo enfocado en defender sistemas contra adversarios. Trabajamos en AI Safety.</span><span lang="en">AI Safety. Both are English terms that overlap in Spanish because they translate as "seguridad". AI Safety deals with systems not harming humanity; AI Security is a subfield focused on defending systems against adversaries. We work on AI Safety.</span></p></div>
         </div>
       </div>
     </div>
@@ -541,12 +547,12 @@
   <!-- CTA -->
   <section class="cta" id="contacto">
     <div class="wrap">
-      <p class="kicker">Recibí novedades sobre seguridad en IA</p>
-      <h2>Unite a nuestra misión</h2>
-      <p>Dejá tu correo para recibir nuestras publicaciones y novedades sobre seguridad en IA. O escribinos directamente a <a href="mailto:hola@iaparaelbien.org" style="color:#fff;text-decoration:underline">hola@iaparaelbien.org</a> para colaborar.</p>
+      <p class="kicker"><span lang="es">Recibí novedades sobre seguridad en IA</span><span lang="en">Get updates on AI safety</span></p>
+      <h2><span lang="es">Unite a nuestra misión</span><span lang="en">Join our mission</span></h2>
+      <p><span lang="es">Dejá tu correo para recibir nuestras publicaciones y novedades sobre seguridad en IA. O escribinos directamente a <a href="mailto:hola@iaparaelbien.org" style="color:#fff;text-decoration:underline">hola@iaparaelbien.org</a> para colaborar.</span><span lang="en">Leave your email to receive our publications and updates on AI safety. Or write to us directly at <a href="mailto:hola@iaparaelbien.org" style="color:#fff;text-decoration:underline">hola@iaparaelbien.org</a> to collaborate.</span></p>
       <form class="form" onsubmit="return false">
         <input type="email" placeholder="tu@correo.org" aria-label="Correo electrónico" required>
-        <button class="btn btn-primary" type="submit">Suscribirme</button>
+        <button class="btn btn-primary" type="submit"><span lang="es">Suscribirme</span><span lang="en">Subscribe</span></button>
       </form>
       <div class="contact-links">
         <a href="mailto:hola@iaparaelbien.org">hola@iaparaelbien.org</a>
@@ -560,35 +566,49 @@
   <div class="wrap foot-grid">
     <div>
       <div class="brand"><span class="mark"></span>IA para el Bien<span class="loc">UY</span></div>
-      <p>Explorando seguridad y protección de IA (AI Safety) desde Uruguay, por y para todos.</p>
+      <p><span lang="es">Explorando seguridad y protección de IA (AI Safety) desde Uruguay, por y para todos.</span><span lang="en">Exploring AI safety from Uruguay, by and for everyone.</span></p>
     </div>
     <div>
-      <h4>Navegación</h4>
-      <ul><li><a href="#mision">Misión</a></li><li><a href="#valores">Valores</a></li><li><a href="#enfoque">Enfoque</a></li><li><a href="#contribucion">Contribución</a></li><li><a href="#videos">Videos</a></li><li><a href="#profundizar">Para profundizar</a></li><li><a href="#sas">Safety vs Security</a></li><li><a href="#faq">FAQ</a></li></ul>
+      <h4><span lang="es">Navegación</span><span lang="en">Navigation</span></h4>
+      <ul><li><a href="#mision"><span lang="es">Misión</span><span lang="en">Mission</span></a></li><li><a href="#valores"><span lang="es">Valores</span><span lang="en">Values</span></a></li><li><a href="#enfoque"><span lang="es">Enfoque</span><span lang="en">Approach</span></a></li><li><a href="#contribucion"><span lang="es">Contribución</span><span lang="en">Contribution</span></a></li><li><a href="#videos"><span lang="es">Videos</span><span lang="en">Videos</span></a></li><li><a href="#profundizar"><span lang="es">Para profundizar</span><span lang="en">Go deeper</span></a></li><li><a href="#sas"><span lang="es">Safety vs Security</span><span lang="en">Safety vs Security</span></a></li><li><a href="#faq"><span lang="es">FAQ</span><span lang="en">FAQ</span></a></li></ul>
     </div>
     <div>
-      <h4>Recursos</h4>
-      <ul><li><a href="#sas">Safety vs Security</a></li><li><a href="#videos">Videos</a></li><li><a href="#profundizar">Para profundizar</a></li><li><a href="#caps">Estado del arte 2026</a></li><li><a href="#contacto">Contacto</a></li></ul>
+      <h4><span lang="es">Recursos</span><span lang="en">Resources</span></h4>
+      <ul><li><a href="#sas"><span lang="es">Safety vs Security</span><span lang="en">Safety vs Security</span></a></li><li><a href="#videos"><span lang="es">Videos</span><span lang="en">Videos</span></a></li><li><a href="#profundizar"><span lang="es">Para profundizar</span><span lang="en">Go deeper</span></a></li><li><a href="#caps"><span lang="es">Estado del arte 2026</span><span lang="en">State of the art 2026</span></a></li><li><a href="#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span></a></li></ul>
     </div>
     <div>
-      <h4>Comunidad</h4>
-      <ul><li><a href="#enfoque">Cómo sumarte</a></li><li><a href="mailto:hola@iaparaelbien.org">Sumate</a></li></ul>
+      <h4><span lang="es">Comunidad</span><span lang="en">Community</span></h4>
+      <ul><li><a href="#enfoque"><span lang="es">Cómo sumarte</span><span lang="en">How to join</span></a></li><li><a href="mailto:hola@iaparaelbien.org"><span lang="es">Sumate</span><span lang="en">Join</span></a></li></ul>
     </div>
   </div>
   <div class="wrap foot-bottom">
-    <span>© <span id="year"></span> IA para el Bien · Laboratorio independiente · Uruguay</span>
-    <span>Hecho con cuidado, para el interés común.</span>
+    <span>© <span id="year"></span> <span lang="es">IA para el Bien · Laboratorio independiente · Uruguay</span><span lang="en">IA para el Bien · Independent lab · Uruguay</span></span>
+    <span><span lang="es">Hecho con cuidado, para el interés común.</span><span lang="en">Made with care, for the common good.</span></span>
   </div>
 </footer>
 
 <div class="cookie" id="cookie">
-  <p>Usamos cookies para mejorar el sitio y entender mejor tu interés por la seguridad en IA.</p>
-  <button class="btn btn-primary" id="cookieOk">Aceptar</button>
-  <button class="btn later" id="cookieNo">Solo necesarias</button>
+  <p><span lang="es">Usamos cookies para mejorar el sitio y entender mejor tu interés por la seguridad en IA.</span><span lang="en">We use cookies to improve the site and better understand your interest in AI safety.</span></p>
+  <button class="btn btn-primary" id="cookieOk"><span lang="es">Aceptar</span><span lang="en">Accept</span></button>
+  <button class="btn later" id="cookieNo"><span lang="es">Solo necesarias</span><span lang="en">Only necessary</span></button>
 </div>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+  // Language toggle (resilient to blocked localStorage / NoScript)
+  const store = {
+    get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } },
+    set(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
+  };
+  const langBtn = document.getElementById('langBtn');
+  const htmlEl = document.documentElement;
+  if (store.get('bien-lang') === 'en') htmlEl.setAttribute('lang', 'en');
+  langBtn.addEventListener('click', () => {
+    const cur = htmlEl.getAttribute('lang') || 'es';
+    const next = cur === 'en' ? 'es' : 'en';
+    htmlEl.setAttribute('lang', next);
+    store.set('bien-lang', next);
+  });
   const menuBtn = document.getElementById('menuBtn'), navlinks = document.getElementById('navlinks');
   menuBtn.addEventListener('click', () => { const open = navlinks.classList.toggle('open'); menuBtn.setAttribute('aria-expanded', open); });
   navlinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navlinks.classList.remove('open')));
@@ -596,8 +616,8 @@
     q.addEventListener('click', () => { const item = q.parentElement, a = item.querySelector('.faq-a'); const isOpen = item.classList.toggle('open'); a.style.maxHeight = isOpen ? a.scrollHeight + 'px' : null; });
   });
   const cookie = document.getElementById('cookie');
-  if (!localStorage.getItem('cookie-bien')) setTimeout(() => cookie.classList.add('show'), 900);
-  const dismiss = () => { cookie.classList.remove('show'); localStorage.setItem('cookie-bien','1'); };
+  if (!store.get('cookie-bien')) setTimeout(() => cookie.classList.add('show'), 900);
+  const dismiss = () => { cookie.classList.remove('show'); store.set('cookie-bien','1'); };
   document.getElementById('cookieOk').addEventListener('click', dismiss);
   document.getElementById('cookieNo').addEventListener('click', dismiss);
 </script>
