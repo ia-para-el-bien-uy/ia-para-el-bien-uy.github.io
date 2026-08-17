@@ -52,7 +52,7 @@
   .brand{font-weight:700;font-size:1.2rem;display:flex;align-items:center;gap:.6rem;letter-spacing:-.01em}
   .brand .mark{width:16px;height:16px;border-radius:50%;background:var(--celeste)}
   .brand .loc{font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-left:2px}
-  .nav-links{display:flex;gap:34px;align-items:center}
+  .nav-links{display:flex;gap:26px;align-items:center}
   .nav-links a{font-weight:600;color:var(--muted);font-size:.95rem;transition:color .15s}
   .nav-links a:hover{color:var(--ink)}
   .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:10px;padding:8px 10px;cursor:pointer}
@@ -152,6 +152,15 @@
   .vid .cap b{color:var(--ink);font-weight:600}
   .vid .ci{font-size:1.1rem;font-weight:700;color:var(--celeste-deep)}
 
+  /* PROFUNDIZAR — full-width playlist embed, no cards */
+  .deep .wrap{max-width:860px}
+  .deep-head{margin-bottom:clamp(36px,5vw,52px)}
+  .deep-head h2{font-size:clamp(1.9rem,4vw,2.8rem);max-width:22ch}
+  .deep-head .lead{margin-top:18px;max-width:58ch}
+  .deep .frame{width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;box-shadow:0 12px 34px rgba(20,36,51,.14);background:#000}
+  .deep .frame iframe{width:100%;height:100%;border:0;display:block}
+  .deep .src{margin-top:14px;font-size:.9rem;color:var(--muted)}
+
   /* TESTIMONIAL — calm navy band, no card */
   .testimonial{background:var(--navy);color:#fff}
   .testimonial .wrap{max-width:860px;text-align:center}
@@ -223,6 +232,14 @@
   .cookie .btn{padding:.55rem 1.05rem;font-size:.88rem}
   .cookie .later{background:transparent;border:1px solid #3a4a59;color:#e6edf3}
 
+  @media (max-width:1100px){
+    .nav-links{display:none}
+    .menu-btn{display:inline-flex}
+    .nav-links.open{display:flex;position:absolute;top:72px;left:0;right:0;background:var(--white);flex-direction:column;padding:18px 28px;border-bottom:1px solid var(--line);gap:16px}
+    .nav-links.open a{font-size:1.05rem}
+    .nav-cta .btn{display:none}
+    .nav-links.open .nav-cta-mobile{display:block}
+  }
   @media (max-width:960px){
     .impact-row{grid-template-columns:1fr;gap:30px}
     .aud{grid-template-columns:1fr}
@@ -232,9 +249,6 @@
     .step{grid-template-columns:1fr;gap:8px}
     .vid-grid{grid-template-columns:1fr}
     .foot-grid{grid-template-columns:1fr 1fr}
-    .nav-links{display:none}
-    .menu-btn{display:inline-flex}
-    .nav-links.open{display:flex;position:absolute;top:72px;left:0;right:0;background:var(--white);flex-direction:column;padding:18px 28px;border-bottom:1px solid var(--line);gap:16px}
   }
   @media (max-width:560px){
     .foot-grid{grid-template-columns:1fr}
@@ -251,12 +265,12 @@
     <a class="brand" href="#top"><span class="mark"></span>IA para el Bien<span class="loc">UY</span></a>
     <nav class="nav-links" id="navlinks">
       <a href="#mision">Misión</a>
-      <a href="#valores">Valores</a>
       <a href="#enfoque">Enfoque</a>
       <a href="#contribucion">Contribución</a>
       <a href="#videos">Videos</a>
-      <a href="#sas">Safety vs Security</a>
+      <a href="#profundizar">Para profundizar</a>
       <a href="#faq">FAQ</a>
+      <a class="btn btn-primary nav-cta-mobile" href="#contacto" style="display:none;margin-top:10px">Colaborar</a>
     </nav>
     <div class="nav-cta">
       <a class="btn btn-primary" href="#contacto">Colaborar</a>
@@ -431,6 +445,19 @@
     </div>
   </section>
 
+  <!-- PROFUNDIZAR -->
+  <section class="deep band band--soft" id="profundizar">
+    <div class="wrap">
+      <div class="deep-head">
+        <p class="kicker">Para profundizar · en español</p>
+        <h2>Ciudadanía e inteligencia artificial, por AGESIC</h2>
+        <p class="lead">La agencia de gobierno digital de Uruguay reunió una serie corta sobre gobernanza, transparencia, privacidad, seguridad y sesgos de la IA. Buena puerta de entrada para quien quiere pensar la IA desde lo público y desde acá.</p>
+      </div>
+      <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLKVWFoonm9Vc" title="IA y Ciudadanía — AGESIC" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+      <p class="src">Fuente: <a href="https://www.youtube.com/watch?v=QAiN164WQ-o&list=PLKVWFoonm9Vc" target="_blank" rel="noopener" style="color:var(--celeste-deep);text-decoration:underline">Playlist "IA y Ciudadanía" · AGESIC Uruguay</a></p>
+    </div>
+  </section>
+
   <!-- TESTIMONIAL -->
   <section class="testimonial band" id="testimonio">
     <div class="wrap">
@@ -531,11 +558,11 @@
     </div>
     <div>
       <h4>Navegación</h4>
-      <ul><li><a href="#mision">Misión</a></li><li><a href="#valores">Valores</a></li><li><a href="#enfoque">Enfoque</a></li><li><a href="#contribucion">Contribución</a></li><li><a href="#videos">Videos</a></li><li><a href="#sas">Safety vs Security</a></li><li><a href="#faq">FAQ</a></li></ul>
+      <ul><li><a href="#mision">Misión</a></li><li><a href="#valores">Valores</a></li><li><a href="#enfoque">Enfoque</a></li><li><a href="#contribucion">Contribución</a></li><li><a href="#videos">Videos</a></li><li><a href="#profundizar">Para profundizar</a></li><li><a href="#sas">Safety vs Security</a></li><li><a href="#faq">FAQ</a></li></ul>
     </div>
     <div>
       <h4>Recursos</h4>
-      <ul><li><a href="#sas">Safety vs Security</a></li><li><a href="#videos">Videos</a></li><li><a href="#caps">Estado del arte 2026</a></li><li><a href="#contacto">Contacto</a></li></ul>
+      <ul><li><a href="#sas">Safety vs Security</a></li><li><a href="#videos">Videos</a></li><li><a href="#profundizar">Para profundizar</a></li><li><a href="#caps">Estado del arte 2026</a></li><li><a href="#contacto">Contacto</a></li></ul>
     </div>
     <div>
       <h4>Comunidad</h4>
