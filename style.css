@@ -91,7 +91,7 @@
 
   /* CONTRIBUCION — numbered with roman numerals, distinct from values */
   .contribucion .value{display:grid;grid-template-columns:80px 1fr;gap:24px;align-items:baseline}
-  .contribucion .value .vi{font-size:1.3rem;font-weight:700;color:var(--sand)}
+  .contribucion .value .vi{font-size:1.3rem;font-weight:700;color:var(--celeste-deep)}
 
   /* PATH — flowing numbered bands */
   .step{display:grid;grid-template-columns:120px 1fr;gap:clamp(24px,4vw,56px);padding:clamp(30px,4vw,44px) 0;border-bottom:1px solid var(--line)}
@@ -99,7 +99,7 @@
   .step .num{font-size:clamp(2.2rem,4vw,3rem);font-weight:700;color:var(--celeste);letter-spacing:-.02em;line-height:1}
   .step h3{font-size:clamp(1.6rem,3vw,2rem);font-weight:600;margin-bottom:10px}
   .step p{color:var(--muted);font-size:1.05rem;max-width:54ch}
-  .step .tag{display:inline-block;margin-top:16px;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sand)}
+  .step .tag{display:inline-block;margin-top:16px;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--celeste-deep)}
 
   /* CAPS — long editorial list, no cards */
   .caps{background:var(--ink);color:#fff}
@@ -152,7 +152,7 @@
   .sas-col h3{font-size:1.7rem;margin-bottom:6px}
   .sas-col .sub{font-weight:700;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px}
   .sas-col.safety .sub{color:var(--celeste-deep)}
-  .sas-col.security .sub{color:var(--sand)}
+  .sas-col.security .sub{color:var(--celeste-deep)}
   .sas-col p{color:var(--muted);font-size:1rem;margin-bottom:14px}
   .sas-col ul{margin:0;padding-left:18px;color:var(--muted);font-size:.96rem}
   .sas-col li{margin:6px 0}
