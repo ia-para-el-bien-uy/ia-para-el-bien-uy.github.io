@@ -147,7 +147,9 @@
   .sas-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:clamp(36px,5vw,56px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .sas-col{padding:clamp(30px,4vw,44px) clamp(24px,3vw,40px)}
   .sas-col.safety{position:relative}
-  .sas-tag{display:inline-block;font-family:var(--font);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--celeste-deep);padding:.3rem .65rem;border-radius:999px;margin-bottom:14px}
+  .sas-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+  .sas-head h3{margin-bottom:0}
+  .sas-tag{display:inline-block;font-family:var(--font);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--celeste-deep);padding:.3rem .65rem;border-radius:999px}
   .sas-col + .sas-col{border-left:1px solid var(--line)}
   .sas-col h3{font-size:1.7rem;margin-bottom:6px}
   .sas-col .sub{font-weight:700;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px}
