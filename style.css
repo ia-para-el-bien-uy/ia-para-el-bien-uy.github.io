@@ -45,6 +45,10 @@
   .btn-line:hover{background:var(--celeste-soft)}
   .btn:focus-visible{outline:2px solid var(--celeste);outline-offset:2px}
 
+  /* BANNER — slim announcement bar above header */
+  .announce{background:var(--celeste-deep);color:#fff;text-align:center;font-size:.9rem;font-weight:600;padding:10px 20px;letter-spacing:.01em}
+  .announce a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+
   /* Header / Nav */
   header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
