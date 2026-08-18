@@ -3,11 +3,12 @@
     --celeste:#2e93e6;
     --celeste-deep:#1a5ea8;
     --celeste-soft:#d8ecfb;
+    --celeste-light:#7ec4f2;    /* sky accent for dark bands */
     --cream:#faf7f1;            /* warm local paper */
     --white:#ffffff;
     --ink:#142433;
     --muted:#5a6a7a;
-    --sand:#c9975c;             /* muted warm accent — local craft, no clash */
+    --sand:#945d33;             /* warm accent, AA-contrast on cream */
     --navy:#1a2b40;             /* calm dark band for testimonial */
     --line:#e8e2d6;
     --font:"DM Sans",system-ui,sans-serif;
@@ -120,7 +121,7 @@
 
   /* CAPS — long editorial list, no cards */
   .caps{background:var(--ink);color:#fff}
-  .caps .kicker{color:#7ec4f2}
+  .caps .kicker{color:var(--celeste-light)}
   .caps .wrap{max-width:980px}
   .caps-head{margin-bottom:clamp(36px,5vw,56px)}
   .caps-head h2{color:#fff;font-size:clamp(1.9rem,4vw,2.8rem);max-width:20ch}
