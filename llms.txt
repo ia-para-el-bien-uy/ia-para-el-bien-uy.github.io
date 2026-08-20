@@ -1,0 +1,32 @@
+# IA para el Bien
+
+Sitio de un laboratorio independiente y sin fines de lucro con base en Uruguay, dedicado a la seguridad de la IA (AI Safety) en español y desde el contexto local. Misión: que la seguridad en IA deje de ser un privilegio de unos pocos y sea un bien común, empezando por la región hispanohablante. Comunidad de aprendizaje abierto: se construye, se falla y se enseña entre tod@s, sin credenciales académicas.
+
+## Nuestro enfoque y misión
+
+- https://iaparaelbien.org/ — Página principal (bilingüe ES/EN). Incluye misión, visión, valores, áreas de trabajo, laboratorio técnico y preguntas frecuentes.
+- https://iaparaelbien.org/#enfoque — Enfoque: divulgación, comunidad y formación, no un laboratorio aislado.
+- https://iaparaelbien.org/#contribucion — Contribución: recursos educativos en español, comunidad regional de práctica, talleres, mentoría.
+
+## Laboratorio técnico
+
+- https://iaparaelbien.org/#lab — Líneas técnicas: interpretabilidad mecanística, alineación de modelos de lenguaje y entrenamiento robusto.
+
+## Recursos externos citados
+
+- https://www.youtube.com/watch?v=QAiN164WQ-o&list=PLKVWFoonm9Vc — Playlist "IA y Ciudadanía", AGESIC (agencia de gobierno digital de Uruguay): gobernanza, transparencia, privacidad, seguridad y sesgos de la IA.
+- https://www.youtube-nocookie.com/embed/CAdTjePDBfc — Ejemplo: robótica y manipulación (Figure, Helix).
+- https://www.youtube-nocookie.com/embed/NAauIR6JFps — Ejemplo: uso de computadoras por un agente (Claude).
+- https://www.youtube-nocookie.com/embed/rBJnWMD0Pho — Ejemplo: uso de la web por un agente (Anthropic).
+- https://www.youtube-nocookie.com/embed/3S7naW_KRyw — Ejemplo: generación de video (Seedance 2).
+
+## Cómo participar
+
+- mailto:hola@iaparaelbien.org — Contacto para colaborar, proponer talleres o sumarse.
+- https://iaparaelbien.org/#contacto — Formulario de novedades y misión.
+
+## Preguntas frecuentes
+
+- ¿Por qué es importante la seguridad en IA? — Evitar riesgos y daños por uso indebido o mal diseño; protege a personas y comunidades.
+- ¿Quiénes forman parte? — Personas de distintos orígenes, muchas autodidactas, sin credenciales académicas; no hace falta ser especialista.
+- ¿AI Safety o AI Security? — AI Safety: que los sistemas no dañen a la humanidad. AI Security: subcampo que defiende sistemas contra adversarios. Trabajamos en AI Safety.

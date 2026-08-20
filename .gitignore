@@ -6,3 +6,7 @@ node_modules/
 *.jpg
 .DS_Store
 Thumbs.db
+
+# allow site assets
+!assets/*.png
+!assets/*.jpg
