@@ -10,3 +10,7 @@ Thumbs.db
 # allow site assets
 !assets/*.png
 !assets/*.jpg
+
+# allow site + chaish assets
+!chaish/assets/*.png
+!chaish/assets/*.jpg
