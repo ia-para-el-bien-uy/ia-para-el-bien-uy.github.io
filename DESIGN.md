@@ -21,7 +21,7 @@ family.
 - **Uppercase is reserved for short labels/headings**, not body text: `.kicker`,
   `.sas-tag`, `.sas-col .sub`, `footer h3`, `.lang-btn`. These are eyebrow/kicker
   labels (≤40 chars), not body copy. → `all-caps-body` should ignore these
-  selectors. (The brand mark is a celeste bolas SVG, no text "UY" — `.brand .loc`
+  selectors. (The brand mark is a celeste boleadoras SVG, no text "UY" — `.brand .loc`
   does not apply on this site.)
 - **Bordered-list rows use vertical-only padding**: `.step`, `.cap`, `.value`
   use `padding:26px 0` with `border-bottom:1px solid var(--line)` — that is a

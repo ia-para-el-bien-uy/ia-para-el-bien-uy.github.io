@@ -9,7 +9,7 @@ index.html              # Redirige a chaish/ (el sitio canónico vive en la subc
 chaish/
   index.html            # Sitio completo CHAISH, bilingüe ES/EN con toggle JS
   style.css             # Hoja de estilos del sub-sitio
-  assets/chaish-mark.svg# Marca bolas (celeste) del hub
+  assets/chaish-mark.svg# Marca boleadoras (celeste) del hub
 script.js               # Toggle idioma, menú móvil, FAQ acordeón, cookie banner
 CNAME                   # Dominio custom (iaparaelbien.org) para GitHub Pages
 llms.txt                # Resumen del sitio para LLMs
@@ -43,7 +43,7 @@ El toggle está en `script.js` y persiste en `localStorage`.
 --line:#e8e2d6
 ```
 
-Botón primario: `#fdcd51` (amarillo, texto `--ink`). Marca del hub: SVG celeste (tres piedras enlazadas, inspirado en las bolas — herramienta de caza Charrúa).
+Botón primario: `#fdcd51` (amarillo, texto `--ink`). Marca del hub: SVG celeste (tres piedras enlazadas, inspirado en las boleadoras — instrumento de caza Charrúa).
 
 ## Deploy
 
