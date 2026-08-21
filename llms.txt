@@ -1,29 +1,37 @@
-# IA para el Bien
+# CHAISH — Charrua AI Safety Hub
 
-Sitio de un laboratorio independiente y sin fines de lucro con base en Uruguay, dedicado a la seguridad de la IA (AI Safety) en español y desde el contexto local. Misión: que la seguridad en IA deje de ser un privilegio de unos pocos y sea un bien común, empezando por la región hispanohablante. Comunidad de aprendizaje abierto: se construye, se falla y se enseña entre tod@s, sin credenciales académicas.
+Sitio de un hub comunitario uruguayo de seguridad en IA (AI Safety), en español y desde el contexto local. Parte de una red regional de hubs (BAISH, AI Safety España); CHAISH apunta a ser el nodo uruguayo de esa red. Laboratorio independiente y sin fines de lucro, basado en Uruguay. Misión: que la seguridad en IA deje de ser un privilegio de unos pocos y sea un bien común, empezando por la región hispanohablante. Se aprende, se falla y se construye en comunidad, sin credenciales académicas.
 
-## Nuestro enfoque y misión
+## Sitio canónico
 
-- https://iaparaelbien.org/ — Página principal (bilingüe ES/EN). Incluye misión, visión, valores, áreas de trabajo, laboratorio técnico y preguntas frecuentes.
-- https://iaparaelbien.org/#enfoque — Enfoque: divulgación, comunidad y formación, no un laboratorio aislado.
-- https://iaparaelbien.org/#contribucion — Contribución: recursos educativos en español, comunidad regional de práctica, talleres, mentoría.
+- https://chaish.iaparaelbien.org/ — Sitio principal (bilingüe ES/EN). iaparaelbien.org redirige aquí.
+- https://chaish.iaparaelbien.org/#porque — Por qué: la seguridad en IA se aprende en comunidad.
+- https://chaish.iaparaelbien.org/#hacemos — Nuestros frentes: Grupo de práctica, Lectura y discusión, Mentoría.
+- https://chaish.iaparaelbien.org/#fallamos — Somos transparentes: el error es parte del camino.
+- https://chaish.iaparaelbien.org/#aprendemos — Aprendemos en comunidad: leemos, discutimos y replicamos en español.
+
+## Misión, valores y enfoque
+
+- https://chaish.iaparaelbien.org/#mision — Misión y visión. Visión: una región que entienda y gobierne su propia IA; auditar sistemas de IA reales para proteger a las personas más vulnerables.
+- https://chaish.iaparaelbien.org/#valores — Seis valores: Independencia, Aprendizaje en comunidad, Fallas abiertas, Acceso sin credenciales, Contexto local, Agencia humana.
+- https://chaish.iaparaelbien.org/#enfoque — Enfoque: divulgación, comunidad y formación, no un laboratorio aislado.
 
 ## Laboratorio técnico
 
-- https://iaparaelbien.org/#lab — Líneas técnicas: interpretabilidad mecanística, alineación de modelos de lenguaje y entrenamiento robusto.
+- https://chaish.iaparaelbien.org/#lab — Líneas técnicas: interpretabilidad mecanística, alineación de modelos de lenguaje, entrenamiento robusto, evaluación de riesgos.
+
+## Seguridad vs seguridad
+
+- https://chaish.iaparaelbien.org/#sas — AI Safety (que los sistemas no dañen a la humanidad) vs AI Security (defender sistemas contra adversarios). Trabajamos en AI Safety.
 
 ## Recursos externos citados
 
 - https://www.youtube.com/watch?v=QAiN164WQ-o&list=PLKVWFoonm9Vc — Playlist "IA y Ciudadanía", AGESIC (agencia de gobierno digital de Uruguay): gobernanza, transparencia, privacidad, seguridad y sesgos de la IA.
-- https://www.youtube-nocookie.com/embed/CAdTjePDBfc — Ejemplo: robótica y manipulación (Figure, Helix).
-- https://www.youtube-nocookie.com/embed/NAauIR6JFps — Ejemplo: uso de computadoras por un agente (Claude).
-- https://www.youtube-nocookie.com/embed/rBJnWMD0Pho — Ejemplo: uso de la web por un agente (Anthropic).
-- https://www.youtube-nocookie.com/embed/3S7naW_KRyw — Ejemplo: generación de video (Seedance 2).
 
 ## Cómo participar
 
-- mailto:hola@iaparaelbien.org — Contacto para colaborar, proponer talleres o sumarse.
-- https://iaparaelbien.org/#contacto — Formulario de novedades y misión.
+- mailto:chaish@iaparaelbien.org — Contacto para colaborar, proponer talleres o sumarse.
+- https://chaish.iaparaelbien.org/#contacto — Formulario de novedades y misión.
 
 ## Preguntas frecuentes
 
