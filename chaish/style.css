@@ -85,7 +85,7 @@
 
   /* Mission */
   .mission .wrap{max-width:980px}
-  .mission-statement h2{font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.15}
+  .mission-statement h2{font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.25}
   .mission-statement h2 b{font-weight:700;color:var(--celeste-deep)}
   .mission-statement p{margin-top:28px;font-size:clamp(1.1rem,1.8vw,1.25rem);color:var(--muted);max-width:62ch;line-height:1.75}
   .vision{margin-top:var(--gap-section);padding-top:clamp(28px,4vw,40px);border-top:1px solid var(--line)}
@@ -162,7 +162,7 @@
 
   /* CTA */
   .cta{background:var(--celeste);color:#fff}
-  .cta .wrap{max-width:760px;text-align:center;padding-top:clamp(64px,8vw,100px);padding-bottom:clamp(64px,8vw,100px)}
+  .cta .wrap{max-width:760px;text-align:center;padding-top:clamp(72px,8vw,104px);padding-bottom:clamp(72px,8vw,104px)}
   .cta .kicker{color:rgba(255,255,255,.9)}
   .cta h2{color:#fff;font-size:clamp(2rem,4vw,2.9rem);font-weight:400;margin-bottom:16px}
   .cta h2 b{font-weight:700}
