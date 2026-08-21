@@ -1,5 +1,5 @@
 :root{
-    --celeste:#2e93e6;
+    --celeste:#1a6dc4;
     --celeste-deep:#1a5ea8;
     --celeste-soft:#d8ecfb;
     --celeste-light:#7ec4f2;
@@ -45,16 +45,17 @@
   .btn-line:hover{background:var(--celeste-soft)}
   .btn:focus-visible{outline:2px solid var(--celeste);outline-offset:2px}
 
-  /* BANNER — slim announcement bar above header */
+  /* BANNER */
   .announce{background:var(--celeste-deep);color:#fff;text-align:center;font-size:.9rem;font-weight:600;padding:10px 20px;letter-spacing:.01em}
   .announce a{color:#fff;text-decoration:underline;text-underline-offset:2px}
 
   /* Header / Nav */
   header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
-  .brand{font-weight:700;font-size:1.2rem;display:flex;align-items:center;gap:.6rem;letter-spacing:-.01em}
-  .brand .mark{width:16px;height:16px;border-radius:50%;background:var(--celeste)}
-  .brand .loc{font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-left:2px}
+  .brand{font-weight:700;font-size:1.2rem;display:flex;align-items:center;gap:.55rem;letter-spacing:-.01em}
+  .brand .mark{width:22px;height:22px;border-radius:7px;background:var(--celeste);position:relative;flex:0 0 auto}
+  .brand .mark::after{content:"";position:absolute;inset:6px 6px auto 6px;height:4px;border-radius:2px;background:#fff;box-shadow:0 6px 0 #fff}
+  .brand .loc{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--celeste);padding:.22rem .5rem;border-radius:7px;margin-left:2px}
   .nav-links{display:flex;gap:26px;align-items:center}
   .nav-links a{font-weight:600;color:var(--muted);font-size:.95rem;transition:color .15s}
   .nav-links a:hover{color:var(--ink)}
@@ -81,7 +82,6 @@
   /* Positioning */
   .impact{background:var(--celeste);color:#fff}
   .impact .wrap{padding-top:clamp(52px,7vw,84px);padding-bottom:clamp(52px,7vw,84px)}
-  .impact .kicker{color:rgba(255,255,255,.9)}
   .impact-line{font-size:clamp(1.3rem,2.6vw,1.9rem);font-weight:500;line-height:1.45;max-width:58ch}
 
   /* Mission */
@@ -99,35 +99,29 @@
   .value h3{font-size:1.4rem;font-weight:600;margin-bottom:6px}
   .value p{color:var(--muted);font-size:1rem;max-width:56ch;margin:0}
 
-  /* Contribucion — numbered with roman numerals */
-  .contribucion .value{display:grid;grid-template-columns:80px 1fr;gap:24px;align-items:baseline}
-  .contribucion .value .vi{font-size:1.3rem;font-weight:700;color:var(--celeste-deep)}
-
-  /* Step — numbered bands */
-  .step{display:grid;grid-template-columns:120px 1fr;gap:clamp(24px,4vw,56px);padding:clamp(30px,4vw,44px) 0;border-bottom:1px solid var(--line)}
+  /* Step — editorial rows */
+  .step{padding:clamp(30px,4vw,44px) 0;border-bottom:1px solid var(--line)}
   .step:first-of-type{border-top:1px solid var(--line)}
-  .step .num{font-size:clamp(2.2rem,4vw,3rem);font-weight:700;color:var(--celeste);letter-spacing:-.02em;line-height:1}
   .step h3{font-size:clamp(1.6rem,3vw,2rem);font-weight:600;margin-bottom:10px}
   .step p{color:var(--muted);font-size:1.05rem;max-width:54ch}
-  .step .tag{display:inline-block;margin-top:16px;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--celeste-deep)}
+  .step .tag{display:inline-block;margin-top:16px;font-size:.82rem;font-weight:600;color:var(--celeste-deep)}
 
-  /* Lab — technical list on white */
+  /* Lab — technical list */
   .lab .wrap{max-width:980px}
   .cap{padding:26px 0;border-bottom:1px solid var(--line)}
   .cap:first-of-type{border-top:1px solid var(--line)}
-  .cap h4{font-size:1.35rem;font-weight:600;color:var(--ink);margin-bottom:4px}
+  .cap h3{font-size:1.35rem;font-weight:600;color:var(--ink);margin-bottom:4px}
   .cap p{color:var(--muted);font-size:.98rem;margin:0}
 
   /* Videos */
   .videos{background:var(--white)}
   .videos .wrap{max-width:980px}
   .videos h2{color:var(--ink)}
-  .videos .kicker{color:var(--celeste-deep)}
   .videos-head{margin-bottom:var(--gap-section)}
   .videos-head h2{font-size:var(--title);max-width:20ch}
   .videos-head .lead{margin-top:18px;max-width:54ch}
   .vid-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,3vw,34px)}
-  .vid .frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(20,36,51,.08)}
+  .vid .frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.08)}
   .vid .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
   .vid .cap{display:flex;gap:14px;align-items:baseline;padding:14px 2px 0;border:none;color:var(--muted)}
   .vid .cap b{color:var(--ink);font-weight:600}
@@ -137,7 +131,7 @@
   .deep-head{margin-bottom:var(--gap-section)}
   .deep-head h2{font-size:var(--title);max-width:22ch}
   .deep-head .lead{margin-top:18px;max-width:58ch}
-  .deep .frame{width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;box-shadow:0 12px 34px rgba(20,36,51,.10);background:#000}
+  .deep .frame{width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.10);background:#000}
   .deep .frame iframe{width:100%;height:100%;border:0;display:block}
   .deep .src{margin-top:14px;font-size:.9rem;color:var(--muted)}
 
@@ -186,7 +180,7 @@
   .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px}
   footer .brand{margin-bottom:14px}
   footer p{font-size:.9rem;color:#b9c6d2;max-width:34ch}
-  footer h4{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:#7f8c99;margin-bottom:14px;font-weight:700}
+  footer h3{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:#7f8c99;margin-bottom:14px;font-weight:700}
   footer ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
   footer a{color:#cdd6de;font-size:.92rem;transition:color .15s}
   footer a:hover{color:#fff}
@@ -211,7 +205,6 @@
   @media (max-width:960px){
     .sas-grid{grid-template-columns:1fr}
     .sas-col + .sas-col{border-left:none;border-top:1px solid var(--line)}
-    .step{grid-template-columns:1fr;gap:8px}
     .vid-grid{grid-template-columns:1fr}
     .foot-grid{grid-template-columns:1fr 1fr}
   }
@@ -223,3 +216,8 @@
   }
 
 .brand-logo{height:26px;max-height:26px;width:auto;vertical-align:middle;border-radius:4px;margin-right:8px;object-fit:contain}@media(max-width:560px){.brand-logo{height:22px;max-height:22px;margin-right:6px}}
+
+/* CHAISH: social icon links in footer */
+.social-link{display:inline-flex;align-items:center;gap:8px}
+.social-ico{display:inline-flex;color:var(--celeste);flex:0 0 auto}
+.social-link:hover .social-ico{color:var(--celeste-deep)}
