@@ -4,7 +4,7 @@ Landing estática de AI Safety uruguaya. HTML/CSS/JS puro, sin build, GH Pages, 
 
 ## Preview
 Usuario: Firefox **Local Mode** → `https://iaparaelbien.localhost` (sin server; mapping a `C:\Users\diego\ia-para-el-bien-preview`). Agente: server 8099 solo para ver render + Playwright.
-Sync WSL→Windows: `wsl -d Ubuntu -- bash /mnt/c/Users/diego/ia-para-el-bien-sync.sh`
+Sync WSL→Windows: `wsl -d Ubuntu -- bash /mnt/c/Users/diego/environment/ia-para-el-bien-sync.sh`
 
 ## Git
 Conventional commits. Commit sin push → aprobación del usuario → push.
