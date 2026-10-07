@@ -1,6 +1,6 @@
 # CHAISH — Charrua AI Safety Hub
 
-Sitio de un hub comunitario uruguayo de seguridad en IA (AI Safety), en español y desde el contexto local. Parte de una red regional de hubs (BAISH, AI Safety España); CHAISH apunta a ser el nodo uruguayo de esa red. Comunidad independiente y sin fines de lucro, basada en Uruguay. Misión: que la seguridad en IA deje de ser un privilegio de unos pocos y sea un bien común, empezando por la región hispanohablante. Se aprende, se falla y se construye en comunidad, sin credenciales académicas.
+Sitio de un hub comunitario uruguayo de seguridad en IA (AI Safety), en español y desde el contexto local. Parte de una red regional de hubs (BAISH, AI Safety España); CHAISH apunta a ser el nodo uruguayo de esa red. Comunidad independiente y sin fines de lucro, basada en Uruguay. Misión: que la seguridad en IA sea un bien común, abierta, accesible y construida entre tod@s. Se aprende, se falla y se construye en comunidad, sin credenciales académicas.
 
 ## Sitio canónico
 
