@@ -63,6 +63,8 @@
   .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:10px;padding:8px 10px;cursor:pointer}
   .lang-btn{background:none;border:1px solid var(--line);border-radius:56px;padding:8px 16px;cursor:pointer;font:inherit;font-weight:700;font-size:.82rem;letter-spacing:.08em;color:var(--muted);transition:background .15s,color .15s}
   .lang-btn:hover{background:var(--celeste-soft);color:var(--celeste-deep)}
+  .nav-cta .lang-btn{display:inline-flex;align-items:center;justify-content:center;height:38px}
+  .nav-cta .menu-btn{align-items:center;justify-content:center;height:38px}
 
   /* Hero */
   .hero{position:relative;overflow:hidden}
