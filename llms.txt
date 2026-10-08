@@ -1,44 +1,42 @@
 # CHAISH — Charrua AI Safety Hub
 
-Sitio de un hub comunitario uruguayo de seguridad en IA (AI Safety), en español y desde el contexto local. Parte de una red regional de hubs (BAISH, AI Safety España); CHAISH apunta a ser el nodo uruguayo de esa red. Comunidad independiente y sin fines de lucro, basada en Uruguay. Misión: que la seguridad en IA sea un bien común, abierta, accesible y construida entre tod@s. Se aprende, se falla y se construye en comunidad, sin credenciales académicas.
+> Sitio de un hub comunitario uruguayo de seguridad en IA (AI Safety), en español y desde el contexto local. Parte de una red regional de hubs (BAISH, AI Safety España); CHAISH apunta a ser el nodo uruguayo de esa red. Comunidad independiente y sin fines de lucro, basada en Uruguay. Misión: que la seguridad en IA sea un bien común, abierta, accesible y construida entre tod@s. Se aprende, se falla y se construye en comunidad, sin credenciales académicas.
+
+El sitio es una sola página bilingüe (español e inglés en el mismo documento), sin rutas por idioma. URL canónica: https://iaparaelbien.org/chaish/ — la raíz iaparaelbien.org y el subdominio chaish.iaparaelbien.org redirigen aquí.
 
 ## Sitio canónico
 
-- https://iaparaelbien.org/chaish/ — Sitio principal (bilingüe ES/EN). La raíz iaparaelbien.org y el subdominio chaish.iaparaelbien.org redirigen aquí.
-- https://iaparaelbien.org/chaish/#porque — Por qué: la seguridad en IA se aprende en comunidad.
-- https://iaparaelbien.org/chaish/#hacemos — Nuestros frentes: Grupo de práctica, Lectura y discusión, Mentoría.
-- https://iaparaelbien.org/chaish/#fallamos — Somos transparentes: el error es parte del camino.
-- https://iaparaelbien.org/chaish/#aprendemos — Aprendemos en comunidad: leemos, discutimos y replicamos en español.
-- https://iaparaelbien.org/chaish/#videos — La IA ya puede hacer esto: ejemplos reales de lo que la IA hace hoy.
-- https://iaparaelbien.org/chaish/#profundizar — Para profundizar: serie de videos de AGESIC sobre IA y ciudadanía.
+- [CHAISH — sitio principal](https://iaparaelbien.org/chaish/): página bilingüe ES/EN con ancla propia por sección.
+- [Por qué](https://iaparaelbien.org/chaish/#porque): la seguridad en IA se aprende en comunidad.
+- [Nuestros frentes](https://iaparaelbien.org/chaish/#hacemos): Grupo de práctica, Lectura y discusión, Mentoría.
+- [Somos transparentes](https://iaparaelbien.org/chaish/#fallamos): el error es parte del camino.
+- [Aprendemos en comunidad](https://iaparaelbien.org/chaish/#aprendemos): leemos, discutimos y replicamos en español.
+- [La IA ya puede hacer esto](https://iaparaelbien.org/chaish/#videos): ejemplos reales de lo que la IA hace hoy.
+- [Para profundizar](https://iaparaelbien.org/chaish/#profundizar): serie de videos de AGESIC sobre IA y ciudadanía.
 
 ## Misión, valores y enfoque
 
-- https://iaparaelbien.org/chaish/#mision — Misión y visión. Visión: una región que entienda y gobierne su propia IA; auditar sistemas de IA reales para proteger a las personas más vulnerables.
-- https://iaparaelbien.org/chaish/#valores — Seis valores: Independencia, Aprendizaje en comunidad, Fallas abiertas, Acceso sin credenciales, Contexto local, Agencia humana.
-- https://iaparaelbien.org/chaish/#enfoque — Enfoque: divulgación, comunidad y formación, no un laboratorio aislado.
+- [Misión y visión](https://iaparaelbien.org/chaish/#mision): una región que entienda y gobierne su propia IA; auditar sistemas de IA reales para proteger a las personas más vulnerables.
+- [Valores](https://iaparaelbien.org/chaish/#valores): Independencia, Aprendizaje en comunidad, Fallas abiertas, Acceso sin credenciales, Contexto local, Agencia humana.
+- [Enfoque](https://iaparaelbien.org/chaish/#enfoque): divulgación, comunidad y formación, no un laboratorio aislado.
 
 ## Temas que estudiamos
 
-- https://iaparaelbien.org/chaish/#lab — Temas que estudiamos: interpretabilidad mecanicista, alineación de modelos de lenguaje, entrenamiento robusto, aprendizaje de valores.
+- [Temas que estudiamos](https://iaparaelbien.org/chaish/#lab): interpretabilidad mecanicista, alineación de modelos de lenguaje, entrenamiento robusto, aprendizaje de valores.
 
 ## Seguridad vs seguridad
 
-- https://iaparaelbien.org/chaish/#sas — AI Safety (que los sistemas no dañen a la humanidad) vs AI Security (defender sistemas contra adversarios). Trabajamos en AI Safety.
+- [AI Safety vs AI Security](https://iaparaelbien.org/chaish/#sas): AI Safety (que los sistemas no dañen a la humanidad) vs AI Security (defender sistemas contra adversarios). Trabajamos en AI Safety.
 
 ## Recursos externos citados
 
-- https://www.youtube.com/watch?v=QAiN164WQ-o&list=PLKVWFoonm9Vc — Playlist "IA y Ciudadanía", AGESIC (agencia de gobierno digital de Uruguay): gobernanza, transparencia, privacidad, seguridad y sesgos de la IA.
+- [Playlist "IA y Ciudadanía", AGESIC](https://www.youtube.com/watch?v=QAiN164WQ-o&list=PLKVWFoonm9Vc): gobernanza, transparencia, privacidad, seguridad y sesgos de la IA, por la agencia de gobierno digital de Uruguay.
 
 ## Cómo participar
 
-- mailto:chaish@iaparaelbien.org — Contacto para colaborar, proponer talleres o sumarse.
-- https://iaparaelbien.org/chaish/#contacto — Formulario de novedades y misión.
+- [chaish@iaparaelbien.org](mailto:chaish@iaparaelbien.org): contacto para colaborar, proponer talleres o sumarse.
+- [Contacto](https://iaparaelbien.org/chaish/#contacto): formulario de novedades y misión.
 
 ## Preguntas frecuentes
 
-- https://iaparaelbien.org/chaish/#faq — Preguntas frecuentes (sección del sitio).
-
-- ¿Por qué es importante la seguridad en IA? — Evitar riesgos y daños por uso indebido o mal diseño; protege a personas y comunidades.
-- ¿Quiénes forman parte? — Personas de distintos orígenes, muchas autodidactas, sin credenciales académicas; no hace falta ser especialista.
-- ¿AI Safety o AI Security? — AI Safety: que los sistemas no dañen a la humanidad. AI Security: subcampo que defiende sistemas contra adversarios. Trabajamos en AI Safety.
+- [Preguntas frecuentes](https://iaparaelbien.org/chaish/#faq): ¿Por qué es importante la seguridad en IA? Evitar riesgos y daños por uso indebido o mal diseño; protege a personas y comunidades. ¿Quiénes forman parte de CHAISH? Personas de distintos orígenes, muchas autodidactas, sin credenciales académicas; no hace falta ser especialista. ¿AI Safety o AI Security? AI Safety: que los sistemas no dañen a la humanidad. AI Security: subcampo que defiende sistemas contra adversarios. Trabajamos en AI Safety.
