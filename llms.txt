@@ -9,6 +9,8 @@ Sitio de un hub comunitario uruguayo de seguridad en IA (AI Safety), en español
 - https://chaish.iaparaelbien.org/#hacemos — Nuestros frentes: Grupo de práctica, Lectura y discusión, Mentoría.
 - https://chaish.iaparaelbien.org/#fallamos — Somos transparentes: el error es parte del camino.
 - https://chaish.iaparaelbien.org/#aprendemos — Aprendemos en comunidad: leemos, discutimos y replicamos en español.
+- https://chaish.iaparaelbien.org/#videos — La IA ya puede hacer esto: ejemplos reales de lo que la IA hace hoy.
+- https://chaish.iaparaelbien.org/#profundizar — Para profundizar: serie de videos de AGESIC sobre IA y ciudadanía.
 
 ## Misión, valores y enfoque
 
@@ -34,6 +36,8 @@ Sitio de un hub comunitario uruguayo de seguridad en IA (AI Safety), en español
 - https://chaish.iaparaelbien.org/#contacto — Formulario de novedades y misión.
 
 ## Preguntas frecuentes
+
+- https://chaish.iaparaelbien.org/#faq — Preguntas frecuentes (sección del sitio).
 
 - ¿Por qué es importante la seguridad en IA? — Evitar riesgos y daños por uso indebido o mal diseño; protege a personas y comunidades.
 - ¿Quiénes forman parte? — Personas de distintos orígenes, muchas autodidactas, sin credenciales académicas; no hace falta ser especialista.
