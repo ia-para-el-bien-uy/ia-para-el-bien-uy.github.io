@@ -18,7 +18,7 @@ El sitio es una sola página bilingüe (español e inglés en el mismo documento
 ## Misión, valores y enfoque
 
 - [Misión y visión](https://iaparaelbien.org/chaish/#mision): una región que entienda y gobierne su propia IA; auditar sistemas de IA reales para proteger a las personas más vulnerables.
-- [Valores](https://iaparaelbien.org/chaish/#valores): Independencia, Aprendizaje en comunidad, Fallas abiertas, Acceso sin credenciales, Contexto local, Agencia humana.
+- [Valores](https://iaparaelbien.org/chaish/#valores): Independencia, Aprendizaje en comunidad, Fallas abiertas, Abierto a todos los niveles, Contexto local, Agencia humana.
 - [Enfoque](https://iaparaelbien.org/chaish/#enfoque): divulgación, comunidad y formación, no un laboratorio aislado.
 
 ## Temas que estudiamos
