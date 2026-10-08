@@ -42,7 +42,7 @@ Después de pushear, verificar **en este orden**. Releer la URL viva sola **no p
 - **El cache es lo que engaña:** Pages sirve `Cache-Control: max-age=600`, así que un re-fetch sin cache-buster puede devolver la generación anterior hasta **10 minutos**. El deploy en sí tarda 40–90 s. Nunca concluir "no se publicó" con una lectura sin `?cb=` — usar el paso 3.
 - Si `pages.status` queda `errored` y el job `build` queda `queued` para siempre, el pipeline está trabado. **Un agente NO puede recuperarlo**: el PAT devuelve `403` en `actions:write` / `pages:write`. Decirlo, en vez de reintentar.
 - Recuperación (**solo admin**): *Actions → re-run del workflow fallido*, o *Settings → Pages → Save*.
-- No empujar commits vacíos para re-disparar el deploy: ensucia el historial y no destraba el estado `errored`.
+- Un estado `errored` se destraba solo con el próximo build exitoso: **un commit real alcanza** (así se destrabó el 2026-10-08, tras ~35 min de builds fallidos). Si los builds siguen fallando o quedan `queued`, el problema es del lado de GitHub: esperar y reintentar, o re-run desde la UI. Un commit vacío solo para re-disparar ensucia el historial sin cambiar el timing.
 - `https_enforced: false` — `http://` no redirige a HTTPS. Conviene activar "Enforce HTTPS" en *Settings → Pages*.
 
 ## Detalle (carga solo cuando hace falta)
