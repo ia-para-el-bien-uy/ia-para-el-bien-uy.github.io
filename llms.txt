@@ -13,6 +13,7 @@ El sitio es una sola página bilingüe (español e inglés en el mismo documento
 - [Aprendemos en comunidad](https://iaparaelbien.org/chaish/#aprendemos): leemos, discutimos y replicamos en español.
 - [La IA ya puede hacer esto](https://iaparaelbien.org/chaish/#videos): ejemplos reales de lo que la IA hace hoy.
 - [Para profundizar](https://iaparaelbien.org/chaish/#profundizar): serie de videos de AGESIC sobre IA y ciudadanía.
+- [Enlaces de interés](https://iaparaelbien.org/chaish/#enlaces): fuentes locales para seguir cómo llega la IA al país.
 
 ## Misión, valores y enfoque
 
@@ -31,6 +32,8 @@ El sitio es una sola página bilingüe (español e inglés en el mismo documento
 ## Recursos externos citados
 
 - [Playlist "IA y Ciudadanía", AGESIC](https://www.youtube.com/watch?v=QAiN164WQ-o&list=PLKVWFoonm9Vc): gobernanza, transparencia, privacidad, seguridad y sesgos de la IA, por la agencia de gobierno digital de Uruguay.
+- [Amenaza Roboto](https://amenazaroboto.com/): periodismo tecnológico desde Uruguay (Dobcast Media); cubre IA, datos y su impacto local.
+- [Observatorio de Inteligencia Artificial (AGESIC)](https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/observatorio-inteligencia-artificial): casos de uso de IA en el Estado uruguayo, transparencia algorítmica y uso ético y responsable.
 
 ## Cómo participar
 
