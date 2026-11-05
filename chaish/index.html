@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHAISH Seguridad en IA desde Uruguay</title>
+<meta name="description" lang="es" content="CHAISH — Hub comunitario de seguridad en IA desde Uruguay. Aprendemos, fallamos y construimos en comunidad, en español y desde el contexto local.">
+<meta name="description" lang="en" content="CHAISH — Community AI safety hub from Uruguay. We learn, fail and build together, in Spanish and from the local context.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Anton&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<!-- impeccable-disable cramped-padding: hairline divider rows (.step/.cap/.value/.sas-grid/.sas-col/.faq-list/.cta) are deliberate editorial style with vertical-only padding — see DESIGN.md -->
+<!-- impeccable-disable low-contrast: false positive — .btn-primary sets color: var(--ink) (#17211E) on #D9A441 = 7.53:1; muted #5F6A5F never pairs with action miel -->
+</head>
+<body>
+
+<div class="announce"><span lang="es">Estamos armando el grupo de práctica; sumate a la conversación <a href="#contacto">acá</a>.</span><span lang="en">We're building the practice group; join the conversation <a href="#contacto">here</a>.</span></div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top"><svg class="brand-logo brand-boleadoras" viewBox="0 0 40 40" role="img" aria-label="CHAISH" focusable="false">
+          <path class="cord" d="M16 17 L14 23"/>
+          <path class="cord" d="M24 17 L26 23"/>
+          <circle class="b1" cx="11" cy="20" r="6.5"/>
+          <circle class="b2" cx="20" cy="14" r="6.5"/>
+          <circle class="b3" cx="29" cy="20" r="6.5"/>
+        </svg><span>CHAISH</span></a>
+    <nav class="nav-links" id="navlinks">
+      <a href="#porque"><span lang="es">Por qué</span><span lang="en">Why</span></a>
+      <a href="#hacemos"><span lang="es">Qué hacemos</span><span lang="en">What we do</span></a>
+      <a href="#aprendemos"><span lang="es">Aprendemos</span><span lang="en">We learn</span></a>
+      <a href="#mision"><span lang="es">Misión</span><span lang="en">Mission</span></a>
+      <a href="#faq"><span lang="es">FAQ</span><span lang="en">FAQ</span></a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="#contacto"><span lang="es">Sumate</span><span lang="en">Join</span></a>
+      <button class="lang-btn" id="langBtn" aria-label="Cambiar idioma / Switch language"><span lang="es">EN</span><span lang="en">ES</span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <h1><span lang="es">Charrua AI Safety Hub (CHAISH)</span><span lang="en">Charrua AI Safety Hub (CHAISH)</span></h1>
+      <p class="lead"><span lang="es">Comunidad uruguaya de seguridad en IA. Aprendemos, nos equivocamos y construimos entre tod@s, en español y desde el contexto local. Nuestro horizonte: auditar sistemas de IA reales para proteger a las personas más vulnerables.</span><span lang="en">Uruguayan AI safety community. We learn, get it wrong and build together, in Spanish and from the local context. Our horizon: auditing real AI systems to protect the most vulnerable.</span></p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#enfoque"><span lang="es">Conocé nuestro enfoque</span><span lang="en">Our approach</span></a>
+        <a class="btn btn-line" href="#hacemos"><span lang="es">Nuestra contribución</span><span lang="en">Our contribution</span></a>
+      </div>
+      <div class="hero-foot breadcrumb">
+        <span class="crumb"><span lang="es">Sin fines de lucro</span><span lang="en">Non-profit</span></span>
+        <span class="sep" aria-hidden="true">/</span>
+        <span class="crumb"><span lang="es">Dirigido por la comunidad</span><span lang="en">Community-driven</span></span>
+        <span class="sep" aria-hidden="true">/</span>
+        <span class="crumb crumb--current"><span lang="es">Abierto a todos los niveles</span><span lang="en">Open to all levels</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANDA DE MARCA -->
+  <section class="statement statement-brand" id="quienes-somos">
+    <div class="wrap">
+      <p class="kicker"><span lang="es">Quiénes somos · Montevideo, Uruguay</span><span lang="en">Who we are · Montevideo, Uruguay</span></p>
+      <p class="statement-words"><span class="d1">Charrua</span> <span class="d2">AI Safety Hub</span> <span class="d3">(CHAISH)</span></p>
+    </div>
+  </section>
+
+  <!-- POR QUE -->
+  <section id="porque" class="band deep">
+    <div class="wrap">
+      <div class="deep-head">
+        <h2><span lang="es">La IA no es neutral. Su seguridad tampoco.</span><span lang="en">AI is not neutral. Neither is its safety.</span></h2>
+        <p class="lead"><span lang="es">Las narrativas que presentan la IA como una fuerza inevitable, o como un riesgo existencial que solo unas pocas personas iluminadas pueden manejar, también hacen política. Desresponsabilizan a las empresas y concentran el poder de decidir. Nosotros partimos de otro lugar y entendemos la seguridad en IA como una práctica abierta y comunitaria que se sostiene entre muchas personas.</span><span lang="en">The narratives that present AI as an inevitable force, or as an existential risk only a few enlightened people can manage, are also doing politics. They lift responsibility off companies and concentrate the power to decide. We start from a different place and understand AI safety as an open, community practice sustained by many people.</span></p>
+      </div>
+      <div class="cap"><div><h3><span lang="es">El mito de lo inevitable</span><span lang="en">The inevitability myth</span></h3><p><span lang="es">La IA es una industria con dueños, decisiones y responsables concretos. Presentarla como una fuerza cósmica o un destino hace más difícil pedirle cuentas a cualquiera.</span><span lang="en">AI is an industry with owners, decisions and concrete people responsible for it. Presenting it as a cosmic force or a destiny makes it harder to hold anyone to account.</span></p></div></div>
+      <div class="cap"><div><h3><span lang="es">Seguridad para unos pocos</span><span lang="en">Safety for the few</span></h3><p><span lang="es">La seguridad en IA se define hoy en institutos privados, financiados en parte por quienes desarrollan los sistemas. Nosotros la entendemos como una práctica abierta, que se aprende en comunidad y se discute entre tod@s.</span><span lang="en">AI safety is defined today in private institutes, partly funded by the people developing the systems. We understand it as an open practice, learned in community and discussed by everyone.</span></p></div></div>
+      <div class="cap"><div><h3><span lang="es">Tierra, agua y trabajo</span><span lang="en">Land, water and labor</span></h3><p><span lang="es">La IA se sostiene sobre territorio: centros de datos, minería, energía y trabajo humano mal pago. En el Sur Global esos costos ya son concretos, y también se están volviendo concretos en Uruguay; varios casos están en el <a class="link-accent" href="#mapa">mapa local</a>.</span><span lang="en">AI rests on territory: data centers, mining, energy and underpaid human labor. In the Global South those costs are already concrete, and they are becoming concrete in Uruguay too; several cases are in our <a class="link-accent" href="#mapa">local map</a>.</span></p></div></div>
+      <div class="cap"><div><h3><span lang="es">La batalla también es de imaginarios</span><span lang="en">The battle over imaginaries</span></h3><p><span lang="es">Además de resistir, hay que imaginar y construir otra tecnología posible desde acá y en español, que es lo que intentamos hacer con este hub.</span><span lang="en">Resisting is not enough; we also have to imagine and build another possible technology from here and in Spanish, which is what we are trying to do with this hub.</span></p></div></div>
+      <p class="src"><span lang="es">Fuente:</span><span lang="en">Source:</span> <a class="link-accent" href="https://volcanicas.com/detras-de-las-narrativas-apocalipticas-de-la-ia-los-nuevos-y-bizarros-cultos-supremacistas-de-silicon-valley/" target="_blank" rel="noopener"><span lang="es">«Detrás de las narrativas apocalípticas de la IA», Laura Marajofsky, Volcánicas, 27/10/2026</span><span lang="en">"Behind the apocalyptic AI narratives", Laura Marajofsky, Volcánicas, 27/10/2026</span></a></p>
+    </div>
+  </section>
+
+  <!-- HACEMOS -->
+  <section class="areas band" id="hacemos">
+    <div class="wrap">
+      <h2 class="section-title" style="max-width:22ch"><span lang="es">Nuestros frentes</span><span lang="en">Our lines of work</span></h2>
+      <div class="steps-gap">
+        <div class="step">
+          <div>
+            <h3><span lang="es">Grupo de práctica</span><span lang="en">Practice group</span></h3>
+            <p><span lang="es">Espacio abierto para quien quiera acercarse a la seguridad en IA, desde curiosear hasta investigar.</span><span lang="en">Open space for anyone approaching AI safety, from curious to researching.</span></p>
+            <span class="tag"><span lang="es">Abierto a todos</span><span lang="en">Open to all</span></span>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h3><span lang="es">Lectura y discusión</span><span lang="en">Reading and discussion</span></h3>
+            <p><span lang="es">Club de lectura y talleres para replicar papers accesibles, en español.</span><span lang="en">Reading club and workshops to replicate approachable papers, in Spanish.</span></p>
+            <span class="tag"><span lang="es">Publicaciones</span><span lang="en">Publications</span></span>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h3><span lang="es">Mentoría</span><span lang="en">Mentoring</span></h3>
+            <p><span lang="es">Quien ya lleva un tiempo en el grupo acompaña al que recién llega. No pedimos que vengas siendo experto.</span><span lang="en">People a bit further along mentor those just arriving. You don't need to be an expert to join.</span></p>
+            <span class="tag"><span lang="es">Acompañamiento entre pares</span><span lang="en">Peer support</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FALLAMOS -->
+  <section id="fallamos" class="band">
+    <div class="wrap">
+      <h2><span lang="es">Somos transparentes</span><span lang="en">We are transparent</span></h2>
+      <p class="lead"><span lang="es">Admitimos abiertamente cuando nos equivocamos.</span><span lang="en">We openly admit when we get it wrong.</span></p>
+    </div>
+  </section>
+
+  <!-- APRENDEMOS (NEW) -->
+  <section id="aprendemos" class="band">
+    <div class="wrap">
+      <h2><span lang="es">Aprendemos mejor en grupo</span><span lang="en">We learn better together</span></h2>
+      <p class="lead"><span lang="es">La seguridad en IA avanza rápido y no entra por una sola puerta. Nos juntamos a leer, discutir y replicar lo que otros publican, en español y sin jerarquías. Quien sabe un poco más hoy acompaña al que recién llega mañana. Construimos conocimiento abierto entre tod@s y sostenemos el grupo entre quienes estamos y quienes llegan.</span><span lang="en">AI safety moves fast and does not come through one door. We gather to read, discuss and replicate what others publish, in Spanish and without hierarchies. Whoever knows a bit more today supports the one who just arrived tomorrow. We build open knowledge together and sustain the group among those who are here and those arriving.</span></p>
+    </div>
+  </section>
+
+  <!-- MISION + VISION -->
+  <section class="mission band" id="mision">
+    <div class="wrap mission-statement">
+      <h2><span lang="es">Que la seguridad en IA sea un bien común: abierta, accesible y construida entre tod@s.</span><span lang="en">AI safety should be a common good: open, accessible and built together.</span></h2>
+      <p><span lang="es">Somos una comunidad independiente en Uruguay dedicada a la seguridad de la IA (AI Safety). Para participar no hace falta tener credenciales académicas. Acercamos la seguridad de la IA a los países de habla hispana: educamos, investigamos y formamos. Queremos una IA segura, transparente y controlable, en español y desde el contexto local. Nos reconocemos en la red de hubs como BAISH y AI Safety España, y apuntamos a ser el nodo uruguayo de esa red regional.</span><span lang="en">We are an independent community in Uruguay dedicated to AI safety. No academic credentials are needed to take part. We bring AI safety to Spanish-speaking countries: we educate, research and train. We want safe, transparent and controllable AI, in Spanish and grounded in local context. We recognize ourselves in the network of hubs such as BAISH and AI Safety España, and we aim to be Uruguay's node in that regional network.</span></p>
+      <div class="vision">
+        <p class="vision-text"><span lang="es">Una región que entienda y gobierne su propia IA. Que la seguridad no se decida solo en laboratorios lejanos, también desde acá, con personas y organizaciones locales que puedan influir en cómo la IA nos afecta.</span><span lang="en">A region that understands and governs its own AI. A place where safety is not decided only in distant labs, but also here, with local people and organizations able to influence how AI affects us.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATEMENT BAND: tres pilares -->
+  <section class="statement" id="pilares">
+    <div class="wrap">
+      <p class="kicker"><span lang="es">Tres pilares · así trabajamos</span><span lang="en">Three pillars · how we work</span></p>
+      <p class="statement-words">
+        <span lang="es" class="d1">Aprendemos</span><span lang="es" class="d2">Fallamos</span><span lang="es" class="d3">Enseñamos</span>
+        <span lang="en" class="d1">We learn</span><span lang="en" class="d2">We fail</span><span lang="en" class="d3">We teach</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- VALORES -->
+  <section class="valores band" id="valores">
+    <div class="wrap">
+      <h2 class="section-title"><span lang="es">Cómo trabajamos, cada día</span><span lang="en">How we work, every day</span></h2>
+      <div class="steps-gap">
+        <div class="value"><div><h3><span lang="es">Independencia</span><span lang="en">Independence</span></h3><p><span lang="es">Nos dirigimos por nuestra cuenta: no dependemos de ninguna empresa ni laboratorio, y colaboramos con quien comparte nuestros valores.</span><span lang="en">We steer ourselves: we depend on no company or lab, and we collaborate with those who share our values.</span></p></div></div>
+        <div class="value"><div><h3><span lang="es">Aprendizaje en comunidad</span><span lang="en">Learning in community</span></h3><p><span lang="es">Construimos, nos equivocamos y nos enseñamos entre tod@s. No hace falta ser experto para empezar: se aprende haciendo, en comunidad y en español.</span><span lang="en">We build, we get it wrong, and we teach each other. You don't need to be an expert to start: we learn by doing, in community and in Spanish.</span></p></div></div>
+        <div class="value"><div><h3><span lang="es">Fallas abiertas</span><span lang="en">Failing openly</span></h3><p><span lang="es">Admitimos abiertamente cuando nos equivocamos.</span><span lang="en">We openly admit when we get it wrong.</span></p></div></div>
+        <div class="value"><div><h3><span lang="es">Abierto a todos los niveles</span><span lang="en">Open to all levels</span></h3><p><span lang="es">Podés sumarte desde cualquier nivel: no se pide título, doctorado ni experiencia previa. La seguridad en IA se aprende y se construye mejor entre tod@s.</span><span lang="en">Join from any level: no degree, PhD or prior experience needed. AI safety is learned and built better together.</span></p></div></div>
+        <div class="value"><div><h3><span lang="es">Contexto local</span><span lang="en">Local context</span></h3><p><span lang="es">La seguridad de la IA se vive distinto en los países de habla hispana; la encaramos desde acá.</span><span lang="en">AI safety is experienced differently in Spanish-speaking countries; we face it from here.</span></p></div></div>
+        <div class="value"><div><h3><span lang="es">Territorio y ambiente</span><span lang="en">Territory and environment</span></h3><p><span lang="es">La IA consume tierra, agua y energía, y deja residuos. Defendemos que esos costos se discutan acá, donde se instalan los centros de datos, y no solo donde se diseñan los modelos.</span><span lang="en">AI consumes land, water and energy, and leaves waste. We defend discussing those costs here, where data centers are built, not only where models are designed.</span></p></div></div>
+        <div class="value"><div><h3><span lang="es">Agencia humana</span><span lang="en">Human agency</span></h3><p><span lang="es">La IA debe ampliar lo que podemos hacer, no reemplazarnos ni controlarnos.</span><span lang="en">AI should expand what we can do, not replace or control us.</span></p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENFOQUE -->
+  <section class="mission band" id="enfoque">
+    <div class="wrap mission-statement">
+      <h2><span lang="es">Enfrentamos la seguridad de la IA desde donde estamos: <b><span class="m1">divulgación</span>, <span class="m2">comunidad</span> y <span class="m3">formación</span></b>, no desde un laboratorio aislado.</span><span lang="en">We face AI safety from where we are: <b><span class="m1">outreach</span>, <span class="m2">community</span> and <span class="m3">training</span></b>, not from an isolated lab.</span></h2>
+      <p><span lang="es">Creemos que la seguridad de la IA no debería ser cosa de unos pocos. Nuestro enfoque junta conocimiento accesible, una comunidad que aprende en grupo y la formación de nuevas generaciones, todo en español y desde el contexto local.</span><span lang="en">We believe AI safety should not be a matter for a few. Our approach brings together accessible knowledge, a community that learns together and the training of new generations, all in Spanish and grounded in local context.</span></p>
+    </div>
+  </section>
+
+  <!-- MAPA LOCAL -->
+  <section class="lab band" id="mapa">
+    <div class="wrap">
+      <div class="deep-head">
+        <h2 class="section-title"><span lang="es">La IA en Uruguay</span><span lang="en">AI in Uruguay</span></h2>
+        <p class="lead"><span lang="es">Seis casos muestran dónde se juega la seguridad en IA en el país, con decisiones, proyectos y costos que ya están acá.</span><span lang="en">Six cases show where AI safety plays out in this country, with decisions, projects and costs that are already here.</span></p>
+      </div>
+      <div class="cap"><div><h3><span lang="es">Centro de datos en Canelones</span><span lang="en">Data center in Canelones</span></h3><p><span lang="es">Uruguay aprobó el centro de datos de Google en Canelones; la evaluación oficial estima 25.000 toneladas de CO₂ al año y 86 de residuos peligrosos. El plan original usaba millones de litros de agua para refrigerar y se cambió tras la peor sequía desde 1950. Marco: <a class="link-accent" href="https://www.youtube.com/watch?v=2smRWxhcEyA&amp;list=PLNVKJqv0t9Fw" target="_blank" rel="noopener">«Los datacenters son bases militares en el extranjero», Cecilia Rikap (la diaria)</a>. Fuente: <a class="link-accent" href="https://www.theguardian.com/global-development/article/2024/aug/01/uruguay-anger-environmental-cost-google-datacentre-carbon-emissions-toxic-waste-water" target="_blank" rel="noopener">The Guardian, 1/8/2024</a>.</span><span lang="en">Uruguay approved Google's data center in Canelones; the official assessment estimates 25,000 tonnes of CO₂ a year and 86 tonnes of hazardous waste. The original plan used millions of litres of water for cooling and was changed after the worst drought since 1950. Frame: <a class="link-accent" href="https://www.youtube.com/watch?v=2smRWxhcEyA&amp;list=PLNVKJqv0t9Fw" target="_blank" rel="noopener">“Data centers are military bases abroad”, Cecilia Rikap (la diaria)</a>. Source: <a class="link-accent" href="https://www.theguardian.com/global-development/article/2024/aug/01/uruguay-anger-environmental-cost-google-datacentre-carbon-emissions-toxic-waste-water" target="_blank" rel="noopener">The Guardian, 1 Aug 2024</a>.</span></p></div></div>
+      <div class="cap"><div><h3><span lang="es">+Colonia y la "criptociudad" Praxis</span><span lang="en">+Colonia and the "crypto-city" Praxis</span></h3><p><span lang="es">Un proyecto de ciudad tecnológica de 500 hectáreas, +Colonia, se promociona con inversores extranjeros y la "criptociudad" Praxis. La prensa lo discute como ciudad privada y advierte por una "isla de prosperidad" en el suroeste del país. Fuente: <a class="link-accent" href="https://www.tvpublica.com.ar/post/una-startup-estadounidense-quiere-construir-una-ciudad-tecnologica-en-uruguay" target="_blank" rel="noopener">TV Pública, 30/9/2026</a>.</span><span lang="en">A 500-hectare tech city project, +Colonia, is being promoted with foreign investors and the "crypto-city" Praxis. The press debates it as a private city and warns of an "island of prosperity" in the country's southwest. Source: <a class="link-accent" href="https://www.tvpublica.com.ar/post/una-startup-estadounidense-quiere-construir-una-ciudad-tecnologica-en-uruguay" target="_blank" rel="noopener">TV Pública, 30 Sep 2026</a>.</span></p></div></div>
+      <div class="cap"><div><h3><span lang="es">Estrategia Nacional de IA 2024-2030</span><span lang="en">National AI Strategy 2024-2030</span></h3><p><span lang="es">El Comité Estratégico del Sector Público para la IA y Datos aprobó el 21 de noviembre de 2024 la Estrategia Nacional de Inteligencia Artificial 2024-2030, coordinada por AGESIC. Fuente: <a class="link-accent" href="https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/noticias/se-aprobo-estrategia-nacional-inteligencia-artificial-2024-2030" target="_blank" rel="noopener">AGESIC, 22/11/2024</a>.</span><span lang="en">The Strategic Committee for Public Sector AI and Data approved the National AI Strategy 2024-2030 on 21 November 2024, coordinated by AGESIC. Source: <a class="link-accent" href="https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/noticias/se-aprobo-estrategia-nacional-inteligencia-artificial-2024-2030" target="_blank" rel="noopener">AGESIC, 22 Nov 2024</a>.</span></p></div></div>
+      <div class="cap"><div><h3><span lang="es">Proyecto de ley sobre deepfakes</span><span lang="en">Bill on deepfakes</span></h3><p><span lang="es">La Cámara de Representantes aprobó el 17 de diciembre de 2025 un proyecto que modifica la Ley 19.580 para sancionar la divulgación de contenidos sexuales generados con IA. Fuente: <a class="link-accent" href="http://www.diputados.gub.uy/proyectos/divulgacion-de-contenidos-sexuales-elaborados-con-inteligencia-artificial-modificacion-del-articulo-92-de-la-ley-n-19-580/" target="_blank" rel="noopener">Cámara de Representantes, 17/12/2025</a>.</span><span lang="en">The Chamber of Representatives approved on 17 December 2025 a bill amending Law 19,580 to penalise the dissemination of AI-generated sexual content. Source: <a class="link-accent" href="http://www.diputados.gub.uy/proyectos/divulgacion-de-contenidos-sexuales-elaborados-con-inteligencia-artificial-modificacion-del-articulo-92-de-la-ley-n-19-580/" target="_blank" rel="noopener">Chamber of Representatives, 17 Dec 2025</a>.</span></p></div></div>
+      <div class="cap"><div><h3><span lang="es">Ceibal lanza EduIA Lab</span><span lang="en">Ceibal launches EduIA Lab</span></h3><p><span lang="es">Ceibal presentó el 26 de marzo de 2025 EduIA Lab, un laboratorio regional de inteligencia artificial en educación, con la presencia del presidente Yamandú Orsi. Fuente: <a class="link-accent" href="https://www.gub.uy/presidencia/comunicacion/noticias/ceibal-presento-eduia-lab-primer-laboratorio-regional-inteligencia-artificial" target="_blank" rel="noopener">Presidencia, 26/3/2025</a>.</span><span lang="en">Ceibal presented EduIA Lab, a regional artificial intelligence laboratory for education, on 26 March 2025, with President Yamandú Orsi in attendance. Source: <a class="link-accent" href="https://www.gub.uy/presidencia/comunicacion/noticias/ceibal-presento-eduia-lab-primer-laboratorio-regional-inteligencia-artificial" target="_blank" rel="noopener">Presidency, 26 Mar 2025</a>.</span></p></div></div>
+      <div class="cap"><div><h3><span lang="es">Inventario de IA en el Estado</span><span lang="en">AI inventory in the State</span></h3><p><span lang="es">Amenaza Roboto pidió a 24 organismos públicos un inventario de sus proyectos de IA; nueve entregaron listas y el Ministerio del Interior no contestó. Fuente: <a class="link-accent" href="https://amenazaroboto.com/inteligencia-artificial-estado-uruguayo-transparencia" target="_blank" rel="noopener">Amenaza Roboto, 14/9/2026</a>.</span><span lang="en">Amenaza Roboto asked 24 public bodies for an inventory of their AI projects; nine provided lists and the Ministry of the Interior did not reply. Source: <a class="link-accent" href="https://amenazaroboto.com/inteligencia-artificial-estado-uruguayo-transparencia" target="_blank" rel="noopener">Amenaza Roboto, 14 Sep 2026</a>.</span></p></div></div>
+    </div>
+  </section>
+
+  <!-- PROFUNDIZAR -->
+  <section class="videos band" id="profundizar">
+    <div class="wrap">
+      <div class="videos-head">
+        <h2><span lang="es">Series para mirar</span><span lang="en">Series to watch</span></h2>
+        <p class="lead"><span lang="es">Dos series en español para entrar en el tema: seguridad en IA desde Latinoamérica, y gobernanza desde el Estado uruguayo.</span><span lang="en">Two Spanish-language series to get into the subject: AI safety from Latin America, and governance from the Uruguayan State.</span></p>
+      </div>
+      <div class="vid-grid">
+        <div class="vid">
+          <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLBAfJK5_GR7g" title="Seguridad en IA — iaS" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+          <div class="cap"><span><b><span lang="es">Seguridad en IA</span><span lang="en">AI safety</span></b><span lang="es"> — iaS, Inteligencia Artificial Segura: sesgos en modelos de lenguaje, con Melissa Robles. <a class="link-accent" href="https://www.youtube.com/playlist?list=PLBAfJK5_GR7g" target="_blank" rel="noopener">playlist</a></span><span lang="en"> — iaS: language-model bias, with Melissa Robles. <a class="link-accent" href="https://www.youtube.com/playlist?list=PLBAfJK5_GR7g" target="_blank" rel="noopener">playlist</a></span></span></div>
+        </div>
+        <div class="vid">
+          <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLKVWFoonm9Vc" title="IA y Ciudadanía — AGESIC" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+          <div class="cap"><span><b><span lang="es">IA y Ciudadanía</span><span lang="en">AI and citizenship</span></b><span lang="es"> — AGESIC: gobernanza, transparencia y sesgos desde el Estado uruguayo. <a class="link-accent" href="https://www.youtube.com/playlist?list=PLKVWFoonm9Vc" target="_blank" rel="noopener">playlist</a></span><span lang="en"> — AGESIC: governance, transparency and bias from the Uruguayan State. <a class="link-accent" href="https://www.youtube.com/playlist?list=PLKVWFoonm9Vc" target="_blank" rel="noopener">playlist</a></span></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENLACES DE INTERES -->
+  <section class="lab band" id="enlaces">
+    <div class="wrap">
+      <div class="deep-head">
+        <h2 class="section-title"><span lang="es">Dónde seguir el tema</span><span lang="en">Where to follow this</span></h2>
+        <p class="lead"><span lang="es">Tres fuentes locales y dos internacionales.</span><span lang="en">Three local sources and two international ones.</span></p>
+      </div>
+      <div class="cap"><div><h3><span lang="es">Amenaza Roboto</span><span lang="en">Amenaza Roboto</span></h3><p><span lang="es">Periodismo tecnológico desde Uruguay (Dobcast Media): cobertura sobre IA, datos y su impacto local. <a class="link-accent" href="https://amenazaroboto.com/" target="_blank" rel="noopener">amenazaroboto.com</a></span><span lang="en">Technology journalism from Uruguay (Dobcast Media): coverage of AI, data and their local impact. <a class="link-accent" href="https://amenazaroboto.com/" target="_blank" rel="noopener">amenazaroboto.com</a></span></p></div></div>
+      <div class="cap"><div><h3><span lang="es">Observatorio de Inteligencia Artificial (AGESIC)</span><span lang="en">Artificial Intelligence Observatory (AGESIC)</span></h3><p><span lang="es">El observatorio de IA del Estado uruguayo: casos de uso de IA en el Estado, recomendaciones sobre transparencia algorítmica y lineamientos de uso ético y responsable. <a class="link-accent" href="https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/observatorio-inteligencia-artificial" target="_blank" rel="noopener">gub.uy</a></span><span lang="en">The Uruguayan State's AI observatory: cases of AI use in the State, algorithmic transparency recommendations, and guidelines for ethical and responsible use. <a class="link-accent" href="https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/observatorio-inteligencia-artificial" target="_blank" rel="noopener">gub.uy</a></span></p></div></div>
+      <div class="cap"><div><h3><span lang="es">Pablo Da Rocha (la diaria)</span><span lang="en">Pablo Da Rocha (la diaria)</span></h3><p><span lang="es">Columnas sobre IA, trabajo y economía desde Uruguay: automatización, salarios, regulación y dependencia. <a class="link-accent" href="https://ladiaria.com.uy/columnista/pablo-da-rocha/" target="_blank" rel="noopener">ladiaria.com.uy</a></span><span lang="en">Columns on AI, labor and economics from Uruguay: automation, wages, regulation and dependency. <a class="link-accent" href="https://ladiaria.com.uy/columnista/pablo-da-rocha/" target="_blank" rel="noopener">ladiaria.com.uy</a></span></p></div></div>
+      <div class="cap"><div><h3><span lang="es">Team Human</span><span lang="en">Team Human</span></h3><p><span lang="es">Movimiento internacional impulsado por creadores, con el apoyo del Center for AI Safety, para que la humanidad mantenga el control de la IA. <a class="link-accent" href="https://www.teamhuman.org/" target="_blank" rel="noopener">teamhuman.org</a></span><span lang="en">An international, creator-led movement supported by the Center for AI Safety, to keep humans in control of AI. <a class="link-accent" href="https://www.teamhuman.org/" target="_blank" rel="noopener">teamhuman.org</a></span></p></div></div>
+      <div class="cap"><div><h3><span lang="es">The AI Resist List</span><span lang="en">The AI Resist List</span></h3><p><span lang="es">Directorio global de iniciativas que resisten la IA y construyen alternativas: resistir, rechazar, reclamar y reimaginar. Una de las referencias con las que pensamos esta página. <a class="link-accent" href="https://airesistlist.org/" target="_blank" rel="noopener">airesistlist.org</a></span><span lang="en">A global directory of initiatives that resist AI and build alternatives: resist, refuse, reclaim and reimagine. One of the references behind this page. <a class="link-accent" href="https://airesistlist.org/" target="_blank" rel="noopener">airesistlist.org</a></span></p></div></div>
+    </div>
+  </section>
+
+  <!-- VIDEOS -->
+  <section class="videos band" id="videos">
+    <div class="wrap">
+      <div class="videos-head">
+        <h2><span lang="es">La IA ya puede hacer esto</span><span lang="en">AI can already do this</span></h2>
+        <p class="lead"><span lang="es">Las capacidades avanzan rápido. Cada una abre posibilidades, pero también nuevos riesgos que la seguridad en IA busca anticipar y mitigar. Acá van ejemplos reales de lo que la IA hace hoy.</span><span lang="en">Capabilities advance fast. Each one opens possibilities, but also new risks that AI safety seeks to anticipate and mitigate. Here are real examples of what AI does today.</span></p>
+      </div>
+      <div class="vid-grid">
+        <div class="vid">
+          <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/CAdTjePDBfc" title="Robótica y manipulación" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+          <div class="cap"><span><b><span lang="es">Robótica y manipulación</span><span lang="en">Robotics and manipulation</span></b><span lang="es"> — un sistema que ordena la casa solo.</span><span lang="en"> — a system that tidies a room on its own.</span></span></div>
+        </div>
+        <div class="vid">
+          <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/NAauIR6JFps" title="Uso de computadoras" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+          <div class="cap"><span><b><span lang="es">Uso de computadoras</span><span lang="en">Computer use</span></b><span lang="es"> — el agente labura con el software sin que nadie lo mire.</span><span lang="en"> — an agent works the software on its own.</span></span></div>
+        </div>
+        <div class="vid">
+          <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/rBJnWMD0Pho" title="Uso de la web" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+          <div class="cap"><span><b><span lang="es">Uso de la web</span><span lang="en">Web use</span></b><span lang="es"> — navega y actúa en servicios por su cuenta.</span><span lang="en"> — browses and acts in services on its own.</span></span></div>
+        </div>
+        <div class="vid">
+          <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/3S7naW_KRyw" title="Generación de video realista" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+          <div class="cap"><span><b><span lang="es">Generación de video</span><span lang="en">Video generation</span></b><span lang="es"> — tan realista que ya casi no se distingue.</span><span lang="en"> — so realistic it's almost indistinguishable.</span></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEMAS QUE QUEREMOS ESTUDIAR -->
+  <section class="lab band" id="lab">
+    <div class="wrap">
+      <div class="deep-head">
+        <h2 class="section-title"><span lang="es">Temas que queremos estudiar</span><span lang="en">Topics we want to study</span></h2>
+        <p class="lead"><span lang="es">Nuestra meta es llegar a investigar — empezando por replicar papers accesibles en grupo y participar en sprints de investigación como los de Apart Research. Lo que aprendemos, lo compartimos en español.</span><span lang="en">Our goal is to get to research — starting by replicating accessible papers as a group and joining research sprints like Apart Research's. What we learn, we share in Spanish.</span></p>
+      </div>
+      <div class="cap"><div><h3><span lang="es">Interpretabilidad mecanicista</span><span lang="en">Mechanistic interpretability</span></h3><p><span lang="es">Entender qué pasa dentro de las redes neuronales para poder inspeccionarlas.</span><span lang="en">Understanding what happens inside neural networks so they can be inspected.</span></p></div></div>
+      <div class="cap"><div><h3><span lang="es">Alineación de modelos de lenguaje</span><span lang="en">Language model alignment</span></h3><p><span lang="es">Métodos para que los LLMs persigan objetivos alineados con los intencionados.</span><span lang="en">Methods so LLMs pursue goals aligned with the intended ones.</span></p></div></div>
+      <div class="cap"><div><h3><span lang="es">Entrenamiento robusto</span><span lang="en">Robust training</span></h3><p><span lang="es">Formas de entrenar modelos que resistan fallas, manipulación y comportamientos no deseados.</span><span lang="en">Ways to train models that resist failures, manipulation and unwanted behaviors.</span></p></div></div>
+      <div class="cap"><div><h3><span lang="es">Aprendizaje de valores</span><span lang="en">Value learning</span></h3><p><span lang="es">Cómo los sistemas aprenden lo que valoramos y traducen preferencias humanas en comportamiento.</span><span lang="en">How systems learn what we value and turn human preferences into behavior.</span></p></div></div>
+    </div>
+  </section>
+
+  <!-- SAS -->
+  <section class="sas band" id="sas">
+    <div class="wrap">
+      <h2><span lang="es">AI Safety vs AI Security</span><span lang="en">AI Safety vs AI Security</span></h2>
+      <p class="lead"><span lang="es">Ambos se traducen como "seguridad" en español y suelen confundirse. Son campos distintos. Por eso trabajamos en AI Safety.</span><span lang="en">Both translate as "seguridad" in Spanish and are often confused. They are different fields. That is why we work on AI Safety.</span></p>
+      <div class="sas-grid">
+        <div class="sas-col safety">
+          <div class="sas-head">
+            <h3>AI Safety</h3>
+            <span class="sas-tag"><span lang="es">Nuestro enfoque</span><span lang="en">Our focus</span></span>
+          </div>
+          <div class="sub"><span lang="es">Prevenir que la IA cause daño</span><span lang="en">Preventing AI from causing harm</span></div>
+          <p><span lang="es">Campo ocupado de que los sistemas de IA no causen daño a la humanidad. Propone que la IA podría fallar por sí misma al perseguir objetivos distintos a los intencionados.</span><span lang="en">A field concerned with AI systems not harming humanity. It holds that AI could fail on its own by pursuing goals other than the intended ones.</span></p>
+          <p class="label-strong"><span lang="es">Ejemplos:</span><span lang="en">Examples:</span></p>
+          <ul><li><span lang="es">Comportamiento imprevisto</span><span lang="en">Unexpected behavior</span></li><li><span lang="es">Engaño</span><span lang="en">Deception</span></li><li><span lang="es">Capacidades peligrosas</span><span lang="en">Dangerous capabilities</span></li><li><span lang="es">Pérdida de control</span><span lang="en">Loss of control</span></li></ul>
+        </div>
+        <div class="sas-col security">
+          <h3>AI Security</h3>
+          <div class="sub"><span lang="es">Defender la IA de ataques</span><span lang="en">Defending AI against attacks</span></div>
+          <p><span lang="es">Campo distinto que se solapa con AI Safety, enfocado en la defensa de un sistema de IA contra adversarios o atacantes. Propone que el sistema puede ser vulnerado por un tercero.</span><span lang="en">A distinct field that overlaps with AI Safety, focused on defending an AI system against adversaries or attackers. It holds that the system can be compromised by a third party.</span></p>
+          <p class="label-strong"><span lang="es">Ejemplos:</span><span lang="en">Examples:</span></p>
+          <ul><li><span lang="es">Prompts maliciosos</span><span lang="en">Malicious prompts</span></li><li><span lang="es">Robo de datos</span><span lang="en">Data theft</span></li><li><span lang="es">Hackeo</span><span lang="en">Hacking</span></li><li><span lang="es">Explotación por terceros</span><span lang="en">Exploitation by third parties</span></li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq band" id="faq">
+    <div class="wrap">
+      <h2 class="section-title"><span lang="es">Preguntas frecuentes</span><span lang="en">Frequently asked questions</span></h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q"><span lang="es">¿Por qué es importante la seguridad en inteligencia artificial?</span><span lang="en">Why is AI safety important?</span> <span class="plus"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="faq-a"><p><span lang="es">La seguridad en IA sirve para evitar riesgos y daños que puedan venir del uso indebido o del mal diseño de los sistemas. Proteger eso cuida a las personas y a las comunidades. Favorece un desarrollo responsable.</span><span lang="en">AI safety helps avoid risks and harm that can come from misuse or poor system design. Protecting that cares for people and communities. It supports responsible development.</span></p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span lang="es">¿Quiénes forman parte de CHAISH?</span><span lang="en">Who is part of CHAISH?</span> <span class="plus"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="faq-a"><p><span lang="es">Personas de distintos orígenes, muchas autodidactas y sin credenciales académicas, que quieren trabajar por la seguridad y la democratización de la IA en beneficio de la sociedad. Para participar no hace falta ser especialista.</span><span lang="en">People of different backgrounds, many self-taught and without academic credentials, who want to work for AI safety and democratization for the benefit of society. You don't need to be a specialist to take part.</span></p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span lang="es">¿Cómo puedo colaborar o participar?</span><span lang="en">How can I collaborate or take part?</span> <span class="plus"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="faq-a"><p><span lang="es">Podés contactarnos para proponer colaboraciones, participar en nuestros talleres o apoyar nuestras iniciativas. Estamos abiertos a alianzas que compartan nuestros valores y objetivos.</span><span lang="en">You can contact us to propose collaborations, join our workshops or support our initiatives. We are open to alliances that share our values and goals.</span></p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span lang="es">¿AI Safety o AI Security?</span><span lang="en">AI Safety or AI Security?</span> <span class="plus"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="faq-a"><p><span lang="es">AI Safety. Ambos son términos de origen inglés que en español se pisan porque pueden traducirse como "seguridad". AI Safety se ocupa de que los sistemas no causen daño a la humanidad; AI Security es un campo distinto que se solapa con AI Safety, enfocado en defender sistemas contra adversarios. Trabajamos en AI Safety.</span><span lang="en">AI Safety. Both are English terms that overlap in Spanish because they translate as "seguridad". AI Safety deals with systems not harming humanity; AI Security is a distinct field that overlaps with AI Safety, focused on defending systems against adversaries. We work on AI Safety.</span></p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contacto">
+    <div class="wrap">
+      <p class="kicker"><span lang="es">Forma parte</span><span lang="en">Be part of it</span></p>
+      <h2><span lang="es">Unite a nuestra misión</span><span lang="en">Join our mission</span></h2>
+      <p><span lang="es">Sumate al grupo: contanos qué te interesa y te escribimos. También podés escribirnos a <a class="link-white" href="mailto:chaish@iaparaelbien.org">chaish@iaparaelbien.org</a>.</span><span lang="en">Join the group: tell us what interests you and we'll write back. You can also email us at <a class="link-white" href="mailto:chaish@iaparaelbien.org">chaish@iaparaelbien.org</a>.</span></p>
+      <p class="cta-action"><a class="btn btn-primary" href="https://tally.so/r/0V7rWA" target="_blank" rel="noopener"><span lang="es">Completar el formulario</span><span lang="en">Open the form</span></a></p>
+      <p class="form-note"><span lang="es">El formulario se abre en Tally, que guarda los datos en la Unión Europea y no los usa para otra cosa.</span><span lang="en">The form opens on Tally, which stores data in the European Union and doesn't use it for anything else.</span></p>
+      <div class="contact-links">
+        <a href="mailto:chaish@iaparaelbien.org">chaish@iaparaelbien.org</a>
+        <a class="social-link" href="https://discord.gg/ezK2rZ9Wj" target="_blank" rel="noopener">Discord<span class="social-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap foot-grid">
+    <div>
+      <div class="brand"><svg class="brand-logo brand-boleadoras" viewBox="0 0 40 40" role="img" aria-label="CHAISH" focusable="false">
+          <path class="cord" d="M16 17 L14 23"/>
+          <path class="cord" d="M24 17 L26 23"/>
+          <circle class="b1" cx="11" cy="20" r="6.5"/>
+          <circle class="b2" cx="20" cy="14" r="6.5"/>
+          <circle class="b3" cx="29" cy="20" r="6.5"/>
+        </svg><span>CHAISH</span></div>
+      <p><span lang="es">Hub comunitario de seguridad en IA desde Uruguay, por y para tod@s.</span><span lang="en">Community AI safety hub from Uruguay, by and for everyone.</span></p>
+    </div>
+    <div>
+      <h3><span lang="es">Navegación</span><span lang="en">Navigation</span></h3>
+      <ul><li><a href="#porque"><span lang="es">Por qué</span><span lang="en">Why</span></a></li><li><a href="#hacemos"><span lang="es">Qué hacemos</span><span lang="en">What we do</span></a></li><li><a href="#aprendemos"><span lang="es">Aprendemos</span><span lang="en">We learn</span></a></li><li><a href="#mision"><span lang="es">Misión</span><span lang="en">Mission</span></a></li><li><a href="#faq"><span lang="es">FAQ</span><span lang="en">FAQ</span></a></li></ul>
+    </div>
+    <div>
+      <h3><span lang="es">Recursos</span><span lang="en">Resources</span></h3>
+      <ul><li><a href="#sas"><span lang="es">AI Safety vs AI Security</span><span lang="en">AI Safety vs AI Security</span></a></li><li><a href="#videos"><span lang="es">Videos</span><span lang="en">Videos</span></a></li><li><a href="#mapa"><span lang="es">La IA en Uruguay</span><span lang="en">AI in Uruguay</span></a></li><li><a href="#profundizar"><span lang="es">Para profundizar</span><span lang="en">Go deeper</span></a></li></ul>
+    </div>
+    <div>
+      <h3><span lang="es">Comunidad</span><span lang="en">Community</span></h3>
+      <ul><li><a href="mailto:chaish@iaparaelbien.org"><span lang="es">Sumate</span><span lang="en">Join</span></a></li><li><a class="social-link" href="https://discord.gg/ezK2rZ9Wj" target="_blank" rel="noopener"><span lang="es">Discord</span><span lang="en">Discord</span><span class="social-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg></span></a></li></ul>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© <span id="year"></span> CHAISH (Charrua AI Safety Hub)</span>
+    <span><span lang="es">Hecho con IA, para el interés común.</span><span lang="en">Made with AI, for the common good.</span></span>
+  </div>
+</footer>
+
+<div class="cookie" id="cookie">
+  <p><span lang="es">Usamos cookies para mejorar el sitio y entender mejor tu interés por la seguridad en IA.</span><span lang="en">We use cookies to improve the site and better understand your interest in AI safety.</span></p>
+  <button class="btn btn-primary" id="cookieOk"><span lang="es">Aceptar</span><span lang="en">Accept</span></button>
+  <button class="btn later" id="cookieNo"><span lang="es">Solo necesarias</span><span lang="en">Only necessary</span></button>
+</div>
+
+<script src="../script.js"></script>
+</body>
+</html>
