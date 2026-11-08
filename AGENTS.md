@@ -52,6 +52,12 @@ Después de pushear, verificar **en este orden**. Releer la URL viva sola **no p
 - `docs/WORKFLOW.md` — entorno del agente
 - `docs/OPENGREP.md` — scan estático: `bash scripts/scan.sh` (gate CI: `--severity ERROR --error`)
 
+## Docs (para que no envejezcan)
+
+- **Un doc sólo afirma tres cosas:** paths que existen en el árbol, comandos que se corrieron de verdad, y valores que viven en un solo lugar. Los valores se **apuntan**, no se copian: `chaish/style.css` (`:root`), `.opengrep/rules.yaml`, `docs/PALETTE.md`. Duplicar un hex o una lista de archivos garantiza que uno de los dos quede viejo.
+- **No describir de memoria.** Si no se verificó, se dice *dónde vive* (`script.js`, `docs/OPENGREP.md`) en vez de *qué hace*: afirmar comportamiento ("tiene menú móvil") es lo que se rompe sin que nadie lo note.
+- **El doc se actualiza en el mismo commit que el código que menciona.** Si el cambio toca un path, un comando o una pipeline, el doc es parte del cambio, no un follow-up.
+
 ## Diseño (guarda esto en cada cambio de UI)
 
 - **El sistema manda:** color, tipografía, espaciado y radios salen de tokens. Si falta un valor, se propone un token antes de usarlo — nunca un literal nuevo suelto.
