@@ -305,8 +305,8 @@ main a[target="_blank"]::after,footer a[target="_blank"]::after{content:"";displ
   .media-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(170px,300px);gap:clamp(24px,4vw,56px);align-items:center}
   .plate{margin:0;padding:0;display:grid;justify-items:center;align-content:center}
   .plate img{display:block;width:auto;height:auto;max-height:min(44svh,360px);max-width:100%;object-fit:contain}
-  /* Sobre la banda oscura la tinta no se leería: la lámina va montada en un panel claro */
-  .statement-brand .plate{background:var(--white);padding:clamp(16px,2vw,26px)}
+  /* Sobre la banda oscura la tinta se apoya en el mismo --ink del fondo */
+  .statement-brand .plate{background:var(--ink);padding:clamp(16px,2vw,26px)}
   /* html.js lo agrega script.js: sin JS las láminas se ven, nunca quedan en opacity 0 */
   html.js .plate img{transform:rotate(45deg);transform-origin:100% 100%;opacity:0}
   html.js .plate.is-in img{animation:plate-in .9s cubic-bezier(.17,.89,.32,1.28) both}
