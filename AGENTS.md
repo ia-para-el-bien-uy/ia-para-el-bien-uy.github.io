@@ -65,6 +65,15 @@ Después de pushear, verificar **en este orden**. Releer la URL viva sola **no p
 - **Antes de dar por cerrado un cambio de UI:** `npx -y impeccable detect chaish/` debe salir en `0`. Si se tocaron colores, correr el chequeo de contraste AA del sistema de diseño.
 - El detector no evalúa composición, jerarquía ni tono: mirar la página renderizada antes de concluir.
 
+## Bilingüe (guarda esto al tocar `lang`)
+
+- El CSS oculta `[lang="en"]` dentro de `html[lang="es"]` (y al revés) para el toggle de idioma, así que
+  **cualquier elemento con `lang` propio desaparece de la página**. El contenido en inglés que tiene que
+  seguir visible dentro de la versión en español lleva la clase `keep-visible` (así los `h3` "AI Safety"
+  y "AI Security"). Un `lang="en"` nuevo sin esa clase es un bloque invisible, no un arreglo.
+- El texto visible de un control va en su `aria-label` como palabra suelta: `EN — cambiar idioma a
+  inglés` pasa `label-content-name-mismatch`, `Cambiar idioma a inglés (EN)` falla (`script.js`).
+
 ## Posicionamiento y tono (guarda esto en cada edición de copy)
 
 - **El sitio es político y lo dice.** La IA no es neutral y su seguridad tampoco. Nombramos las ideas y las estructuras que concentran poder: tecno-oligarquía, mito de la inevitabilidad, captura regulatoria, extractivismo, supremacismo, colonialismo. La crítica es a ideas, instituciones y sistemas, nunca a personas por nombre ni a empresas por epíteto.
