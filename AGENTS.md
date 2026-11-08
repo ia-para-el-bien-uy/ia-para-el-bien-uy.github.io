@@ -5,11 +5,11 @@ El sitio es una sola página (`chaish/index.html`); la raíz `index.html` solo r
 
 ## Dónde vive el repo
 
-- **Fuente de verdad:** `C:\Users\diego\orca\ia-para-el-bien-uy.github.io` — el checkout que gestiona Orca, con remote SSH (`git@github.com:ia-para-el-bien-uy/…`). Es el que se pushea y el que publica.
-- Clones que **no** son fuente de verdad:
-  - `~/environment/ia-para-el-bien-uy.github.io` (WSL, remote HTTPS) — quedó atrás y nunca pusheó.
-  - `C:\Users\diego\ia-para-el-bien-site` — sin `.git`, es un cajón de variantes HTML sueltas.
-- Editar cualquiera de esos dos produce commits que **nunca se publican**.
+- **Checkout único:** `C:\Users\diego\environment\ia-para-el-bien-uy.github.io`, remote HTTPS
+  (`https://github.com/ia-para-el-bien-uy/…`), `gh` autenticado como DiegoFleitas. Es el que se
+  pushea y publica: `git ls-remote origin refs/heads/main` tiene que devolver el HEAD local.
+- Antes de editar una copia, confirmá cuál es con `git remote -v`. Si el path no existe en el disco,
+  el doc que lo nombra está viejo — ver § Docs.
 
 ## URL canónica
 
@@ -25,7 +25,7 @@ Servir el repo directamente — es lo único que refleja lo que estás editando:
 python -m http.server 8099 --bind 127.0.0.1   # luego abrir http://127.0.0.1:8099/chaish/
 ```
 
-El pipeline viejo de sync está **muerto**: `ia-para-el-bien-sync.sh` lee de `~/environment/ia-para-el-bien-site`, que ya no existe, y `C:\Users\diego\ia-para-el-bien-preview` quedó desincronizado del repo.
+No hay pipeline de sync ni servidor aparte: el directorio del repo *es* el sitio.
 
 ## Git
 

@@ -19,8 +19,8 @@ llms.txt                # Resumen del sitio para LLMs
 DESIGN.md               # Contrato del design system para el detector impeccable
 AGENTS.md               # Contrato del agente: fuente de verdad, deploy, tono, diseño
 docs/                   # COPY, PALETTE, WORKFLOW, OPENGREP
-assets/                 # Logo de la org; las páginas no lo referencian (la marca va como SVG inline)
-style.css               # Resto del sitio anterior: ninguna página lo enlaza (candidato a borrar)
+assets/                 # Logo de la org (las páginas usan SVG inline)
+style.css               # Resto del sitio anterior; ninguna página lo enlaza
 .opengrep/rules.yaml    # Ruleset propio: 11 reglas, invariantes del sitio
 .semgrepignore
 scripts/scan.sh         # Runner del scan estático (local, WSL y CI)
@@ -33,12 +33,6 @@ scripts/scan.sh         # Runner del scan estático (local, WSL y CI)
 2. Preview local: `python -m http.server 8099 --bind 127.0.0.1` → <http://127.0.0.1:8099/chaish/>.
 3. Antes de commitear: `bash scripts/scan.sh` (ver [Seguridad](#seguridad)).
 4. Commit a `main`. GitHub Pages despliega automáticamente.
-
-## Preview
-
-Servir el repo directamente es lo único que refleja lo que estás editando. El pipeline viejo de Firefox
-Local Mode (`C:\Users\diego\ia-para-el-bien-preview` + `ia-para-el-bien-sync.sh`) está **muerto** y quedó
-desincronizado — detalles en `docs/WORKFLOW.md`.
 
 ## Bilingüe
 

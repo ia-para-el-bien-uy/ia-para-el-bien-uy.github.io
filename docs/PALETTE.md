@@ -1,45 +1,36 @@
 # Paleta
 
-Exactamente **3 superficies + neutros cálidos** (adaptación "híbrido C": la marca
-se mantiene, los neutros se corren hacia la familia crema/tierra).
+Los valores viven en `chaish/style.css` (`:root`). Acá van los roles, no los hex.
 
-1. `--white:#f0eee0` — **crema**; base para TODAS las secciones claras.
-2. `--celeste:#1a6dc4` — **acento de marca** (no se toca); solo `.cta` e `.impact`
-   como superficie.
-3. `--ink:#17211e` — oscuro cálido; footer + cookie.
+Fuente de diseño: el archivo Penpot **`chaish`** — los sets `live`, `hybrid` y `tierra` definen estos
+valores; el CSS los reproduce. Los sets `primitives`/`semantic` guardan la paleta azul anterior.
 
-Tonos derivados del acento: `--celeste-deep:#5f6b45 (oliva)`, `--celeste-soft:#dce9e3`
-(salvia), `--celeste-light:#7ec4f2`.
+## Superficies (3)
 
-Acentos tierra (nuevos): `--green:#7c9a3e`, `--green-text:#55701f`,
-`--lime:#efffc1`, `--sage:#b9d7d1`, `--orange:#e56a3e`, `--orange-text:#a8451c`.
-Acción: `--action:#d9a441`, `--action-hover:#c08b2e`.
+- `--white` crema — todas las secciones claras.
+- `--action` miel — sólo `.cta .wrap`, siempre con texto `--ink`.
+- `--ink` — footer, cookie, `.statement`.
 
-## Regla de texto
+## Acento
 
-Oscuro (`--ink`/`--muted`) sobre crema; blanco sobre celeste/ink. Nunca mezclar
-blanco y negro en celdas de la misma familia.
+`--celeste`, `--celeste-deep`, `--celeste-soft`: familia oliva (el nombre quedó del diseño anterior).
+El azul `#1a6dc4` ya no existe en el CSS: no reintroducirlo sin una decisión de diseño.
 
-**Ojo con los acentos tierra:** `--green` y `--orange` son *decorativos*
-(~3:1 sobre crema). Para texto usá sus variantes `-text` (`#55701f` 5.27:1,
-`#b84a1f` 4.86:1). Tinta oscura sobre verde/lima/salvia sí pasa AA.
+## Texto
 
-## Reglas duras
+- `--green`, `--orange`, `--lime`: decorativos (1.1–2.8:1), nunca texto. Para texto de acento van
+  `--green-text` / `--orange-text` (4.84 y 5.10:1). `--jaspe` sí alcanza AA (5.73:1).
+- `--muted` y `--celeste-deep` pasan AA sobre crema al límite (~4.85:1): no usarlos en tamaños chicos.
 
-- Todos los colores como **tokens** en `:root` — cero literales hex inline.
-- Botón amarillo siempre con texto oscuro (`--ink`), nunca blanco.
-- **`--sand` ELIMINADO** (usuario: "no me gusta #945d33"). No reintroducir.
-- El celeste de CHAISH **no se reemplaza**: sigue siendo el acento de marca.
+## Reglas
+
+- Tokens en `:root`, cero hex suelto. El CSP además prohíbe `style=""`.
+- Miel siempre con texto `--ink`, nunca blanco.
+- `--sand` eliminado; no reintroducir.
+- Radio 0 salvo el CTA (`--radius-card-right`).
 
 ## Tipografía
 
-`--font:"Space Grotesk"` para todo el texto; `--font-mono:"Space Mono"` reservada a
-labels cortos (`.kicker`, `.sas-tag`, `.sas-col .sub`, `footer h3`, `.lang-btn`,
-`.step .tag`). Ambas son Google Fonts (OFL).
-
-## Nota
-
-Los valores de arriba son los que están en `chaish/style.css`. Verificarlos contra
-el CSS antes de confiar en este archivo: la doc se desactualizó antes.
-
-Forma: botones rectos (radio 0) y CTA card `--action` con radio solo en las esquinas derechas (`--radius-card-right:40px`).
+Space Grotesk para todo. Space Mono sólo en labels cortos (`.kicker`, `.sas-tag`, `.sas-col .sub`,
+`footer h3`, `.lang-btn`, `.step .tag`); Anton sólo en `.statement-words`. Son Google Fonts: si cambia
+la lista, actualizar el allowlist del CSP en `chaish/index.html`.

@@ -88,21 +88,9 @@ un `if` en el workflow.
 ## CSP (en `<meta>`, porque Pages no da headers)
 
 GitHub Pages no permite mandar `Content-Security-Policy` como header, así que la política vive en
-`<meta http-equiv="Content-Security-Policy">`, una por página HTML:
-
-- `chaish/index.html`: `default-src 'none'` + allowlist explícita.
-- `index.html` (sólo redirige): `default-src 'none'; base-uri 'none'; form-action 'none'`.
-
-| Directiva | Valor | Por qué |
-|-----------|-------|---------|
-| `default-src` | `'none'` | todo lo demás se permite por excepción, no por defecto |
-| `script-src` | `'self'` | sólo `script.js`; sin `'unsafe-inline'` ni `'unsafe-eval'` |
-| `style-src` | `'self' https://fonts.googleapis.com` | hoja propia + CSS de Google Fonts |
-| `font-src` | `https://fonts.gstatic.com` | los archivos de fuente salen de gstatic |
-| `img-src` | `'self' data:` | el `data:` es el SVG del subrayado en `chaish/style.css` |
-| `frame-src` | `https://www.youtube-nocookie.com` | los 6 embeds |
-| `connect-src` | `'none'` | el sitio no hace `fetch`/XHR |
-| `base-uri`, `form-action` | `'none'` | no hay formularios (el CTA es `mailto:`/Tally) ni `<base>` |
+`<meta http-equiv="Content-Security-Policy">`, una por página: `chaish/index.html` con allowlist explícita
+(`default-src 'none'`, `script-src 'self'`, Google Fonts, YouTube-nocookie, `data:` para el SVG del
+subrayado) y `index.html` con la mínima, porque sólo redirige.
 
 Reglas al tocar la página:
 
@@ -113,21 +101,11 @@ Reglas al tocar la página:
   y ese host tiene el TLS roto (`SEC_E_WRONG_PRINCIPAL`): el link dejaría de funcionar.
 - **`frame-ancestors` y `report-uri` se ignoran en `<meta>`.** Si alguna vez importa el clickjacking,
   sólo se arregla con un proxy/CDN delante (Cloudflare ya está en los subdominios).
-- **Recurso externo nuevo = actualizar el allowlist** en las dos páginas si aplica, y este doc.
+- **Recurso externo nuevo = actualizar el allowlist** y este doc.
 
-Verificación (no alcanza con mirar la consola):
-
-```js
-// en la consola, con la página cargada
-document.querySelector('meta[http-equiv="Content-Security-Policy"]').content   // política activa
-// prueba negativa: el script inyectado NO debe ejecutarse
-const s = document.createElement('script'); s.textContent = 'window.__pwned = 1';
-document.body.appendChild(s); window.__pwned                                   // undefined
-```
-
-Si `window.__pwned` queda en `undefined` y el toggle de idioma sigue funcionando, la política está
-activa y la página no se rompió. Chequeo completo con el servidor local (8099) y Playwright/DevTools
-escuchando `securitypolicyviolation`.
+Verificación (no alcanza con mirar la consola): con la página cargada, inyectar un `<script>` debe dejar
+`window.__pwned` en `undefined`. Ojo: `eval()` en la consola de DevTools está exento de CSP y no prueba
+nada. El detalle del chequeo completo, en la skill `static-site-csp`.
 
 ## Pitfalls locales (v1.33.1, Windows)
 
