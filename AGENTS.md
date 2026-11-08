@@ -50,6 +50,7 @@ Después de pushear, verificar **en este orden**. Releer la URL viva sola **no p
 - `docs/PALETTE.md` — sistema de superficies y reglas de color
 - `docs/COPY.md` — convenciones de copy (voseo, "de forma abierta", captions)
 - `docs/WORKFLOW.md` — entorno del agente
+- `docs/OPENGREP.md` — scan estático: `bash scripts/scan.sh` (gate CI: `--severity ERROR --error`)
 
 ## Diseño (guarda esto en cada cambio de UI)
 

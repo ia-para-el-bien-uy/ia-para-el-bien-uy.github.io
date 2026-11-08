@@ -1,0 +1,177 @@
+rules:
+  # ---------------------------------------------------------------------------
+  # CHAISH / iaparaelbien.org — repo invariants for a build-less static site.
+  #
+  # The site renders only repo-owned copy: no user input, no data fetching, no
+  # templating. Every rule below is therefore either (a) a guardrail on code that
+  # must never appear, or (b) an audit rule where the compliant pattern is the
+  # current state — a hit means the invariant regressed.
+  #
+  # Run:  opengrep scan -f .opengrep/rules.yaml --no-rewrite-rule-ids .
+  # ---------------------------------------------------------------------------
+
+  - id: chaish-dom-html-sink
+    languages: [javascript]
+    severity: ERROR
+    message: >-
+      DOM HTML sink "$SINK". The page only renders static, repo-owned text, so
+      writing HTML from a variable turns any future data source (URL hash,
+      localStorage, JSON) into an XSS path. Use textContent or build nodes.
+    metadata:
+      category: security
+      subcategory: [vuln]
+      cwe: ["CWE-79: Improper Neutralization of Input During Web Page Generation"]
+      confidence: HIGH
+    patterns:
+      - pattern-either:
+          - pattern: $EL.innerHTML = $X
+          - pattern: $EL.innerHTML += $X
+          - pattern: $EL.outerHTML = $X
+          - pattern: $EL.insertAdjacentHTML($POS, $X)
+          - pattern: document.write(...)
+          - pattern: document.writeln(...)
+
+  - id: chaish-dynamic-code-exec
+    languages: [javascript]
+    severity: ERROR
+    message: >-
+      Dynamic code execution. Static copy never needs eval/Function, and CSP for
+      this site is expected to forbid it. Remove the call.
+    metadata:
+      category: security
+      subcategory: [vuln]
+      cwe: ["CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code"]
+      confidence: HIGH
+    patterns:
+      - pattern-either:
+          - pattern: eval(...)
+          - pattern: new Function(...)
+          - pattern: Function(...)
+          - pattern: setTimeout("...", ...)
+          - pattern: setTimeout('...', ...)
+          - pattern: setInterval("...", ...)
+
+  - id: chaish-html-blank-target-without-noopener
+    languages: [generic]
+    severity: WARNING
+    message: >-
+      target="_blank" without rel="noopener" hands window.opener (and thus
+      window.location) to the destination origin. Every external link in the
+      site pairs _blank with rel="noopener"; keep it that way.
+    metadata:
+      category: security
+      subcategory: [vuln]
+      cwe: ["CWE-1022: Use of Web Link to Untrusted Target with window.opener Access"]
+      confidence: HIGH
+    paths:
+      include:
+        - "*.html"
+    patterns:
+      - pattern-regex: '<a\s[^>]*target\s*=\s*["'']_blank["''][^>]*>'
+      - pattern-not-regex: 'rel\s*=\s*["''][^"'']*noopener'
+
+  - id: chaish-html-inline-event-handler
+    languages: [generic]
+    severity: WARNING
+    message: >-
+      Inline event handler. The site keeps behaviour in script.js so a CSP
+      without 'unsafe-inline' stays possible (inline handlers fail under it).
+    metadata:
+      category: security
+      subcategory: [audit]
+      cwe: ["CWE-79: Improper Neutralization of Input During Web Page Generation"]
+      confidence: MEDIUM
+    paths:
+      include:
+        - "*.html"
+    patterns:
+      - pattern-regex: '\son(click|dblclick|load|error|submit|change|input|mouseover|mouseout|focus|blur|keydown|keyup|keypress|touchstart|touchmove)\s*='
+
+  - id: chaish-html-javascript-uri
+    languages: [generic]
+    severity: WARNING
+    message: >-
+      javascript: URI in an attribute. Behaves as inline script and is blocked by
+      any CSP lacking 'unsafe-inline'.
+    metadata:
+      category: security
+      subcategory: [vuln]
+      cwe: ["CWE-79: Improper Neutralization of Input During Web Page Generation"]
+      confidence: HIGH
+    paths:
+      include:
+        - "*.html"
+    patterns:
+      - pattern-regex: '(href|src|action)\s*=\s*["'']\s*javascript:'
+
+  - id: chaish-html-insecure-http-reference
+    languages: [generic]
+    severity: WARNING
+    message: >-
+      Plain http:// reference on an https:// page. Browsers block or upgrade it
+      for subresources and warn on links; cite the https:// URL when the source
+      host supports it.
+    metadata:
+      category: security
+      subcategory: [audit]
+      cwe: ["CWE-319: Cleartext Transmission of Sensitive Information"]
+      confidence: MEDIUM
+    paths:
+      include:
+        - "*.html"
+    patterns:
+      - pattern-regex: '(href|src|action|srcset|data-src)\s*=\s*["'']http://'
+
+  - id: chaish-html-third-party-script-without-sri
+    languages: [generic]
+    severity: WARNING
+    message: >-
+      Remote script without Subresource Integrity. GitHub Pages cannot set
+      security headers, so integrity= is the only check left on a CDN file.
+    metadata:
+      category: security
+      subcategory: [vuln]
+      cwe: ["CWE-353: Missing Support for Integrity Check"]
+      confidence: MEDIUM
+    paths:
+      include:
+        - "*.html"
+    patterns:
+      - pattern-regex: '<script\s[^>]*src\s*=\s*["'']https?://[^>]*>'
+      - pattern-not-regex: 'integrity\s*='
+
+  - id: chaish-unguarded-web-storage
+    languages: [javascript]
+    severity: WARNING
+    message: >-
+      Web storage access outside try/catch. Storage throws in private modes and
+      with site data blocked; the language toggle and cookie bar are built to
+      degrade silently, so every access must stay wrapped.
+    metadata:
+      category: security
+      subcategory: [audit]
+      cwe: ["CWE-248: Uncaught Exception"]
+      confidence: MEDIUM
+    patterns:
+      - pattern-either:
+          - pattern: localStorage.getItem(...)
+          - pattern: localStorage.setItem(...)
+          - pattern: localStorage.removeItem(...)
+          - pattern: sessionStorage.$M(...)
+      - pattern-not-inside: |
+          try { ... } catch ($E) { ... }
+
+  - id: chaish-leaked-discord-webhook
+    languages: [generic]
+    severity: ERROR
+    message: >-
+      Discord webhook URL committed to the site source. The repo is public and
+      Pages serves every tracked file; anyone can post to a published webhook.
+      The public invite (discord.gg/...) is the only Discord link that belongs here.
+    metadata:
+      category: security
+      subcategory: [vuln]
+      cwe: ["CWE-798: Use of Hard-coded Credentials"]
+      confidence: HIGH
+    patterns:
+      - pattern-regex: 'https://discord(?:app)?\.com/api/webhooks/[0-9]{15,20}/[A-Za-z0-9_-]{50,}'

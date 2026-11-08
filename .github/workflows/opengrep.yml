@@ -1,0 +1,51 @@
+name: opengrep
+
+# Static site, no build: a bad commit is live ~60s after merge, so the scan runs
+# before that. ERROR-severity findings fail the job; WARNING findings are
+# informational (the audit rules have a known, accepted baseline).
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  OPENGREP_VERSION: "1.33.1"
+  # sha256 of opengrep_manylinux_x86 for v1.33.1 — verified 2026-11-08
+  OPENGREP_SHA256: "46e8133cc490f9f50518061590ce2f6be5a08afaeda034471c0ceda4b3899808"
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install opengrep (pinned + checksum)
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/bin"
+          url="https://github.com/opengrep/opengrep/releases/download/v${OPENGREP_VERSION}/opengrep_manylinux_x86"
+          curl -sSfL -o "$RUNNER_TEMP/bin/opengrep" "$url"
+          echo "${OPENGREP_SHA256}  $RUNNER_TEMP/bin/opengrep" | sha256sum -c -
+          chmod +x "$RUNNER_TEMP/bin/opengrep"
+          echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
+          "$RUNNER_TEMP/bin/opengrep" --version
+
+      - name: Scan (fail on ERROR)
+        run: bash scripts/scan.sh --severity ERROR --error --json -o "$RUNNER_TEMP/opengrep.json"
+
+      - name: Scan (full report)
+        if: always()
+        run: bash scripts/scan.sh --json -o "$RUNNER_TEMP/opengrep-all.json"
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: opengrep-results
+          path: ${{ runner.temp }}/opengrep*.json
+          if-no-files-found: warn

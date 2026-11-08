@@ -1,0 +1,19 @@
+# Opengrep / Semgrep-family ignore list (uses .semgrepignore for compatibility).
+# Scans are limited to git-tracked files, so node_modules/ is already out;
+# these entries keep prose and generated noise out of generic-language rules.
+
+# Prose and docs: markdown code fences trip generic regex rules from stock rulesets
+*.md
+docs/
+llms.txt
+
+# Tool config itself
+.opengrep/
+.semgrepignore
+
+# Binary assets
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.ico
