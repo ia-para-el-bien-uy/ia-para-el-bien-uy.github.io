@@ -25,6 +25,8 @@ Forma: botones rectos (radio 0); el CTA es la única card con radio, sólo en la
 - **`low-contrast`** — el detector cruza `--muted` con la miel; ese par no existe (el botón y el CTA
   llevan `--ink` sobre miel, 7.34:1).
 - **Uppercase** sólo en labels cortos: `.kicker`, `.sas-tag`, `.sas-col .sub`, `footer h3`, `.lang-btn`.
+- **`bounce-easing` en `.plate`** — el overshoot (`cubic-bezier(.17,.89,.32,1.28)`) es el gesto pedido para la
+  entrada de las láminas; el resto del sitio no lo usa.
 - **Hero sin eyebrow/kicker** — la h1 va sola; es intencional, evita el tell de hero SaaS.
 
 ## A seguir marcando

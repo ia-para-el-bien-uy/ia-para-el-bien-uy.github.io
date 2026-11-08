@@ -296,3 +296,20 @@ main a[target="_blank"]::after,footer a[target="_blank"]::after{content:"";displ
   .statement-words .d1{color:var(--marca-1d)}
   .statement-words .d2{color:var(--marca-2d)}
   .statement-words .d3{color:var(--marca-3d)}
+
+  /* Láminas junto al texto — una por sección, entrada individual al cruzar el viewport.
+     Keyframes equivalentes a animate.css `rotateInDownRight` (MIT, © Daniel Eden),
+     con el easing de overshoot pedido. */
+  main{overflow-x:clip} /* el giro de 45° desborda a los lados; clip no crea scroll container */
+  @supports not (overflow-x:clip){main{overflow:hidden}}
+  .media-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(170px,300px);gap:clamp(24px,4vw,56px);align-items:center}
+  .plate{margin:0;padding:0;display:grid;justify-items:center;align-content:center}
+  .plate img{display:block;width:auto;height:auto;max-height:min(44svh,360px);max-width:100%;object-fit:contain}
+  /* html.js lo agrega script.js: sin JS las láminas se ven, nunca quedan en opacity 0 */
+  html.js .plate img{transform:rotate(45deg);transform-origin:100% 100%;opacity:0}
+  html.js .plate.is-in img{animation:plate-in .9s cubic-bezier(.17,.89,.32,1.28) both}
+  @keyframes plate-in{0%{transform:rotate(45deg);opacity:0}to{transform:translateZ(0);opacity:1}}
+  @media (max-width:860px){
+    .media-split{grid-template-columns:1fr}
+    .media-split .plate{justify-self:center;margin-top:clamp(24px,5vw,44px)}
+  }

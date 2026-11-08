@@ -1,3 +1,5 @@
+document.documentElement.classList.add('js');
+
 document.getElementById('year').textContent = new Date().getFullYear();
 
 // Language toggle (resilient to blocked localStorage / NoScript)
@@ -105,3 +107,26 @@ const dismiss = () => {
 };
 document.getElementById('cookieOk').addEventListener('click', dismiss);
 document.getElementById('cookieNo').addEventListener('click', dismiss);
+
+// Láminas-interludio: cada una entra cuando cruza el viewport (rotateInDownRight).
+// Sin IO o con movimiento reducido, se muestran de entrada.
+const plates = Array.from(document.querySelectorAll('.plate'));
+if (plates.length) {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reveal = (el) => el.classList.add('is-in');
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    plates.forEach(reveal);
+  } else {
+    const plateIO = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          obs.unobserve(entry.target);
+          reveal(entry.target);
+        });
+      },
+      { threshold: 0.35, rootMargin: '0px 0px -8% 0px' }
+    );
+    plates.forEach((p) => plateIO.observe(p));
+  }
+}
