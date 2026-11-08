@@ -87,6 +87,43 @@ rules:
     patterns:
       - pattern-regex: '\son(click|dblclick|load|error|submit|change|input|mouseover|mouseout|focus|blur|keydown|keyup|keypress|touchstart|touchmove)\s*='
 
+  - id: chaish-html-inline-script
+    languages: [generic]
+    severity: ERROR
+    message: >-
+      Inline <script> block. The meta CSP sends script-src 'self' with no
+      'unsafe-inline' and no hash, so this block will not run in production even
+      when it works locally. Move the code to script.js.
+    metadata:
+      category: security
+      subcategory: [audit]
+      cwe: ["CWE-79: Improper Neutralization of Input During Web Page Generation"]
+      confidence: HIGH
+    paths:
+      include:
+        - "*.html"
+    patterns:
+      - pattern-regex: '<script(?:(?!\bsrc\s*=)[^>])*>'
+
+  - id: chaish-html-inline-style-attribute
+    languages: [generic]
+    severity: WARNING
+    message: >-
+      Inline style="" attribute. The meta CSP sends style-src without
+      'unsafe-inline', so the declaration is dropped in production (DevTools
+      shows the attribute but the browser ignores it). Use a class in the
+      stylesheet, as the design system requires.
+    metadata:
+      category: security
+      subcategory: [audit]
+      cwe: ["CWE-79: Improper Neutralization of Input During Web Page Generation"]
+      confidence: HIGH
+    paths:
+      include:
+        - "*.html"
+    patterns:
+      - pattern-regex: '\sstyle\s*=\s*["'']'
+
   - id: chaish-html-javascript-uri
     languages: [generic]
     severity: WARNING

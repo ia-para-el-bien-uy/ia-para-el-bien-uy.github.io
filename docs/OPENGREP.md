@@ -9,7 +9,7 @@ Un hallazgo casi siempre significa que la invariante se rompió.
 
 | Ruta | Para qué |
 |------|----------|
-| `.opengrep/rules.yaml` | Ruleset del repo, 9 reglas, ids `chaish-*` |
+| `.opengrep/rules.yaml` | Ruleset del repo, 11 reglas, ids `chaish-*` |
 | `.semgrepignore` | Excluye prosa (`*.md`, `docs/`, `llms.txt`) y binarios del escaneo genérico |
 | `scripts/scan.sh` | Runner único: local, WSL y CI |
 | `.github/workflows/opengrep.yml` | Gate en `push` a `main` y en PRs |
@@ -39,6 +39,8 @@ Instalar el binario (v1.33.1):
 | `chaish-html-blank-target-without-noopener` | WARNING | Todo `target="_blank"` lleva `rel="noopener"` (si no, el destino controla `window.opener`) |
 | `chaish-html-third-party-script-without-sri` | WARNING | Script remoto sin `integrity=`: Pages no puede mandar headers, SRI es el único control |
 | `chaish-html-javascript-uri` | WARNING | Nada de `href="javascript:` — es script inline disfrazado |
+| `chaish-html-inline-script` | ERROR | Nada de bloques `<script>` sin `src`: el CSP de `script-src 'self'` los bloquea en producción aunque anden en local |
+| `chaish-html-inline-style-attribute` | WARNING | Nada de `style="..."`: `style-src` sin `'unsafe-inline'` descarta la declaración en producción |
 | `chaish-html-inline-event-handler` | WARNING | Nada de `onclick=`/`onload=` en HTML: el comportamiento vive en `script.js` para que un CSP estricto sea posible |
 | `chaish-unguarded-web-storage` | WARNING | Todo acceso a `localStorage`/`sessionStorage` va dentro de `try/catch` (storage lanza en modo privado o con datos bloqueados) |
 | `chaish-html-insecure-http-reference` | WARNING | Nada de `http://` en `href`/`src`: mixed content en una página https |
@@ -82,6 +84,50 @@ un `if` en el workflow.
    ```
 
    Y probar también la línea **correcta** (debe quedar limpia) — si no, la regla no discrimina.
+
+## CSP (en `<meta>`, porque Pages no da headers)
+
+GitHub Pages no permite mandar `Content-Security-Policy` como header, así que la política vive en
+`<meta http-equiv="Content-Security-Policy">`, una por página HTML:
+
+- `chaish/index.html`: `default-src 'none'` + allowlist explícita.
+- `index.html` (sólo redirige): `default-src 'none'; base-uri 'none'; form-action 'none'`.
+
+| Directiva | Valor | Por qué |
+|-----------|-------|---------|
+| `default-src` | `'none'` | todo lo demás se permite por excepción, no por defecto |
+| `script-src` | `'self'` | sólo `script.js`; sin `'unsafe-inline'` ni `'unsafe-eval'` |
+| `style-src` | `'self' https://fonts.googleapis.com` | hoja propia + CSS de Google Fonts |
+| `font-src` | `https://fonts.gstatic.com` | los archivos de fuente salen de gstatic |
+| `img-src` | `'self' data:` | el `data:` es el SVG del subrayado en `chaish/style.css` |
+| `frame-src` | `https://www.youtube-nocookie.com` | los 6 embeds |
+| `connect-src` | `'none'` | el sitio no hace `fetch`/XHR |
+| `base-uri`, `form-action` | `'none'` | no hay formularios (el CTA es `mailto:`/Tally) ni `<base>` |
+
+Reglas al tocar la página:
+
+- **Nada inline.** Un `style="..."` o un `<script>` inline rompe la política. Estilos → clase en
+  `chaish/style.css` (así se sacó `style="max-width:22ch"`). El redirect del root es `<meta refresh>`,
+  no JS.
+- **No agregar `upgrade-insecure-requests`.** Subiría el enlace `http://` de diputados.gub.uy a https,
+  y ese host tiene el TLS roto (`SEC_E_WRONG_PRINCIPAL`): el link dejaría de funcionar.
+- **`frame-ancestors` y `report-uri` se ignoran en `<meta>`.** Si alguna vez importa el clickjacking,
+  sólo se arregla con un proxy/CDN delante (Cloudflare ya está en los subdominios).
+- **Recurso externo nuevo = actualizar el allowlist** en las dos páginas si aplica, y este doc.
+
+Verificación (no alcanza con mirar la consola):
+
+```js
+// en la consola, con la página cargada
+document.querySelector('meta[http-equiv="Content-Security-Policy"]').content   // política activa
+// prueba negativa: el script inyectado NO debe ejecutarse
+const s = document.createElement('script'); s.textContent = 'window.__pwned = 1';
+document.body.appendChild(s); window.__pwned                                   // undefined
+```
+
+Si `window.__pwned` queda en `undefined` y el toggle de idioma sigue funcionando, la política está
+activa y la página no se rompió. Chequeo completo con el servidor local (8099) y Playwright/DevTools
+escuchando `securitypolicyviolation`.
 
 ## Pitfalls locales (v1.33.1, Windows)
 

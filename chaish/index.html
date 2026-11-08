@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- CSP: GitHub Pages no permite headers, así que la política va en <meta>.
+     default-src 'none' + lista blanca explícita; sin 'unsafe-inline' (no hay
+     handlers ni estilos inline). frame-ancestors/report-uri no aplican en <meta>.
+     Mantener en sync con docs/OPENGREP.md (tabla de directivas y allowlist). -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.youtube-nocookie.com; connect-src 'none'; base-uri 'none'; form-action 'none'">
 <title>CHAISH Seguridad en IA desde Uruguay</title>
 <meta name="description" lang="es" content="CHAISH — Hub comunitario de seguridad en IA desde Uruguay. Aprendemos, fallamos y construimos en comunidad, en español y desde el contexto local.">
 <meta name="description" lang="en" content="CHAISH — Community AI safety hub from Uruguay. We learn, fail and build together, in Spanish and from the local context.">
@@ -87,7 +92,7 @@
   <!-- HACEMOS -->
   <section class="areas band" id="hacemos">
     <div class="wrap">
-      <h2 class="section-title" style="max-width:22ch"><span lang="es">Nuestros frentes</span><span lang="en">Our lines of work</span></h2>
+      <h2 class="section-title section-title--narrow"><span lang="es">Nuestros frentes</span><span lang="en">Our lines of work</span></h2>
       <div class="steps-gap">
         <div class="step">
           <div>

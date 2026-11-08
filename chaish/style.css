@@ -60,6 +60,7 @@
   .muted{color:var(--muted)}
   .lead{font-size:clamp(1.15rem,2vw,1.4rem);color:var(--muted);max-width:56ch;line-height:1.6}
   .section-title{font-size:var(--title)}
+  .section-title--narrow{max-width:22ch}
   .label-strong{font-weight:600;color:var(--ink)}
   .link-accent{color:var(--celeste-deep);text-decoration:underline}
   .link-white{color:#fff;text-decoration:underline}
