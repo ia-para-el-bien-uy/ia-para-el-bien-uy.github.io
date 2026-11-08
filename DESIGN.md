@@ -29,7 +29,10 @@ Forma: botones rectos (radio 0); el CTA es la única card con radio, sólo en la
 
 ## A seguir marcando
 
-- **Pares de contraste nuevos.** Medir antes de mergear; los pares base están en `docs/PALETTE.md`.
+- **Par de contraste nuevo.** Medir antes de mergear; los pares base están en `docs/PALETTE.md`.
+- **Nav activo:** `live.color.jaspe` en el Penpot y `--jaspe` en el CSS, con subrayado. `live.color.accent`
+  (#D13109) da 4.34:1 sobre el header y no sirve para texto normal; el color solo tampoco alcanza para
+  marcar el ítem activo (WCAG 1.4.1).
 - **`layout-transition` en `.faq-a`** (`max-height`): aceptado hoy; si se toca, preferir
   `grid-template-rows` o un transform.
 - **Leading de display**: `.hero h1` (1.02) y `.mission-statement h2` (1.25) son intencionales. Marcar
