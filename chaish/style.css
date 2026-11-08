@@ -41,13 +41,15 @@
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  html[lang="es"] [lang="en"]{display:none!important}
+  html[lang="es"] [lang="en"]:not(.keep-visible){display:none!important}
   html[lang="en"] [lang="es"]{display:none!important}
   body{margin:0;background:var(--white);color:var(--ink);font-family:var(--font);font-size:var(--step);line-height:1.7;-webkit-font-smoothing:antialiased}
   h1,h2,h3{font-weight:400;line-height:1.08;letter-spacing:-.02em;margin:0;text-wrap:pretty}
   h4{margin:0}
   p{margin:0}
   a{color:inherit;text-decoration:none}
+  .skip-link{position:absolute;left:8px;top:-80px;z-index:100;background:var(--ink);color:var(--white);padding:.6rem 1rem;font-weight:600}
+  .skip-link:focus{top:8px}
 
   /* Layout */
   .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
@@ -56,7 +58,7 @@
   .steps-gap{margin-top:var(--gap-section)}
 
   /* Typography */
-  .kicker{font-size:.8rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--celeste-deep);margin:0 0 20px}
+  .kicker{font-size:.8rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--celeste-deep);margin:0 0 20px;line-height:1.7}
   .muted{color:var(--muted)}
   .lead{font-size:clamp(1.15rem,2vw,1.4rem);color:var(--muted);max-width:56ch;line-height:1.6}
   .section-title{font-size:var(--title)}
@@ -72,6 +74,8 @@
   .btn-line{border:1px solid var(--ink);color:var(--ink)}
   .btn-line:hover{background:var(--sage)}
   .btn:focus-visible{outline:2px solid var(--celeste);outline-offset:2px}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--celeste);outline-offset:2px}
+  .faq-q:focus-visible{outline-offset:-2px}
 
   /* BANNER */
   .announce{background:var(--celeste-deep);color:#fff;text-align:center;font-size:.9rem;font-weight:600;padding:10px 20px;letter-spacing:.01em}
@@ -85,8 +89,8 @@
   .brand .loc{font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-left:2px}
   .nav-links{display:flex;gap:22px;align-items:center;position:relative;padding-bottom:9px}
   .nav-links a{font-weight:600;color:var(--ink);font-size:.95rem;transition:color .15s}
-  .nav-links a:hover{color:var(--accent)}
-  .nav-links a.is-active{color:var(--accent)}
+  .nav-links a:hover{color:var(--jaspe)}
+  .nav-links a.is-active{color:var(--jaspe);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
   .nav-links::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='6'%3E%3Cpath d='M0 3 Q4 0 8 3 Q12 6 16 3' fill='none' stroke='%235f6b45' stroke-width='1.2'/%3E%3C/svg%3E");background-repeat:repeat-x;background-size:16px 6px;opacity:.85;pointer-events:none}
   .nav-cta{display:flex;align-items:center;gap:12px}
   .nav-cta-mobile{display:none}
@@ -150,6 +154,7 @@
   .vid .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
   .vid .cap{display:flex;gap:14px;align-items:baseline;padding:14px 2px 0;border:none;color:var(--muted)}
   .vid .cap b{color:var(--ink);font-weight:600}
+  .vid .cap .link-accent{display:inline-flex;align-items:center;min-height:24px}
 
   /* Profundizar */
   .deep-head{margin-bottom:var(--gap-section)}
@@ -183,6 +188,7 @@
   .faq-q .plus{flex:0 0 auto;width:24px;height:24px;color:var(--celeste);transition:transform .2s}
   .faq-item.open .plus{transform:rotate(45deg)}
   .faq-a{max-height:0;overflow:hidden;transition:max-height .28s ease;color:var(--muted)}
+  .faq-a[hidden],.cookie[hidden]{display:none}
   .faq-a p{padding:0 4px 24px;max-width:68ch}
 
   /* CTA */
@@ -211,6 +217,7 @@
   footer ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
   footer a{color:var(--dark-link);font-size:.92rem;transition:color .15s}
   footer a:hover{color:#fff}
+  footer p.foot-note{font-size:.82rem;color:var(--dark-muted);margin-top:10px;max-width:40ch}
   .foot-bottom{border-top:1px solid var(--dark-line);margin-top:38px;padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.82rem;color:var(--dark-muted)}
 
   /* Cookie */
@@ -240,9 +247,13 @@
   }
   @media (prefers-reduced-motion:reduce){
     *{scroll-behavior:auto!important}
+    *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
   }
 
 .brand-logo{height:26px;max-height:26px;width:auto;vertical-align:middle;border-radius:4px;margin-right:8px;object-fit:contain}@media(max-width:560px){.brand-logo{height:22px;max-height:22px;margin-right:6px}}
+
+/* Enlaces a pestaña nueva: icono decorativo; el aviso textual esta en el footer */
+main a[target="_blank"]::after,footer a[target="_blank"]::after{content:"";display:inline-block;width:.62em;height:.62em;margin-left:.28em;background-color:currentColor;--arrow:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 17 17 7M9 7h8v8' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");-webkit-mask:var(--arrow) center/contain no-repeat;mask:var(--arrow) center/contain no-repeat}
 
 /* CHAISH: social icon links in footer */
 .social-link{display:inline-flex;align-items:center;gap:9px}
