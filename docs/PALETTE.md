@@ -30,6 +30,8 @@ El azul `#1a6dc4` ya no existe en el CSS: no reintroducirlo sin una decisión de
 ## Reglas
 
 - Tokens en `:root`, cero hex suelto. El CSP además prohíbe `style=""`.
+- Las olas viven en `:root` como data URIs: `--wave-nav` (oliva) y `--wave-brand` (jaspe, rosa y oliva).
+  Los tonos van codificados dentro del SVG; si cambia `--marca-1/2/3` o `--celeste-deep`, actualizar el token de la ola.
 - Miel siempre con texto `--ink`, nunca blanco.
 - `--sand` eliminado; no reintroducir.
 - Radio 0 salvo el CTA (`--radius-card-right`).
