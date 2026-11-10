@@ -13,8 +13,8 @@ valores; el CSS los reproduce. Los sets `primitives`/`semantic` guardan la palet
 - `--jaspe` — banda de tesis del artículo (`.band-tesis`), texto `--white`.
 
 La cita destacada del artículo (`.quote-block`) va sobre `--celeste` (oliva) con texto `--white` y barra
-`--action`. `--arena` quedó sin uso con ese cambio: el token sigue en `:root` y en Penpot
-(`live.color.arena`), pero no se reintroduce sin una decisión de diseño.
+`--action`. `--arena` volvió a usarse en la banda de marca: es el texto base de las palabras y del kicker
+sobre `--ink` (ver § Texto).
 
 ## Acento
 
@@ -26,6 +26,10 @@ El azul `#1a6dc4` ya no existe en el CSS: no reintroducirlo sin una decisión de
 - `--green`, `--orange`, `--lime`: decorativos (1.1–2.8:1), nunca texto. Para texto de acento van
   `--green-text` / `--orange-text` (4.84 y 5.10:1). `--jaspe` sí alcanza AA (5.73:1).
 - `--muted` y `--celeste-deep` pasan AA sobre crema al límite (~4.85:1): no usarlos en tamaños chicos.
+- Banda de marca (`#quienes-somos`): las tres piedras van **como texto** sobre `--ink` — `--marca-1d`
+  (CH), `--marca-2` (AI), `--marca-3d` (S y H) — y el resto en `--arena`. `--marca-2` es la única piedra
+  sin variante `-d`: acá va el valor base, 4.25:1 sobre ink, AA para el rótulo (44 px en el diseño, 24 en
+  mobile). El color por letra vive en el CSS (`.c1/.c2/.c3`), no en un token de Penpot.
 
 ## Reglas
 
