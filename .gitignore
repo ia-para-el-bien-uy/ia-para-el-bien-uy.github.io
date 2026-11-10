@@ -15,4 +15,4 @@ Thumbs.db
 !chaish/assets/*.png
 !chaish/assets/*.jpg
 # allow dossier 01 assets
-!chaish/dossier-01/assets/*.png
+!chaish/memoria-abierta/assets/*.png

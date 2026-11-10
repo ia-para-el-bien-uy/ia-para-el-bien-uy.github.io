@@ -2,7 +2,7 @@
 
 Landing estática de AI Safety uruguaya. HTML/CSS/JS puro, sin build, GitHub Pages, bilingüe ES/EN.
 El sitio tiene dos páginas: la home (`chaish/index.html`) y el Dossier 01
-(`chaish/dossier-01/index.html`, con su propia hoja `dossier.css` sobre los tokens de `chaish/style.css`);
+(`chaish/memoria-abierta/index.html`, con su propia hoja `dossier.css` sobre los tokens de `chaish/style.css`);
 la raíz `index.html` solo redirige a `chaish/`.
 
 ## Dónde vive el repo
@@ -16,7 +16,7 @@ la raíz `index.html` solo redirige a `chaish/`.
 ## URL canónica
 
 - `https://iaparaelbien.org/chaish/` es la canónica; `iaparaelbien.org` (raíz) y `chaish.iaparaelbien.org` redirigen ahí.
-- El dossier vive en `https://iaparaelbien.org/chaish/dossier-01/` y no tiene URL corta propia.
+- El dossier vive en `https://iaparaelbien.org/chaish/memoria-abierta/` y no tiene URL corta propia.
 - Pages sirve desde la rama `main`, path `/` (build "legacy"). Solo cuenta el `CNAME` de la raíz.
 - **DNS y Cloudflare:** `iaparaelbien.org` apunta directo a GitHub Pages (`Server: GitHub.com`, IPs `185.199.108-111.153`). Los subdominios `www.iaparaelbien.org` y `chaish.iaparaelbien.org` están proxeados por **Cloudflare** y devuelven 301 al apex (`/` y `/chaish` respectivamente). O sea: ese redirect lo hace Cloudflare, **no** Pages — el `chaish/CNAME` del repo es inerte.
 
