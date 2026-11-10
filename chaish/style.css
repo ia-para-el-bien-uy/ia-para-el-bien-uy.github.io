@@ -151,6 +151,12 @@
   .cap:first-of-type{border-top:1px solid var(--line)}
   .cap h3{font-size:1.35rem;font-weight:600;color:var(--ink);margin-bottom:4px}
   .cap p{color:var(--muted);font-size:.98rem;margin:0;max-width:680px}
+  /* Cierre de «La IA en Uruguay»: fila que enlaza el Artículo 01 (diseño: Penpot, cierre del mapa) */
+  .cap-articulo{display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:40px;border-bottom:0}
+  .cap-articulo .kicker{margin:0 0 10px}
+  .cap-articulo h3{margin-bottom:6px}
+  .cap-articulo .cap-meta{font-size:.98rem;color:var(--muted);margin:0}
+  .cap-articulo .cap-more{margin:0;white-space:nowrap}
 
   /* Videos */
   .videos{background:var(--white)}
@@ -253,6 +259,10 @@
   }
   @media (max-width:560px){
     .foot-grid{grid-template-columns:1fr}
+    /* 6 ítems de nav no entran en una fila a 390: tres columnas, dos filas */
+    .nav-links{display:grid;grid-template-columns:repeat(3,auto);justify-content:center;gap:8px 18px}
+    .cap-articulo{grid-template-columns:1fr;row-gap:14px}
+    .cap-articulo .cap-more{white-space:normal}
   }
   @media (prefers-reduced-motion:reduce){
     *{scroll-behavior:auto!important}
