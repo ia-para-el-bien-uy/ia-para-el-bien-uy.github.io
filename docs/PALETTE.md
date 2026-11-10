@@ -30,8 +30,9 @@ El azul `#1a6dc4` ya no existe en el CSS: no reintroducirlo sin una decisión de
 ## Reglas
 
 - Tokens en `:root`, cero hex suelto. El CSP además prohíbe `style=""`.
-- Las olas viven en `:root` como data URIs: `--wave-nav` (oliva) y `--wave-brand` (jaspe, rosa y oliva).
-  Los tonos van codificados dentro del SVG; si cambia `--marca-1/2/3` o `--celeste-deep`, actualizar el token de la ola.
+- La ola del nav vive en `:root` como data URI (`--wave-nav`, oliva); el tono va codificado dentro del SVG.
+  La marca de los h2 es una boleadora SVG inline (nudo y tres piedras): la geometría vive en el HTML y el color
+  sale de `--marca-1/2/3` y `--marca-cord`. No hay token propio de la boleadora.
 - Miel siempre con texto `--ink`, nunca blanco.
 - `--sand` eliminado; no reintroducir.
 - Radio 0 salvo el CTA (`--radius-card-right`).

@@ -38,11 +38,8 @@
     --step:clamp(1.08rem,1.3vw,1.22rem);
     --gap-section:clamp(36px,5vw,52px);
     --title:clamp(1.9rem,4vw,2.8rem);
-    /* Olas: motivo del nav, reusado bajo los títulos de sección.
-       El data URI no admite var(), así que los tonos de marca se codifican acá una sola vez.
-       La ola de marca da 6 ciclos por color (96 px) para que los tres tonos se lean como bandas. */
+    /* Ola del nav (oliva). El data URI no admite var(), así que el tono va codificado acá. */
     --wave-nav:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='6'%3E%3Cpath d='M0 3 Q4 0 8 3 Q12 6 16 3' fill='none' stroke='%235f6b45' stroke-width='1.2'/%3E%3C/svg%3E");
-    --wave-brand:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='288' height='6'%3E%3Cpath d='M0 3 Q4 0 8 3 Q12 6 16 3 Q20 0 24 3 Q28 6 32 3 Q36 0 40 3 Q44 6 48 3 Q52 0 56 3 Q60 6 64 3 Q68 0 72 3 Q76 6 80 3 Q84 0 88 3 Q92 6 96 3' fill='none' stroke='%23a03b22' stroke-opacity='.85' stroke-width='1.2'/%3E%3Cpath d='M96 3 Q100 0 104 3 Q108 6 112 3 Q116 0 120 3 Q124 6 128 3 Q132 0 136 3 Q140 6 144 3 Q148 0 152 3 Q156 6 160 3 Q164 0 168 3 Q172 6 176 3 Q180 0 184 3 Q188 6 192 3' fill='none' stroke='%23b4705a' stroke-opacity='.85' stroke-width='1.2'/%3E%3Cpath d='M192 3 Q196 0 200 3 Q204 6 208 3 Q212 0 216 3 Q220 6 224 3 Q228 0 232 3 Q236 6 240 3 Q244 0 248 3 Q252 6 256 3 Q260 0 264 3 Q268 6 272 3 Q276 0 280 3 Q284 6 288 3' fill='none' stroke='%235f6b45' stroke-opacity='.85' stroke-width='1.2'/%3E%3C/svg%3E");
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -69,9 +66,17 @@
   .lead{font-size:clamp(1.15rem,2vw,1.4rem);color:var(--muted);max-width:56ch;line-height:1.6}
   .section-title{font-size:var(--title)}
   .section-title--narrow{max-width:22ch}
-  /* Motivo del nav: ola tricolor de marca bajo los títulos de sección cortos.
-     Quedan fuera los h2-statement largos, los kickers y el CTA sobre miel. */
-  .section-title,.videos-head h2,.sas h2{padding-bottom:14px;background-image:var(--wave-brand);background-repeat:repeat-x;background-position:left bottom;background-size:288px 6px;width:fit-content}
+  /* Boleadora junto a los h2 de sección: variantes 4D0–4D3 (nudo pegado al texto, piedras volando).
+     La geometría vive en el HTML; los colores salen de los tokens de marca. */
+  .boleadora{display:inline-block;width:66px;height:46px;overflow:visible;vertical-align:middle;margin-left:-2px}
+  .boleadora--before{margin-left:0;margin-right:-2px}
+  .boleadora .cord{fill:none;stroke:var(--marca-cord);stroke-width:1.2;stroke-linecap:round}
+  .boleadora .cord--75{opacity:.75}
+  .boleadora .cord--85{opacity:.85}
+  .boleadora .stone--1{fill:var(--marca-1)}
+  .boleadora .stone--2{fill:var(--marca-2)}
+  .boleadora .stone--3{fill:var(--marca-3)}
+  .h2-head,.h2-tail{white-space:nowrap}
   .label-strong{font-weight:600;color:var(--ink)}
   .link-accent{color:var(--celeste-deep);text-decoration:underline}
   .link-white{color:#fff;text-decoration:underline}
@@ -259,6 +264,7 @@
   }
   @media (max-width:560px){
     .foot-grid{grid-template-columns:1fr}
+    .boleadora{width:52px;height:36px}
     /* 6 ítems de nav no entran en una fila a 390: tres columnas, dos filas */
     .nav-links{display:grid;grid-template-columns:repeat(3,auto);justify-content:center;gap:8px 18px}
     .cap-articulo{grid-template-columns:1fr;row-gap:14px}
