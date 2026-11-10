@@ -1,7 +1,9 @@
 # IA para el Bien (ia-para-el-bien-uy.github.io)
 
 Landing estática de AI Safety uruguaya. HTML/CSS/JS puro, sin build, GitHub Pages, bilingüe ES/EN.
-El sitio es una sola página (`chaish/index.html`); la raíz `index.html` solo redirige a `chaish/`.
+El sitio tiene dos páginas: la home (`chaish/index.html`) y el Dossier 01
+(`chaish/dossier-01/index.html`, con su propia hoja `dossier.css` sobre los tokens de `chaish/style.css`);
+la raíz `index.html` solo redirige a `chaish/`.
 
 ## Dónde vive el repo
 
@@ -14,6 +16,7 @@ El sitio es una sola página (`chaish/index.html`); la raíz `index.html` solo r
 ## URL canónica
 
 - `https://iaparaelbien.org/chaish/` es la canónica; `iaparaelbien.org` (raíz) y `chaish.iaparaelbien.org` redirigen ahí.
+- El dossier vive en `https://iaparaelbien.org/chaish/dossier-01/` y no tiene URL corta propia.
 - Pages sirve desde la rama `main`, path `/` (build "legacy"). Solo cuenta el `CNAME` de la raíz.
 - **DNS y Cloudflare:** `iaparaelbien.org` apunta directo a GitHub Pages (`Server: GitHub.com`, IPs `185.199.108-111.153`). Los subdominios `www.iaparaelbien.org` y `chaish.iaparaelbien.org` están proxeados por **Cloudflare** y devuelven 301 al apex (`/` y `/chaish` respectivamente). O sea: ese redirect lo hace Cloudflare, **no** Pages — el `chaish/CNAME` del repo es inerte.
 
@@ -62,7 +65,9 @@ Después de pushear, verificar **en este orden**. Releer la URL viva sola **no p
 
 - **El sistema manda:** color, tipografía, espaciado y radios salen de tokens. Si falta un valor, se propone un token antes de usarlo — nunca un literal nuevo suelto.
 - **`DESIGN.md` es el contrato del detector `impeccable`.** Los patrones intencionales están suprimidos por archivo, con motivo. No ensanchar un ignore: un hallazgo fuera de esos patrones es un defecto real.
-- **Antes de dar por cerrado un cambio de UI:** `npx -y impeccable detect chaish/` debe salir en `0`. Si se tocaron colores, correr el chequeo de contraste AA del sistema de diseño.
+- **Antes de dar por cerrado un cambio de UI:** `npx -y impeccable detect chaish/` no debe sumar hallazgos
+  fuera del baseline (`DESIGN.md`: 2 por página). Si se tocaron colores, correr el chequeo de contraste AA
+  del sistema de diseño.
 - El detector no evalúa composición, jerarquía ni tono: mirar la página renderizada antes de concluir.
 
 ## Bilingüe (guarda esto al tocar `lang`)

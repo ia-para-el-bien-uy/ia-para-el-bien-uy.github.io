@@ -90,7 +90,8 @@ un `if` en el workflow.
 GitHub Pages no permite mandar `Content-Security-Policy` como header, así que la política vive en
 `<meta http-equiv="Content-Security-Policy">`, una por página: `chaish/index.html` con allowlist explícita
 (`default-src 'none'`, `script-src 'self'`, Google Fonts, YouTube-nocookie, `data:` para el SVG del
-subrayado) y `index.html` con la mínima, porque sólo redirige.
+subrayado), `chaish/dossier-01/index.html` con la misma allowlist **sin `frame-src`** (esa página no
+embebe videos) y `index.html` con la mínima, porque sólo redirige.
 
 Reglas al tocar la página:
 

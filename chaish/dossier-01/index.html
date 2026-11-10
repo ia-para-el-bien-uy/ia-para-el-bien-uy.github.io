@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- CSP: misma allowlist que chaish/index.html sin frame-src (esta página no
+     embebe videos). Mantener en sync con docs/OPENGREP.md. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Memoria abierta — Dossier 01 — CHAISH</title>
+<meta name="description" content="Dossier 01: una tesis de la Facultad de Ingeniería usa modelos abiertos para leer el Archivo Berrutti. Cómo funciona, qué límites tiene y de dónde sale cada dato.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="dossier.css">
+<!-- impeccable-disable cramped-padding: filas editoriales del dossier (.pipe-step, .limit, .source-item, .card) usan padding vertical y hairlines como parte del estilo — ver DESIGN.md -->
+<!-- impeccable-disable low-contrast: falso positivo — .src y .card usan --muted sobre crema (4.85:1, AA); no hay par --muted sobre --action en esta página -->
+<!-- impeccable-disable tight-leading: sólo display — .article-hero h1 (1.05), .tesis-statement (1.1) y .quote-block blockquote (1.15) son titulares de una o dos líneas; el cuerpo va a 1.6-1.7 — ver DESIGN.md -->
+</head>
+<body>
+
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<div class="announce">Estamos armando el grupo de práctica; <a href="../#contacto">sumate a la conversación</a>.</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="../"><svg class="brand-logo brand-boleadoras" viewBox="0 0 40 40" role="img" aria-label="CHAISH" focusable="false">
+          <path class="cord" d="M16 17 L14 23"/>
+          <path class="cord" d="M24 17 L26 23"/>
+          <circle class="b1" cx="11" cy="20" r="6.5"/>
+          <circle class="b2" cx="20" cy="14" r="6.5"/>
+          <circle class="b3" cx="29" cy="20" r="6.5"/>
+        </svg><span>CHAISH</span></a>
+    <nav class="nav-links" id="navlinks">
+      <a href="../#porque">Por qué</a>
+      <a href="../#hacemos">Qué hacemos</a>
+      <a href="../#aprendemos">Aprendemos</a>
+      <a href="../#mision">Misión</a>
+      <a href="../#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="../#contacto">Sumate</a>
+    </div>
+  </div>
+</header>
+
+<main id="contenido" tabindex="-1">
+  <article>
+
+    <!-- CABECERA DEL DOSSIER -->
+    <header class="article-hero">
+      <div class="wrap">
+        <nav class="crumb" aria-label="Ruta de navegación">
+          <a href="../">Inicio</a>
+          <span class="sep" aria-hidden="true">›</span>
+          <span>Dossier 01</span>
+          <span class="sep" aria-hidden="true">›</span>
+          <span class="current" aria-current="page">Archivos y modelos abiertos</span>
+        </nav>
+        <h1>Memoria abierta</h1>
+        <p class="article-lead">Un proyecto de la Facultad de Ingeniería usa modelos abiertos para leer los archivos de la dictadura. La decisión es técnica: los documentos no pueden salir del país y su lectura tiene que poder auditarse.</p>
+        <p class="article-meta">Dossier 01 · 9 de noviembre de 2026 · 7 min de lectura · Por CHAISH</p>
+        <hr class="rule">
+      </div>
+    </header>
+
+    <!-- EL ARCHIVO -->
+    <section class="article-section" id="archivo">
+      <div class="wrap">
+        <h2>El archivo</h2>
+        <div class="split">
+          <div class="body-col">
+            <p>El Archivo Berrutti reúne documentos de inteligencia militar del período dictatorial y predictatorial uruguayo. El Estado lo recuperó en 2006, en el ex Centro General de Instrucción para Oficiales de Reserva. La colección abarca de 1968 a 2004 y lleva el nombre de la ministra que impulsó su recuperación: Azucena Berrutti.</p>
+            <p>La mayor parte llegó en unos 1.500 rollos de microfilm. Cada rollo tiene miles de páginas: actas de detención, allanamientos, escuchas, fichas, recortes de prensa y comunicados oficiales. Son más de dos millones de documentos.</p>
+            <p>El archivo mezcla documentos de la Dirección Nacional de Información e Inteligencia, el Órgano Coordinador de Operaciones Antisubversivas y el Servicio de Información de Defensa. El papel se guardó durante años sin ventilación y con humedad. Muchas imágenes quedaron veladas, manchadas o partidas. Para una persona es difícil leerlas; para un programa de reconocimiento óptico, mucho más.</p>
+            <p>CRUZAR empieza por el archivo. Antes de extraer nombres hay que reconstruir el texto, y esa reconstrucción es lenta y depende de mucha gente.</p>
+            <p class="src">Fuente: <a href="#f1">[1]</a> <a href="#f3">[3]</a></p>
+          </div>
+          <figure class="fig">
+            <img src="assets/archivo-fragmento.png" width="435" height="510" loading="lazy" decoding="async"
+                 alt="Tres recortes del archivo en tres calidades: nítido, con desenfoque y muy pixelado. Los subtítulos dicen «Fragmento de documento de calidad alta» (figura 5.1), «calidad media» (figura 5.2) y «calidad baja» (figura 5.3).">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- EL PROYECTO -->
+    <section class="article-section" id="proyecto">
+      <div class="wrap">
+        <h2>El proyecto</h2>
+        <div class="body-col">
+          <p>El trabajo es una tesis de grado de Ingeniería en Computación de la UdelaR. La hicieron Natalie Alaniz Ferreira, Facundo Díaz Rodríguez y Agustín Martínez Acuña, con la tutoría de Aiala Rosá e Ignacio Sastre. Se defendió en 2025, en el Instituto de Computación (InCo).</p>
+          <p>El prototipo recibe una imagen, produce texto y marca personas, organizaciones y lugares. La meta era que el archivo quedara legible para quien lo investiga.</p>
+          <p>El prototipo incluye una aplicación web para probar el pipeline de punta a punta con documentos reales. Se presentó en Ingeniería de Muestra. Agustín empezó después una maestría, codirigida por Aiala Rosá y Lorena Etcheverry, para seguir con el tema.</p>
+          <p>El informe se publica con licencia CC-BY 4.0. El proyecto es de la Facultad de Ingeniería, no de CHAISH: esta página lo estudia y lo atribuye.</p>
+        </div>
+        <dl class="ficha">
+          <div>
+            <dt>AUTORES</dt>
+            <dd>Natalie Alaniz Ferreira<br>Facundo Díaz Rodríguez<br>Agustín Martínez Acuña</dd>
+          </div>
+          <div>
+            <dt>TUTORES</dt>
+            <dd>Aiala Rosá<br>Ignacio Sastre</dd>
+          </div>
+          <div>
+            <dt>LICENCIA</dt>
+            <dd>CC-BY 4.0</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- BANDA: LA TESIS -->
+    <section class="band-tesis">
+      <div class="wrap">
+        <p class="label">LA TESIS</p>
+        <p class="tesis-statement">Un archivo que no sale del país solo se puede leer con modelos locales, y solo se puede auditar con modelos abiertos.</p>
+      </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section class="article-section" id="como-funciona">
+      <div class="wrap">
+        <h2>Cómo funciona</h2>
+        <p class="article-intro">El pipeline tiene dos módulos construidos y varias etapas que todavía son plan.</p>
+        <div class="pipe">
+          <div class="pipe-step">
+            <p class="num">01</p>
+            <div>
+              <h3>Imagen → texto.</h3>
+              <p>El sistema prueba motores tradicionales como Tesseract y MonkeyOCR, y modelos multimodales como Llama 3.2 Vision y MiniCPM-o 2.6. Un preprocesamiento recorta bordes y separa bloques para transcribir cada uno por separado.</p>
+            </div>
+          </div>
+          <div class="pipe-step">
+            <p class="num">02</p>
+            <div>
+              <h3>Texto → entidades.</h3>
+              <p>Modelos de la familia BERT, ajustados al dominio, marcan personas, organizaciones y lugares. Como hay pocos ejemplos anotados, el equipo generó datos sintéticos con Llama 3.1 y QwQ 32B, y les agregó ruido para imitar los errores del OCR.</p>
+            </div>
+            <figure class="fig">
+              <img src="assets/ner-ejemplo.png" width="634" height="289" loading="lazy" decoding="async"
+                   alt="Figura 6.5: la misma oración dos veces, limpia y con ruido de OCR. «El teniente Sosa, integrante de la Asesoría Letrada de la Armada, fue asignado al Área Naval Cerro en 1975.» «Teniente Sosa» aparece marcado como persona y «Asesoría Letrada de la Armada» como organización.">
+            </figure>
+          </div>
+          <div class="pipe-step">
+            <p class="num">03</p>
+            <div>
+              <h3>Entidades → cruces.</h3>
+              <p>La tesis no llega hasta acá: CRUZAR desarrolla después la correferencia, las relaciones, los eventos y el grafo de conocimiento. El prototipo deja el texto y las entidades listos para esa etapa.</p>
+            </div>
+          </div>
+          <div class="pipe-step">
+            <p class="num">04</p>
+            <div>
+              <h3>Validación humana.</h3>
+              <p>LUISA convoca a personas para transcribir recortes pequeños; el sistema compara varias respuestas y reconstruye el texto. Esa anotación alimenta el entrenamiento y controla la calidad.</p>
+            </div>
+          </div>
+        </div>
+        <p class="pipe-results">Los resultados: BLEU de 0,85 en documentos fáciles y 0,45 en los difíciles. En entidades, F1 macro de 0,51 contra 0,26 del baseline. En documentos simples, Tesseract sigue siendo competitivo; en los dañados, los modelos multimodales sacan ventaja.</p>
+        <p class="src">Fuente: <a href="#f1">[1]</a> <a href="#f2">[2]</a> <a href="#f3">[3]</a></p>
+      </div>
+    </section>
+
+    <!-- LA CONDICIÓN ABIERTA -->
+    <section class="article-section" id="condicion-abierta">
+      <div class="wrap">
+        <h2>La condición abierta</h2>
+        <p class="article-intro">El proyecto usa modelos abiertos porque necesita ejecutar el sistema en infraestructura propia y someterlo a revisión. La apertura, acá, es una condición técnica.</p>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Modelos abiertos</h3>
+            <p>El equipo trabajó con pesos descargables: Llama 3.2 Vision, MiniCPM-o 2.6, modelos BERT y Qwen2.5-VL. Un modelo al que solo se llega por API no sirve para documentos confidenciales. La apertura que importa acá es la que permite ejecutar el modelo en una máquina propia.</p>
+            <p>Pero abierto no es una sola cosa. Solaiman describe seis niveles, de completamente cerrado a completamente abierto. Mozilla lo dice sin vueltas: open source y open weights son afirmaciones distintas, y ningún modelo de su tabla publica el corpus completo. Descargar pesos no equivale a poder reproducir el entrenamiento.</p>
+            <p class="src">Fuente: <a href="#f2">[2]</a> <a href="#f4">[4]</a> <a href="#f5">[5]</a></p>
+          </article>
+          <article class="card">
+            <h3>Datos y anotación</h3>
+            <p>LUISA es la puerta para que cualquiera colabore: muestra recortes pequeños, recibe transcripciones y las cruza. Con esa ayuda se procesaron 1.500 páginas del archivo. La tesis se publica con CC-BY 4.0, así que el método y los resultados quedan disponibles para revisión.</p>
+            <p>Sin ejemplos correctos el modelo no aprende, y construir ese corpus fue gran parte del trabajo.</p>
+            <p class="src">Fuente: <a href="#f1">[1]</a> <a href="#f3">[3]</a></p>
+          </article>
+          <article class="card">
+            <h3>Infraestructura local</h3>
+            <p>Los experimentos corrieron en ClusterUY, el centro nacional de supercomputación, con una GPU A40 de 48 GB. Los documentos se procesan acá: nada sale a servidores externos. Esa decisión cuesta potencia y tiempo, y se sostiene por confidencialidad.</p>
+            <p>En la entrevista, Aiala Rosá lo dice sin vueltas. «Todo esto va a ser local y la utilización de modelos que vamos a hacer va a ser siempre de código abierto».</p>
+            <p class="src">Fuente: <a href="#f2">[2]</a> <a href="#f7">[7]</a> <a href="#f4">[4]</a></p>
+          </article>
+          <article class="card">
+            <h3>Evaluación y gobernanza</h3>
+            <p>Abrir el código no alcanza si nadie mide lo que produce. El equipo reporta BLEU, precisión, recall y F1 por clase, y documenta los errores. Esa evaluación es parte de la apertura.</p>
+            <p>AGESIC y la UAIP publicaron en 2024 recomendaciones de transparencia algorítmica. La Ley 18.381 ya establece que la información sobre algoritmos públicos es pública por defecto. El dossier no pide una ley nueva: pide usar la que existe.</p>
+            <p class="src">Fuente: <a href="#f1">[1]</a> <a href="#f6">[6]</a></p>
+          </article>
+        </div>
+        <figure class="quote-block">
+          <p class="label">CITA</p>
+          <blockquote>«Todo esto va a ser local y la utilización de modelos que vamos a hacer va a ser siempre de código abierto».</blockquote>
+          <figcaption>— Aiala Rosá, tutora del proyecto, en la diaria (36:00).</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- LOS LÍMITES -->
+    <section class="article-section" id="limites">
+      <div class="wrap">
+        <h2>Los límites</h2>
+        <div class="limit-list">
+          <div class="limit">
+            <p class="num">01</p>
+            <p>El sistema es un prototipo. Un F1 de 0,51 en entidades significa que todavía se le escapan nombres y que le cuesta identificar organizaciones y lugares. En validación, las personas fueron la clase mejor reconocida (0,51); las organizaciones quedaron en 0,37 y los lugares en 0,29.</p>
+          </div>
+          <div class="limit">
+            <p class="num">02</p>
+            <p>El OCR también falla. En documentos difíciles, el BLEU baja a 0,45. Los modelos multimodales pueden alucinar: agregan texto que no está en la imagen. El equipo lo evita con prompts que prohíben corregir o completar, pero el riesgo no desaparece.</p>
+          </div>
+          <div class="limit">
+            <p class="num">03</p>
+            <p>Hay límites de confidencialidad. Las herramientas más potentes están en servidores externos y no se pueden usar. La conexión con la base de LUISA no se automatizó por políticas de CRUZAR: el acceso a los datos requiere autorización.</p>
+          </div>
+          <div class="limit">
+            <p class="num">04</p>
+            <p>Hay un límite de diseño: el proyecto no reemplaza a historiadores. Acelera la búsqueda; la interpretación sigue siendo humana. El equipo también documenta un sesgo en la generación de datos sintéticos: los lugares dependen de diccionarios incompletos.</p>
+          </div>
+          <div class="limit">
+            <p class="num">05</p>
+            <p>Abierto no significa seguro. Un modelo local puede fallar igual, y un archivo abierto puede exponer datos sensibles. La apertura agrega auditoría, no garantías.</p>
+          </div>
+        </div>
+        <p class="src">Fuente: <a href="#f1">[1]</a> <a href="#f2">[2]</a> <a href="#f5">[5]</a></p>
+      </div>
+    </section>
+
+    <!-- QUÉ SIGUE -->
+    <section class="article-section" id="que-sigue">
+      <div class="wrap">
+        <h2>Qué sigue</h2>
+        <div class="body-col">
+          <p>Un archivo nacional que solo se puede leer con modelos ajenos no es soberano: es alquiler. La tesis muestra que hay otra forma, más nuestra y menos vistosa.</p>
+          <p>Tener un modelo propio no basta. IA soberana es poder elegir, auditar y reemplazar el modelo con el que se lee tu propia historia. Eso exige pesos abiertos, datos que se quedan acá y gente que los mantenga. El cómputo también cuenta: sin capacidad local, el archivo vuelve a depender de una API.</p>
+          <p>Podés colaborar con LUISA transcribiendo recortes. La soberanía también se construye entre tod@s.</p>
+        </div>
+        <figure class="fig fig--wide">
+          <img src="assets/luisa-interfaz.png" width="1335" height="763" loading="lazy" decoding="async"
+               alt="Captura de LUISA: cinco recortes manuscritos —«diciembre», «de», «1974», unas comillas y una firma— alineados sobre una fila de campos de texto, con el primero activo para escribir la transcripción.">
+        </figure>
+        <div class="next-actions">
+          <a class="btn btn-primary" href="../#contacto">Sumate al grupo</a>
+          <a class="btn btn-miel" href="https://mh.udelar.edu.uy/luisa/" target="_blank" rel="noopener">Colaborá en LUISA</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUENTES -->
+    <section class="article-section" id="fuentes">
+      <div class="wrap">
+        <h2>Fuentes</h2>
+        <ol class="source-list">
+          <li class="source-item" id="f1">
+            <p class="num">01</p>
+            <div>
+              <p class="cite">Alaniz Ferreira, Díaz Rodríguez, Martínez Acuña. «Reconocimiento y extracción de entidades a partir de archivos del pasado reciente». Tesis de grado, FIng/UdelaR, 2025.</p>
+              <a class="url" href="https://www.colibri.udelar.edu.uy/items/b832a5cc-2c39-4fdb-8ec8-5b84e182e874" target="_blank" rel="noopener">https://www.colibri.udelar.edu.uy/items/b832a5cc-2c39-4fdb-8ec8-5b84e182e874</a>
+            </div>
+          </li>
+          <li class="source-item" id="f2">
+            <p class="num">02</p>
+            <div>
+              <p class="cite">«Inteligencia artificial para investigar los archivos de la dictadura». Entrevista a Aiala Rosá y Agustín Martínez. la diaria, Las ganas, 12/10/2026.</p>
+              <a class="url" href="https://www.youtube.com/watch?v=F3TVZnkLGxY" target="_blank" rel="noopener">https://www.youtube.com/watch?v=F3TVZnkLGxY</a>
+            </div>
+          </li>
+          <li class="source-item" id="f3">
+            <p class="num">03</p>
+            <div>
+              <p class="cite">LUISA — Leyendo Unidos para Interpretar loS Archivos. FIC + FIng, UdelaR.</p>
+              <a class="url" href="https://mh.udelar.edu.uy/luisa/" target="_blank" rel="noopener">https://mh.udelar.edu.uy/luisa/</a>
+            </div>
+          </li>
+          <li class="source-item" id="f4">
+            <p class="num">04</p>
+            <div>
+              <p class="cite">Mozilla. «The State of Open Source AI 2026», vol. 1.1, septiembre de 2026.</p>
+              <a class="url" href="https://stateofopensource.ai/state-of-open-source-ai-v1-1.pdf" target="_blank" rel="noopener">https://stateofopensource.ai/state-of-open-source-ai-v1-1.pdf</a>
+            </div>
+          </li>
+          <li class="source-item" id="f5">
+            <p class="num">05</p>
+            <div>
+              <p class="cite">Solaiman, I. «The Gradient of Generative AI Release: Methods and Considerations». arXiv 2302.04844, 2023.</p>
+              <a class="url" href="https://arxiv.org/abs/2302.04844" target="_blank" rel="noopener">https://arxiv.org/abs/2302.04844</a>
+            </div>
+          </li>
+          <li class="source-item" id="f6">
+            <p class="num">06</p>
+            <div>
+              <p class="cite">AGESIC y UAIP. «Recomendaciones sobre transparencia algorítmica», 17/07/2024.</p>
+              <a class="url" href="https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/publicaciones/recomendaciones-sobre-transparencia-algoritmica" target="_blank" rel="noopener">https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/publicaciones/recomendaciones-sobre-transparencia-algoritmica</a>
+            </div>
+          </li>
+          <li class="source-item" id="f7">
+            <p class="num">07</p>
+            <div>
+              <p class="cite">ClusterUY — Centro Nacional de Supercomputación.</p>
+              <a class="url" href="https://cluster.uy/" target="_blank" rel="noopener">https://cluster.uy/</a>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+  </article>
+</main>
+
+<footer class="site">
+  <div class="wrap foot-grid">
+    <div>
+      <div class="brand"><svg class="brand-logo brand-boleadoras" viewBox="0 0 40 40" role="img" aria-label="CHAISH" focusable="false">
+          <path class="cord" d="M16 17 L14 23"/>
+          <path class="cord" d="M24 17 L26 23"/>
+          <circle class="b1" cx="11" cy="20" r="6.5"/>
+          <circle class="b2" cx="20" cy="14" r="6.5"/>
+          <circle class="b3" cx="29" cy="20" r="6.5"/>
+        </svg><span>CHAISH</span></div>
+      <p>Hub comunitario de seguridad en IA desde Uruguay, por y para tod@s.</p>
+      <p class="foot-note">Los enlaces externos abren en una pestaña nueva.</p>
+    </div>
+    <div>
+      <h3>Navegación</h3>
+      <ul><li><a href="../#porque">Por qué</a></li><li><a href="../#hacemos">Qué hacemos</a></li><li><a href="../#aprendemos">Aprendemos</a></li><li><a href="../#mision">Misión</a></li><li><a href="../#faq">FAQ</a></li></ul>
+    </div>
+    <div>
+      <h3>Recursos</h3>
+      <ul><li><a href="../#sas">AI Safety vs AI Security</a></li><li><a href="../#videos">Videos</a></li><li><a href="../#mapa">La IA en Uruguay</a></li><li><a href="../#profundizar">Para profundizar</a></li></ul>
+    </div>
+    <div>
+      <h3>Comunidad</h3>
+      <ul><li><a href="mailto:chaish@iaparaelbien.org">Escribinos</a></li><li><a class="social-link" href="https://discord.gg/ezK2rZ9Wj" target="_blank" rel="noopener">Discord<span class="social-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg></span></a></li></ul>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© <span id="year"></span> CHAISH (Charrua AI Safety Hub)</span>
+    <span>Hecho con IA, para el interés común.</span>
+  </div>
+</footer>
+
+<div class="cookie" id="cookie" role="region" aria-label="Aviso de cookies" hidden>
+  <p>Usamos cookies para mejorar el sitio y entender mejor tu interés por la seguridad en IA.</p>
+  <button class="btn btn-primary" id="cookieOk">Aceptar</button>
+  <button class="btn later" id="cookieNo">Solo necesarias</button>
+</div>
+
+<script src="../../script.js"></script>
+</body>
+</html>

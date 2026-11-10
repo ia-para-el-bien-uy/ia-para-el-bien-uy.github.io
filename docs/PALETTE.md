@@ -5,11 +5,16 @@ Los valores viven en `chaish/style.css` (`:root`). Acá van los roles, no los he
 Fuente de diseño: el archivo Penpot **`chaish`** — los sets `live`, `hybrid` y `tierra` definen estos
 valores; el CSS los reproduce. Los sets `primitives`/`semantic` guardan la paleta azul anterior.
 
-## Superficies (3)
+## Superficies (4)
 
 - `--white` crema — todas las secciones claras.
-- `--action` miel — sólo `.cta .wrap`, siempre con texto `--ink`.
+- `--action` miel — sólo `.cta .wrap` y el CTA secundario del dossier (`.btn-miel`), siempre con texto `--ink`.
 - `--ink` — footer, cookie, `.statement`.
+- `--jaspe` — banda de tesis del dossier (`.band-tesis`), texto `--white`.
+
+La cita destacada del dossier (`.quote-block`) va sobre `--celeste` (oliva) con texto `--white` y barra
+`--action`. `--arena` quedó sin uso con ese cambio: el token sigue en `:root` y en Penpot
+(`live.color.arena`), pero no se reintroduce sin una decisión de diseño.
 
 ## Acento
 

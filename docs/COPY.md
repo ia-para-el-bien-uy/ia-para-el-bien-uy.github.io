@@ -5,6 +5,8 @@
 - Captions/videos humanizados (ritmo variado, sin cadencia uniforme de IA).
 - Rutas de assets relativas (solo Google Fonts es absoluto).
 - **Bilingüe ES/EN en la misma página:** cada bloque lleva su `<span lang="es">` y su `<span lang="en">`. Toda edición de copy va en los dos idiomas, o el espejo queda desfasado.
+  Excepción: `chaish/dossier-01/` se publica sólo en español — sin spans `lang` y sin botón de idioma en
+  el header. Traducirlo implica agregar el toggle y el par ES/EN completo en la misma pasada.
 
 ## Fuerza política y fuentes
 
