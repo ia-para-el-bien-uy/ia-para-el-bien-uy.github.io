@@ -154,12 +154,22 @@
   .value h3{font-size:1.4rem;font-weight:600;margin-bottom:6px}
   .value p{color:var(--muted);font-size:1rem;max-width:56ch;margin:0}
 
-  /* Step — editorial rows */
-  .step{padding:clamp(30px,4vw,44px) 0;border-bottom:1px solid var(--line)}
+  /* Step — editorial rows (con marcador de lista, diseño: Penpot #hacemos) */
+  .step{display:grid;grid-template-columns:80px minmax(0,1fr);padding:clamp(30px,4vw,44px) 0;border-bottom:1px solid var(--line)}
   .step:first-of-type{border-top:1px solid var(--line)}
   .step h3{font-size:clamp(1.6rem,3vw,2rem);font-weight:600;margin-bottom:10px}
   .step p{color:var(--muted);font-size:1.05rem;max-width:54ch}
   .step .tag{display:inline-block;margin-top:16px;font-size:.82rem;font-weight:700;color:var(--celeste-deep)}
+  /* Marcador de lista: boleadora compacta de 20 px en la columna 80/48, centrada y al ras de la
+     primera línea. Mismo SVG que .brand-logo menos el disco: la viñeta va desnuda. */
+  .idx{display:flex;align-items:flex-start;justify-content:center;margin:0}
+  .idx-mark{display:block;width:20px;height:20px;flex:0 0 auto;overflow:visible}
+  .idx-mark .b1{fill:var(--marca-1)}
+  .idx-mark .b2{fill:var(--marca-2)}
+  .idx-mark .b3{fill:var(--marca-3)}
+  .idx-mark .cord{fill:none;stroke:var(--marca-cord);stroke-width:2.4;stroke-linecap:round}
+  .step>.idx{padding-top:3px}
+  @media (max-width:900px){.step{grid-template-columns:48px minmax(0,1fr)}}
 
   /* Lab — technical list */
   .cap{padding:26px 0;border-bottom:1px solid var(--line)}

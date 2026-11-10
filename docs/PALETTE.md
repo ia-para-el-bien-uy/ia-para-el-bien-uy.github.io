@@ -36,7 +36,9 @@ El azul `#1a6dc4` ya no existe en el CSS: no reintroducirlo sin una decisión de
   geometría vive en el HTML; el color sale de `--marca-disco` + `--marca-logo-1/2/3` + `--marca-logo-cord`,
   que es un set emparejado con la superficie del disco: sobre crema el disco es tinta y las piedras aclaran
   (`--marca-1d/2d/3d`, `--marca-cordd`), en el footer el disco es crema y las piedras vuelven a
-  `--marca-1/2/3` + `--marca-cord`. Los marcadores de lista nunca siguen a `--marca-logo-*`.
+  `--marca-1/2/3` + `--marca-cord`. Los marcadores de lista nunca siguen a `--marca-logo-*`. Las filas
+  `.step` de `#hacemos` reservan la columna del marcador (80 px, 48 px en ≤900) y el mark va centrado en
+  ella: los valores viven en `chaish/style.css`.
 - Miel siempre con texto `--ink`, nunca blanco.
 - `--sand` eliminado; no reintroducir.
 - Radio 0 salvo el CTA (`--radius-card-right`).
