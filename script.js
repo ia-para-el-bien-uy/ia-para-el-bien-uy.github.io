@@ -1,6 +1,10 @@
 document.documentElement.classList.add('js');
 
-document.getElementById('year').textContent = new Date().getFullYear();
+// El chrome real de cada página manda: si falta un control (una página sólo en
+// español no tiene toggle de idioma), el script no debe romperse ni forzar el
+// idioma guardado sobre contenido que no tiene par traducido.
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // Language toggle (resilient to blocked localStorage / NoScript)
 const store = {
@@ -17,15 +21,17 @@ function syncLangBtn() {
   // axe (2.5.3) compara palabra por palabra: el texto visible va primero y suelto.
   langBtn.setAttribute('aria-label', en ? 'ES — switch language to Spanish' : 'EN — cambiar idioma a inglés');
 }
-if (store.get('bien-lang') === 'en') htmlEl.setAttribute('lang', 'en');
-syncLangBtn();
-langBtn.addEventListener('click', () => {
-  const cur = htmlEl.getAttribute('lang') || 'es';
-  const next = cur === 'en' ? 'es' : 'en';
-  htmlEl.setAttribute('lang', next);
-  store.set('bien-lang', next);
+if (langBtn) {
+  if (store.get('bien-lang') === 'en') htmlEl.setAttribute('lang', 'en');
   syncLangBtn();
-});
+  langBtn.addEventListener('click', () => {
+    const cur = htmlEl.getAttribute('lang') || 'es';
+    const next = cur === 'en' ? 'es' : 'en';
+    htmlEl.setAttribute('lang', next);
+    store.set('bien-lang', next);
+    syncLangBtn();
+  });
+}
 
 // Nav horizontal (sin burger): scrollspy del link activo
 const navLinks = Array.from(document.querySelectorAll('#navlinks a[href^="#"]'));
@@ -95,18 +101,20 @@ const hideCookie = () => {
   cookie.classList.remove('show');
   setTimeout(() => { cookie.hidden = true; }, 350);
 };
-if (!store.get('cookie-bien')) {
-  setTimeout(() => {
-    cookie.hidden = false;
-    requestAnimationFrame(() => cookie.classList.add('show'));
-  }, 900);
+if (cookie) {
+  if (!store.get('cookie-bien')) {
+    setTimeout(() => {
+      cookie.hidden = false;
+      requestAnimationFrame(() => cookie.classList.add('show'));
+    }, 900);
+  }
+  const dismiss = () => {
+    hideCookie();
+    store.set('cookie-bien', '1');
+  };
+  document.getElementById('cookieOk').addEventListener('click', dismiss);
+  document.getElementById('cookieNo').addEventListener('click', dismiss);
 }
-const dismiss = () => {
-  hideCookie();
-  store.set('cookie-bien', '1');
-};
-document.getElementById('cookieOk').addEventListener('click', dismiss);
-document.getElementById('cookieNo').addEventListener('click', dismiss);
 
 // Láminas-interludio: cada una entra cuando cruza el viewport (rotateInDownRight).
 // Sin IO o con movimiento reducido, se muestran de entrada.
