@@ -46,7 +46,13 @@ Después de pushear, verificar **en este orden**. Releer la URL viva sola **no p
 - Si `pages.status` queda `errored` y el job `build` queda `queued` para siempre, el pipeline está trabado. **Un agente NO puede recuperarlo**: el PAT devuelve `403` en `actions:write` / `pages:write`. Decirlo, en vez de reintentar.
 - Recuperación (**solo admin**): *Actions → re-run del workflow fallido*, o *Settings → Pages → Save*.
 - Un estado `errored` se destraba solo con el próximo build exitoso: **un commit real alcanza** (así se destrabó el 2026-10-08, tras ~35 min de builds fallidos). Si los builds siguen fallando o quedan `queued`, el problema es del lado de GitHub: esperar y reintentar, o re-run desde la UI. Un commit vacío solo para re-disparar ensucia el historial sin cambiar el timing.
-- `https_enforced: false` — `http://` no redirige a HTTPS. Conviene activar "Enforce HTTPS" en *Settings → Pages*.
+- `https_enforced: true` (activado 2026-11-10): `http://` devuelve **301** a la misma URL en
+  `https://` en todas las rutas del apex. Verificación viva: `curl -sSI http://iaparaelbien.org/chaish/ | head -1`
+  → `301`. Si alguna vez vuelve a `200`, el setting se cayó (o hay una entrada cacheada de
+  `max-age=600` sirviendo la generación anterior: esperar a que expire o pedir una ruta no pedida antes).
+- Observatorio de headers (MDN Observatory): `Strict-Transport-Security`, `X-Frame-Options` y
+  `X-Content-Type-Options` siguen faltando y no se arreglan desde el markup —Pages no emite headers
+  propios y `frame-ancestors` se ignora en `<meta>`. Sólo un proxy/CDN delante del apex los agrega.
 
 ## Detalle (carga solo cuando hace falta)
 
