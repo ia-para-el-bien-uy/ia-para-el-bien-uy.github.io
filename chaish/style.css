@@ -317,7 +317,7 @@ main a[target="_blank"]::after,footer a[target="_blank"]::after{content:"";displ
   .statement-words{display:flex;flex-wrap:wrap;justify-content:center;gap:.12em .45em;margin:0;font-family:"Anton",var(--font);font-weight:400;text-transform:uppercase;font-size:clamp(2rem,6.2vw,4.6rem);line-height:1;letter-spacing:.01em}
   /* Banda de marca: misma familia que la de pilares, tipografia menor */
   .statement-brand{padding:clamp(40px,5vw,64px) 0}
-  .statement-brand .statement-words{font-size:clamp(1.5rem,3.4vw,2.6rem);letter-spacing:.02em}
+  .statement-brand .statement-words{font-size:clamp(1.5rem,3.4vw,2.6rem);letter-spacing:.02em;color:var(--arena)}
   /* Marca boleadoras tricolor (museo): el logo lleva un disco detras del mark; el marcador de lista va desnudo */
   .brand-boleadoras{width:26px;height:26px;flex:0 0 auto;display:block;overflow:visible}
   .brand-boleadoras .disc{fill:var(--marca-disco)}
@@ -339,10 +339,23 @@ main a[target="_blank"]::after,footer a[target="_blank"]::after{content:"";displ
   .hero-foot.breadcrumb .sep{color:var(--muted);font-weight:400}
   /* 90/10: el oliva sostiene la UI; el jaspe marca UN momento narrativo (banda de marca) */
   .statement-brand{background:var(--ink)}
-  /* Patron de las boleadoras sobre ink: tres palabras, tres piedras (tonos oscuros) */
-  .statement-words .d1{color:var(--marca-1d)}
-  .statement-words .d2{color:var(--marca-2d)}
-  .statement-words .d3{color:var(--marca-3d)}
+  /* Pilares: tres palabras, tres piedras (tonos oscuros). Estas clases son de #pilares:
+     la banda de marca colorea por letra tomada y no las usa. */
+  #pilares .statement-words .d1{color:var(--marca-1d)}
+  #pilares .statement-words .d2{color:var(--marca-2d)}
+  #pilares .statement-words .d3{color:var(--marca-3d)}
+  /* Banda de marca: seis letras toman el color de la piedra de la que salen (CH·AI·S·H),
+     el resto va en arena, y el acronimo repite el codigo. Los grupos no se parten. */
+  .statement-brand .kicker{opacity:1;color:var(--arena)}
+  .statement-words .w{white-space:nowrap}
+  .statement-words .c1{color:var(--marca-1d)}
+  .statement-words .c2{color:var(--marca-2)}
+  .statement-words .c3{color:var(--marca-3d)}
+  /* Mobile: la medida del board (318 px de contenido en 390) es la que deja caer el acronimo
+     a la segunda linea, como en el diseno. No se fuerza con <br>. */
+  @media (max-width:560px){
+    .statement-brand .statement-words{max-width:318px;margin-left:auto;margin-right:auto}
+  }
 
   /* Láminas junto al texto — una por sección, entrada individual al cruzar el viewport.
      Keyframes equivalentes a animate.css `rotateInDownRight` (MIT, © Daniel Eden),
