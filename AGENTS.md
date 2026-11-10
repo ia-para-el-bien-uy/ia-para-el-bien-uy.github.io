@@ -54,6 +54,7 @@ Después de pushear, verificar **en este orden**. Releer la URL viva sola **no p
 - `docs/COPY.md` — convenciones de copy (voseo, "de forma abierta", captions)
 - `docs/WORKFLOW.md` — entorno del agente
 - `docs/OPENGREP.md` — scan estático: `bash scripts/scan.sh` (gate CI: `--severity ERROR --error`)
+- `docs/HANDOVER-H2-BOLEADORA.md` — handover de la boleadora D0–D3 para los h2 (Penpot listo; integración pendiente)
 
 ## Docs (para que no envejezcan)
 
