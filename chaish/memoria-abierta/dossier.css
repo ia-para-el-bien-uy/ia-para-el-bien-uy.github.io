@@ -40,7 +40,6 @@
 /* ---------- Pipeline ---------- */
 .pipe{margin-top:56px;border-top:1px solid var(--line)}
 .pipe-step{display:grid;grid-template-columns:80px minmax(0,1fr);min-height:176px;padding:20px 0;border-bottom:1px solid var(--line)}
-.pipe-step .num{font-family:var(--font-mono);font-size:1.125rem;line-height:1.4;color:var(--celeste)}
 .pipe-step h3{font-size:1.375rem;line-height:1.2;letter-spacing:-.01em}
 .pipe-step p{margin-top:6px;font-size:1rem;line-height:1.7}
 .pipe-step .fig{grid-column:1 / -1;width:100%;max-width:634px;margin:28px auto 0}
@@ -71,7 +70,6 @@ p.src a:hover{color:var(--ink);border-color:currentColor}
 /* ---------- Límites ---------- */
 .limit-list{margin-top:64px;border-top:1px solid var(--line)}
 .limit{display:grid;grid-template-columns:80px minmax(0,1fr);padding:20px 0;border-bottom:1px solid var(--line)}
-.limit .num{font-family:var(--font-mono);font-size:.8125rem;line-height:1.4;color:var(--celeste);padding-top:3px}
 .limit p{font-size:1rem;line-height:1.7}
 
 /* ---------- Qué sigue ---------- */
@@ -83,7 +81,6 @@ p.src a:hover{color:var(--ink);border-color:currentColor}
 /* ---------- Fuentes ---------- */
 .source-list{margin-top:64px;list-style:none;padding:0;border-top:1px solid var(--line)}
 .source-item{display:grid;grid-template-columns:64px minmax(0,1fr);padding:20px 0 36px;border-bottom:1px solid var(--line)}
-.source-item .num{font-family:var(--font-mono);font-size:.8125rem;line-height:1.4;color:var(--celeste);padding-top:2px}
 .source-item .cite{font-size:.875rem;line-height:1.45}
 .source-item .url{display:inline-block;margin-top:8px;font-family:var(--font-mono);font-size:.8125rem;line-height:1.4;color:var(--muted);overflow-wrap:anywhere;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s,color .15s}
 .source-item .url:hover{color:var(--ink);border-color:currentColor}
@@ -92,6 +89,23 @@ p.src a:hover{color:var(--ink);border-color:currentColor}
 .ficha{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:56px;padding:16px 0 32px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .ficha dt{font-family:var(--font-mono);font-size:.8125rem;line-height:1.4;letter-spacing:.08em;color:var(--celeste)}
 .ficha dd{margin:5px 0 0;font-size:.875rem;line-height:1.5}
+
+/* ---------- Marcador de lista: boleadora compacta ---------- */
+/* Variante C de Penpot: el numeral 01/02/03 se reemplaza por el mark de
+   marca a 20 px, centrado en el rail y alineado a la primera línea.
+   El número sigue en el DOM para lectores de pantalla. */
+.idx{display:flex;align-items:flex-start;justify-content:center;margin:0}
+.idx-mark{display:block;width:20px;height:20px;flex:0 0 auto;overflow:visible}
+.idx-mark .b1{fill:var(--marca-1)}
+.idx-mark .b2{fill:var(--marca-2)}
+.idx-mark .b3{fill:var(--marca-3)}
+.idx-mark .cord{fill:none;stroke:var(--marca-cord);stroke-width:2.4;stroke-linecap:round}
+/* el margin de .pipe-step p no debe empujar el mark */
+.pipe-step .idx{margin-top:0;padding-top:3px}
+.limit .idx{padding-top:4px}
+.source-item .idx{padding-top:0}
+/* Número solo para lectores de pantalla: el nodo visual es el mark. */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
 
 /* ---------- Responsive ---------- */
 @media (max-width:900px){

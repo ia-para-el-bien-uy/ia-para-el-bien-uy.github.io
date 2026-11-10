@@ -128,14 +128,14 @@
         <p class="article-intro">El pipeline tiene dos módulos construidos y varias etapas que todavía son plan.</p>
         <div class="pipe">
           <div class="pipe-step">
-            <p class="num">01</p>
+            <p class="idx"><svg class="idx-mark" viewBox="0 0 40 40" width="20" height="20" aria-hidden="true" focusable="false"><path class="cord" d="M16 17 L14 23"/><path class="cord" d="M24 17 L26 23"/><circle class="b1" cx="11" cy="20" r="6.5"/><circle class="b2" cx="20" cy="14" r="6.5"/><circle class="b3" cx="29" cy="20" r="6.5"/></svg><span class="sr-only">01</span></p>
             <div>
               <h3>Imagen → texto.</h3>
               <p>El sistema prueba motores tradicionales como Tesseract y MonkeyOCR, y modelos multimodales como Llama 3.2 Vision y MiniCPM-o 2.6. Un preprocesamiento recorta bordes y separa bloques para transcribir cada uno por separado.</p>
             </div>
           </div>
           <div class="pipe-step">
-            <p class="num">02</p>
+            <p class="idx"><svg class="idx-mark" viewBox="0 0 40 40" width="20" height="20" aria-hidden="true" focusable="false"><path class="cord" d="M16 17 L14 23"/><path class="cord" d="M24 17 L26 23"/><circle class="b1" cx="11" cy="20" r="6.5"/><circle class="b2" cx="20" cy="14" r="6.5"/><circle class="b3" cx="29" cy="20" r="6.5"/></svg><span class="sr-only">02</span></p>
             <div>
               <h3>Texto → entidades.</h3>
               <p>Modelos de la familia BERT, ajustados al dominio, marcan personas, organizaciones y lugares. Como hay pocos ejemplos anotados, el equipo generó datos sintéticos con Llama 3.1 y QwQ 32B, y les agregó ruido para imitar los errores del OCR.</p>
@@ -146,14 +146,14 @@
             </figure>
           </div>
           <div class="pipe-step">
-            <p class="num">03</p>
+            <p class="idx"><svg class="idx-mark" viewBox="0 0 40 40" width="20" height="20" aria-hidden="true" focusable="false"><path class="cord" d="M16 17 L14 23"/><path class="cord" d="M24 17 L26 23"/><circle class="b1" cx="11" cy="20" r="6.5"/><circle class="b2" cx="20" cy="14" r="6.5"/><circle class="b3" cx="29" cy="20" r="6.5"/></svg><span class="sr-only">03</span></p>
             <div>
               <h3>Entidades → cruces.</h3>
               <p>La tesis no llega hasta acá: CRUZAR desarrolla después la correferencia, las relaciones, los eventos y el grafo de conocimiento. El prototipo deja el texto y las entidades listos para esa etapa.</p>
             </div>
           </div>
           <div class="pipe-step">
-            <p class="num">04</p>
+            <p class="idx"><svg class="idx-mark" viewBox="0 0 40 40" width="20" height="20" aria-hidden="true" focusable="false"><path class="cord" d="M16 17 L14 23"/><path class="cord" d="M24 17 L26 23"/><circle class="b1" cx="11" cy="20" r="6.5"/><circle class="b2" cx="20" cy="14" r="6.5"/><circle class="b3" cx="29" cy="20" r="6.5"/></svg><span class="sr-only">04</span></p>
             <div>
               <h3>Validación humana.</h3>
               <p>LUISA convoca a personas para transcribir recortes pequeños; el sistema compara varias respuestas y reconstruye el texto. Esa anotación alimenta el entrenamiento y controla la calidad.</p>
@@ -210,23 +210,23 @@
         <h2>Los <span class="h2-tail">límites<svg class="boleadora" viewBox="0 0 66 46" width="66" height="46" aria-hidden="true" focusable="false"><g><path class="cord" d="M4 4 C18 6 20 20 12 34"/><path class="cord cord--75" d="M4 4 C26 10 40 20 42 30"/><path class="cord cord--85" d="M4 4 C34 6 54 10 60 18"/><circle class="stone stone--1" cx="4" cy="4" r="3"/><circle class="stone stone--2" cx="12" cy="34" r="4"/><circle class="stone stone--3" cx="42" cy="30" r="4.6"/><circle class="stone stone--1" cx="60" cy="18" r="5.2"/></g></svg></span></h2>
         <div class="limit-list">
           <div class="limit">
-            <p class="num">01</p>
+            <p class="idx"><svg class="idx-mark" viewBox="0 0 40 40" width="20" height="20" aria-hidden="true" focusable="false"><path class="cord" d="M16 17 L14 23"/><path class="cord" d="M24 17 L26 23"/><circle class="b1" cx="11" cy="20" r="6.5"/><circle class="b2" cx="20" cy="14" r="6.5"/><circle class="b3" cx="29" cy="20" r="6.5"/></svg><span class="sr-only">01</span></p>
             <p>El sistema es un prototipo. Un F1 de 0,51 en entidades significa que todavía se le escapan nombres y que le cuesta identificar organizaciones y lugares. En validación, las personas fueron la clase mejor reconocida (0,51); las organizaciones quedaron en 0,37 y los lugares en 0,29.</p>
           </div>
           <div class="limit">
-            <p class="num">02</p>
+            <p class="idx"><svg class="idx-mark" viewBox="0 0 40 40" width="20" height="20" aria-hidden="true" focusable="false"><path class="cord" d="M16 17 L14 23"/><path class="cord" d="M24 17 L26 23"/><circle class="b1" cx="11" cy="20" r="6.5"/><circle class="b2" cx="20" cy="14" r="6.5"/><circle class="b3" cx="29" cy="20" r="6.5"/></svg><span class="sr-only">02</span></p>
             <p>El OCR también falla. En documentos difíciles, el BLEU baja a 0,45. Los modelos multimodales pueden alucinar: agregan texto que no está en la imagen. El equipo lo evita con prompts que prohíben corregir o completar, pero el riesgo no desaparece.</p>
           </div>
           <div class="limit">
-            <p class="num">03</p>
+            <p class="idx"><svg class="idx-mark" viewBox="0 0 40 40" width="20" height="20" aria-hidden="true" focusable="false"><path class="cord" d="M16 17 L14 23"/><path class="cord" d="M24 17 L26 23"/><circle class="b1" cx="11" cy="20" r="6.5"/><circle class="b2" cx="20" cy="14" r="6.5"/><circle class="b3" cx="29" cy="20" r="6.5"/></svg><span class="sr-only">03</span></p>
             <p>Hay límites de confidencialidad. Las herramientas más potentes están en servidores externos y no se pueden usar. La conexión con la base de LUISA no se automatizó por políticas de CRUZAR: el acceso a los datos requiere autorización.</p>
           </div>
           <div class="limit">
-            <p class="num">04</p>
+            <p class="idx"><svg class="idx-mark" viewBox="0 0 40 40" width="20" height="20" aria-hidden="true" focusable="false"><path class="cord" d="M16 17 L14 23"/><path class="cord" d="M24 17 L26 23"/><circle class="b1" cx="11" cy="20" r="6.5"/><circle class="b2" cx="20" cy="14" r="6.5"/><circle class="b3" cx="29" cy="20" r="6.5"/></svg><span class="sr-only">04</span></p>
             <p>Hay un límite de diseño: el proyecto no reemplaza a historiadores. Acelera la búsqueda; la interpretación sigue siendo humana. El equipo también documenta un sesgo en la generación de datos sintéticos: los lugares dependen de diccionarios incompletos.</p>
           </div>
           <div class="limit">
-            <p class="num">05</p>
+            <p class="idx"><svg class="idx-mark" viewBox="0 0 40 40" width="20" height="20" aria-hidden="true" focusable="false"><path class="cord" d="M16 17 L14 23"/><path class="cord" d="M24 17 L26 23"/><circle class="b1" cx="11" cy="20" r="6.5"/><circle class="b2" cx="20" cy="14" r="6.5"/><circle class="b3" cx="29" cy="20" r="6.5"/></svg><span class="sr-only">05</span></p>
             <p>Abierto no significa seguro. Un modelo local puede fallar igual, y un archivo abierto puede exponer datos sensibles. La apertura agrega auditoría, no garantías.</p>
           </div>
         </div>
@@ -258,51 +258,51 @@
     <section class="article-section" id="fuentes">
       <div class="wrap">
         <h2><span class="h2-tail">Fuentes<svg class="boleadora" viewBox="0 0 66 46" width="66" height="46" aria-hidden="true" focusable="false"><g transform="translate(0,46) scale(1,-1)"><path class="cord" d="M4 4 C18 6 20 20 12 34"/><path class="cord cord--75" d="M4 4 C26 10 40 20 42 30"/><path class="cord cord--85" d="M4 4 C34 6 54 10 60 18"/><circle class="stone stone--1" cx="4" cy="4" r="3"/><circle class="stone stone--2" cx="12" cy="34" r="4"/><circle class="stone stone--3" cx="42" cy="30" r="4.6"/><circle class="stone stone--1" cx="60" cy="18" r="5.2"/></g></svg></span></h2>
-        <ol class="source-list">
+        <ol class="source-list" role="list">
           <li class="source-item" id="f1">
-            <p class="num">01</p>
+            <p class="idx" aria-hidden="true"><svg class="idx-mark" viewBox="0 0 40 40" width="20" height="20" aria-hidden="true" focusable="false"><path class="cord" d="M16 17 L14 23"/><path class="cord" d="M24 17 L26 23"/><circle class="b1" cx="11" cy="20" r="6.5"/><circle class="b2" cx="20" cy="14" r="6.5"/><circle class="b3" cx="29" cy="20" r="6.5"/></svg></p>
             <div>
               <p class="cite">Alaniz Ferreira, Díaz Rodríguez, Martínez Acuña. «Reconocimiento y extracción de entidades a partir de archivos del pasado reciente». Tesis de grado, FIng/UdelaR, 2025.</p>
               <a class="url" href="https://www.colibri.udelar.edu.uy/items/b832a5cc-2c39-4fdb-8ec8-5b84e182e874" target="_blank" rel="noopener">https://www.colibri.udelar.edu.uy/items/b832a5cc-2c39-4fdb-8ec8-5b84e182e874</a>
             </div>
           </li>
           <li class="source-item" id="f2">
-            <p class="num">02</p>
+            <p class="idx" aria-hidden="true"><svg class="idx-mark" viewBox="0 0 40 40" width="20" height="20" aria-hidden="true" focusable="false"><path class="cord" d="M16 17 L14 23"/><path class="cord" d="M24 17 L26 23"/><circle class="b1" cx="11" cy="20" r="6.5"/><circle class="b2" cx="20" cy="14" r="6.5"/><circle class="b3" cx="29" cy="20" r="6.5"/></svg></p>
             <div>
               <p class="cite">«Inteligencia artificial para investigar los archivos de la dictadura». Entrevista a Aiala Rosá y Agustín Martínez. la diaria, Las ganas, 12/10/2026.</p>
               <a class="url" href="https://www.youtube.com/watch?v=F3TVZnkLGxY" target="_blank" rel="noopener">https://www.youtube.com/watch?v=F3TVZnkLGxY</a>
             </div>
           </li>
           <li class="source-item" id="f3">
-            <p class="num">03</p>
+            <p class="idx" aria-hidden="true"><svg class="idx-mark" viewBox="0 0 40 40" width="20" height="20" aria-hidden="true" focusable="false"><path class="cord" d="M16 17 L14 23"/><path class="cord" d="M24 17 L26 23"/><circle class="b1" cx="11" cy="20" r="6.5"/><circle class="b2" cx="20" cy="14" r="6.5"/><circle class="b3" cx="29" cy="20" r="6.5"/></svg></p>
             <div>
               <p class="cite">LUISA — Leyendo Unidos para Interpretar loS Archivos. FIC + FIng, UdelaR.</p>
               <a class="url" href="https://mh.udelar.edu.uy/luisa/" target="_blank" rel="noopener">https://mh.udelar.edu.uy/luisa/</a>
             </div>
           </li>
           <li class="source-item" id="f4">
-            <p class="num">04</p>
+            <p class="idx" aria-hidden="true"><svg class="idx-mark" viewBox="0 0 40 40" width="20" height="20" aria-hidden="true" focusable="false"><path class="cord" d="M16 17 L14 23"/><path class="cord" d="M24 17 L26 23"/><circle class="b1" cx="11" cy="20" r="6.5"/><circle class="b2" cx="20" cy="14" r="6.5"/><circle class="b3" cx="29" cy="20" r="6.5"/></svg></p>
             <div>
               <p class="cite">Mozilla. «The State of Open Source AI 2026», vol. 1.1, septiembre de 2026.</p>
               <a class="url" href="https://stateofopensource.ai/state-of-open-source-ai-v1-1.pdf" target="_blank" rel="noopener">https://stateofopensource.ai/state-of-open-source-ai-v1-1.pdf</a>
             </div>
           </li>
           <li class="source-item" id="f5">
-            <p class="num">05</p>
+            <p class="idx" aria-hidden="true"><svg class="idx-mark" viewBox="0 0 40 40" width="20" height="20" aria-hidden="true" focusable="false"><path class="cord" d="M16 17 L14 23"/><path class="cord" d="M24 17 L26 23"/><circle class="b1" cx="11" cy="20" r="6.5"/><circle class="b2" cx="20" cy="14" r="6.5"/><circle class="b3" cx="29" cy="20" r="6.5"/></svg></p>
             <div>
               <p class="cite">Solaiman, I. «The Gradient of Generative AI Release: Methods and Considerations». arXiv 2302.04844, 2023.</p>
               <a class="url" href="https://arxiv.org/abs/2302.04844" target="_blank" rel="noopener">https://arxiv.org/abs/2302.04844</a>
             </div>
           </li>
           <li class="source-item" id="f6">
-            <p class="num">06</p>
+            <p class="idx" aria-hidden="true"><svg class="idx-mark" viewBox="0 0 40 40" width="20" height="20" aria-hidden="true" focusable="false"><path class="cord" d="M16 17 L14 23"/><path class="cord" d="M24 17 L26 23"/><circle class="b1" cx="11" cy="20" r="6.5"/><circle class="b2" cx="20" cy="14" r="6.5"/><circle class="b3" cx="29" cy="20" r="6.5"/></svg></p>
             <div>
               <p class="cite">AGESIC y UAIP. «Recomendaciones sobre transparencia algorítmica», 17/07/2024.</p>
               <a class="url" href="https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/publicaciones/recomendaciones-sobre-transparencia-algoritmica" target="_blank" rel="noopener">https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/publicaciones/recomendaciones-sobre-transparencia-algoritmica</a>
             </div>
           </li>
           <li class="source-item" id="f7">
-            <p class="num">07</p>
+            <p class="idx" aria-hidden="true"><svg class="idx-mark" viewBox="0 0 40 40" width="20" height="20" aria-hidden="true" focusable="false"><path class="cord" d="M16 17 L14 23"/><path class="cord" d="M24 17 L26 23"/><circle class="b1" cx="11" cy="20" r="6.5"/><circle class="b2" cx="20" cy="14" r="6.5"/><circle class="b3" cx="29" cy="20" r="6.5"/></svg></p>
             <div>
               <p class="cite">ClusterUY — Centro Nacional de Supercomputación.</p>
               <a class="url" href="https://cluster.uy/" target="_blank" rel="noopener">https://cluster.uy/</a>
