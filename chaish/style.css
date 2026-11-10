@@ -34,6 +34,16 @@
     --marca-1d:#c26340;
     --marca-2d:#d8cbb4;
     --marca-3d:#7c8a5e;
+    --marca-cordd:#b9b0a2;
+    /* Marca de boleadoras: el logo lleva disco detras del mark y por eso su paleta va emparejada
+       con el disco, no con la pagina. Sobre crema el disco es tinta y las piedras aclaran;
+       en el footer (disco crema) vuelven las piedras oscuras. Los marcadores de lista van desnudos
+       y usan --marca-1/2/3 + --marca-cord directamente. */
+    --marca-disco:var(--ink);
+    --marca-logo-1:var(--marca-1d);
+    --marca-logo-2:var(--marca-2d);
+    --marca-logo-3:var(--marca-3d);
+    --marca-logo-cord:var(--marca-cordd);
     --ink-hover:#0e1411;
     --step:clamp(1.08rem,1.3vw,1.22rem);
     --gap-section:clamp(36px,5vw,52px);
@@ -275,7 +285,7 @@
     *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
   }
 
-.brand-logo{height:26px;max-height:26px;width:auto;vertical-align:middle;border-radius:4px;margin-right:8px;object-fit:contain}@media(max-width:560px){.brand-logo{height:22px;max-height:22px;margin-right:6px}}
+.brand-logo{height:26px;max-height:26px;width:auto;vertical-align:middle;border-radius:4px;margin-right:10px;object-fit:contain}@media(max-width:560px){.brand-logo{height:22px;max-height:22px;margin-right:8px}}
 
 /* Enlaces a pestaña nueva: icono decorativo; el aviso textual esta en el footer */
 main a[target="_blank"]::after,footer a[target="_blank"]::after{content:"";display:inline-block;width:.62em;height:.62em;margin-left:.28em;background-color:currentColor;--arrow:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 17 17 7M9 7h8v8' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");-webkit-mask:var(--arrow) center/contain no-repeat;mask:var(--arrow) center/contain no-repeat}
@@ -298,15 +308,17 @@ main a[target="_blank"]::after,footer a[target="_blank"]::after{content:"";displ
   /* Banda de marca: misma familia que la de pilares, tipografia menor */
   .statement-brand{padding:clamp(40px,5vw,64px) 0}
   .statement-brand .statement-words{font-size:clamp(1.5rem,3.4vw,2.6rem);letter-spacing:.02em}
-  /* Marca boleadoras tricolor (museo): variantes clara y oscura */
-  .brand-boleadoras{width:26px;height:26px;flex:0 0 auto;display:block;margin-right:8px;overflow:visible}
-  .brand-boleadoras .b1{fill:var(--marca-1)}
-  .brand-boleadoras .b2{fill:var(--marca-2)}
-  .brand-boleadoras .b3{fill:var(--marca-3)}
-  .brand-boleadoras .cord{fill:none;stroke:var(--marca-cord);stroke-width:2.4;stroke-linecap:round}
-  footer.site{--marca-1:#c26340;--marca-2:#d8cbb4;--marca-3:#7c8a5e;--marca-cord:#b9b0a2}
+  /* Marca boleadoras tricolor (museo): el logo lleva un disco detras del mark; el marcador de lista va desnudo */
+  .brand-boleadoras{width:26px;height:26px;flex:0 0 auto;display:block;overflow:visible}
+  .brand-boleadoras .disc{fill:var(--marca-disco)}
+  .brand-boleadoras .b1{fill:var(--marca-logo-1)}
+  .brand-boleadoras .b2{fill:var(--marca-logo-2)}
+  .brand-boleadoras .b3{fill:var(--marca-logo-3)}
+  .brand-boleadoras .cord{fill:none;stroke:var(--marca-logo-cord);stroke-width:2.4;stroke-linecap:round}
+  /* Sobre tinta el disco es crema y las piedras vuelven a la paleta oscura: inversion completa, misma silueta */
+  footer.site{--marca-disco:var(--white);--marca-logo-1:var(--marca-1);--marca-logo-2:var(--marca-2);--marca-logo-3:var(--marca-3);--marca-logo-cord:var(--marca-cord)}
   @media (max-width:560px){
-    .brand-boleadoras{width:22px;height:22px;margin-right:6px}
+    .brand-boleadoras{width:22px;height:22px}
   }
 
   /* CTA sobre miel: el link inline no puede ser blanco (1.9:1) */

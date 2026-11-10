@@ -31,8 +31,12 @@ El azul `#1a6dc4` ya no existe en el CSS: no reintroducirlo sin una decisión de
 
 - Tokens en `:root`, cero hex suelto. El CSP además prohíbe `style=""`.
 - La ola del nav vive en `:root` como data URI (`--wave-nav`, oliva); el tono va codificado dentro del SVG.
-  La marca de los h2 es una boleadora SVG inline (nudo y tres piedras): la geometría vive en el HTML y el color
-  sale de `--marca-1/2/3` y `--marca-cord`. No hay token propio de la boleadora.
+- La marca de boleadoras tiene **dos piezas**: el logo del nav y del footer es la boleadora dentro de un disco,
+  y el marcador de lista (`.idx-mark`) y la boleadora de los h2 son la boleadora **desnuda**, sin disco. La
+  geometría vive en el HTML; el color sale de `--marca-disco` + `--marca-logo-1/2/3` + `--marca-logo-cord`,
+  que es un set emparejado con la superficie del disco: sobre crema el disco es tinta y las piedras aclaran
+  (`--marca-1d/2d/3d`, `--marca-cordd`), en el footer el disco es crema y las piedras vuelven a
+  `--marca-1/2/3` + `--marca-cord`. Los marcadores de lista nunca siguen a `--marca-logo-*`.
 - Miel siempre con texto `--ink`, nunca blanco.
 - `--sand` eliminado; no reintroducir.
 - Radio 0 salvo el CTA (`--radius-card-right`).
