@@ -40,9 +40,10 @@ Después de pushear, verificar **en este orden**. Releer la URL viva sola **no p
 
 1. Remote: `git ls-remote origin refs/heads/main` debe devolver tu SHA local.
 2. Build de Pages: `gh api repos/ia-para-el-bien-uy/ia-para-el-bien-uy.github.io/pages/builds/latest` y `gh run list --limit 3`.
-3. Contenido vivo con cache-buster: `curl -s "https://iaparaelbien.org/chaish/?cb=$RANDOM"`.
+3. Contenido vivo con una **clave de cache nueva**: `curl -s "https://iaparaelbien.org/chaish/index.html" | grep -o "<title>[^<]*"` (o el texto que acabás de cambiar). Confirmar que salió de origen: `X-Cache: MISS`, `Age: 0`.
 
-- **El cache es lo que engaña:** Pages sirve `Cache-Control: max-age=600`, así que un re-fetch sin cache-buster puede devolver la generación anterior hasta **10 minutos**. El deploy en sí tarda 40–90 s. Nunca concluir "no se publicó" con una lectura sin `?cb=` — usar el paso 3.
+- **El cache es lo que engaña:** Pages sirve `Cache-Control: max-age=600`, así que una ruta ya pedida puede devolver la generación anterior hasta **10 minutos**. El deploy en sí tarda 40–90 s. Nunca concluir "no se publicó" leyendo una ruta cacheada — usar el paso 3.
+- **`?cb=$RANDOM` no bustea el cache de Pages** (medido 2026-11-10): el query string no entra en la clave. `/chaish/` y `/chaish/?cb=…` devuelven el mismo `Age` con `X-Cache: HIT`, y `Cache-Control: no-cache` / `Pragma: no-cache` del cliente también se ignoran. Para leer la generación nueva hay que pedir **otra ruta del mismo archivo** (`/chaish/index.html` en vez de `/chaish/`); si tiene que ser la misma URL, esperar a que expire el `max-age`.
 - Si `pages.status` queda `errored` y el job `build` queda `queued` para siempre, el pipeline está trabado. **Un agente NO puede recuperarlo**: el PAT devuelve `403` en `actions:write` / `pages:write`. Decirlo, en vez de reintentar.
 - Recuperación (**solo admin**): *Actions → re-run del workflow fallido*, o *Settings → Pages → Save*.
 - Un estado `errored` se destraba solo con el próximo build exitoso: **un commit real alcanza** (así se destrabó el 2026-10-08, tras ~35 min de builds fallidos). Si los builds siguen fallando o quedan `queued`, el problema es del lado de GitHub: esperar y reintentar, o re-run desde la UI. Un commit vacío solo para re-disparar ensucia el historial sin cambiar el timing.
