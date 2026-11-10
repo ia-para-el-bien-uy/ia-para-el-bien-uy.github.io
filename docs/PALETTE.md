@@ -8,11 +8,11 @@ valores; el CSS los reproduce. Los sets `primitives`/`semantic` guardan la palet
 ## Superficies (4)
 
 - `--white` crema — todas las secciones claras.
-- `--action` miel — sólo `.cta .wrap` y el CTA secundario del dossier (`.btn-miel`), siempre con texto `--ink`.
+- `--action` miel — sólo `.cta .wrap` y el CTA secundario del artículo (`.btn-miel`), siempre con texto `--ink`.
 - `--ink` — footer, cookie, `.statement`.
-- `--jaspe` — banda de tesis del dossier (`.band-tesis`), texto `--white`.
+- `--jaspe` — banda de tesis del artículo (`.band-tesis`), texto `--white`.
 
-La cita destacada del dossier (`.quote-block`) va sobre `--celeste` (oliva) con texto `--white` y barra
+La cita destacada del artículo (`.quote-block`) va sobre `--celeste` (oliva) con texto `--white` y barra
 `--action`. `--arena` quedó sin uso con ese cambio: el token sigue en `:root` y en Penpot
 (`live.color.arena`), pero no se reintroduce sin una decisión de diseño.
 
