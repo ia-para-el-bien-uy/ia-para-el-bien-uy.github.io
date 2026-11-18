@@ -57,44 +57,6 @@ if (navSections.length && 'IntersectionObserver' in window) {
   navSections.forEach((s) => io.observe(s));
 }
 
-// FAQ accordion: aria-expanded + el panel cerrado sale del arbol de accesibilidad.
-// Anima max-height y, al terminar la transicion, aplica hidden (cerrado) o
-// max-height:none (abierto, para que el contenido reflowe al cambiar de ancho).
-const FAQ_MS = 320;
-document.querySelectorAll('.faq-q').forEach((q) => {
-  const item = q.parentElement;
-  const panel = document.getElementById(q.getAttribute('aria-controls'));
-  if (!panel) return;
-  let timer = 0;
-  const settle = (fn) => {
-    const done = () => {
-      panel.removeEventListener('transitionend', onEnd);
-      clearTimeout(timer);
-      fn();
-    };
-    const onEnd = (e) => {
-      if (e.target === panel && e.propertyName === 'max-height') done();
-    };
-    panel.addEventListener('transitionend', onEnd);
-    timer = setTimeout(done, FAQ_MS);
-  };
-  q.addEventListener('click', () => {
-    const open = q.getAttribute('aria-expanded') === 'true';
-    q.setAttribute('aria-expanded', String(!open));
-    item.classList.toggle('open', !open);
-    if (open) {
-      panel.style.maxHeight = panel.scrollHeight + 'px';
-      requestAnimationFrame(() => { panel.style.maxHeight = '0px'; });
-      settle(() => { if (q.getAttribute('aria-expanded') === 'false') panel.hidden = true; });
-    } else {
-      panel.hidden = false;
-      panel.style.maxHeight = '0px';
-      requestAnimationFrame(() => { panel.style.maxHeight = panel.scrollHeight + 'px'; });
-      settle(() => { if (q.getAttribute('aria-expanded') === 'true') panel.style.maxHeight = 'none'; });
-    }
-  });
-});
-
 // Cookie bar: hidden hasta que aparece, para no dejar foco fuera de pantalla
 const cookie = document.getElementById('cookie');
 const hideCookie = () => {

@@ -13,7 +13,7 @@ chaish/
   index.html            # Sitio completo CHAISH, bilingüe ES/EN, CSP en <meta>
   style.css             # Estilos del sitio canónico; tokens en :root
   assets/               # Marca y logo del hub
-script.js               # Compartido: toggle ES/EN, scrollspy del nav, FAQ, cookie bar, año
+script.js               # Compartido: toggle ES/EN, scrollspy del nav, cookie bar, año
 CNAME                   # Dominio custom (iaparaelbien.org) para GitHub Pages
 llms.txt                # Resumen del sitio para LLMs
 DESIGN.md               # Contrato del design system para el detector impeccable
