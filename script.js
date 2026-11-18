@@ -118,7 +118,7 @@ if (cookie) {
 
 // Láminas-interludio: cada una entra cuando cruza el viewport (rotateInDownRight).
 // Sin IO o con movimiento reducido, se muestran de entrada.
-const plates = Array.from(document.querySelectorAll('.plate:not(.plate--closer)'));
+const plates = Array.from(document.querySelectorAll('.plate:not(.plate--closer):not(.plate--hero)'));
 if (plates.length) {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const reveal = (el) => el.classList.add('is-in');
