@@ -43,8 +43,13 @@ Forma: botones rectos (radio 0); el CTA es la única card con radio, sólo en la
 - **Nav activo:** `live.color.jaspe` en el Penpot y `--jaspe` en el CSS, con subrayado. `live.color.accent`
   (#D13109) da 4.34:1 sobre el header y no sirve para texto normal; el color solo tampoco alcanza para
   marcar el ítem activo (WCAG 1.4.1).
-- **`layout-transition` en `.faq-a`** (`max-height`): aceptado hoy; si se toca, preferir
-  `grid-template-rows` o un transform.
+- **Animación del FAQ** — `<details>` nativo con `::details-content` + `interpolate-size`
+  (Chromium anima apertura y cierre; sin `interpolate-size` la altura salta, el estado es
+  correcto). La variante `grid-template-rows` + `@starting-style` se probó y se descartó:
+  sólo anima la primera apertura (el contenido cerrado usa `content-visibility`, no
+  `display:none`). `prefers-reduced-motion` cubre `::details-content` en una regla propia:
+  dentro de una lista de selectores, un motor sin el pseudo-elemento invalidaría la lista
+  entera y perdería el reduced-motion global.
 - **Leading de display**: `.hero h1` (1.02) y `.mission-statement h2` (1.25) son intencionales. Marcar
   sólo cuerpo (`.lead`, `p`, `.vision-text`), que va ≥1.6.
 
@@ -54,6 +59,8 @@ Forma: botones rectos (radio 0); el CTA es la única card con radio, sólo en la
 npx -y impeccable detect chaish/
 ```
 
-`0` limpio · `2` hallazgos · `1` target no escaneable. Baseline aceptado hoy: **2 por página** —
-`overused-font` (Space Grotesk) y `cream-palette`, decisiones de diseño ya tomadas, no defectos nuevos
-(hoy son 4: home + artículo).
+`0` limpio · `2` hallazgos · `1` target no escaneable. Baseline medido 2026-11-18 (exit 2): **5** —
+home: `overused-font` (Space Grotesk), `cream-palette` y `kicker-above-heading` (kicker «Forma parte»
+del CTA, pendiente de decisión); artículo: `overused-font` y `cream-palette`. Más 1 advisory
+(`bounce-easing` en `.plate`, intencional). `overused-font` y `cream-palette` son decisiones de
+diseño ya tomadas, no defectos nuevos.
