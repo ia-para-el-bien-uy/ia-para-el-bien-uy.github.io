@@ -4,6 +4,12 @@
 
 El sitio es una sola página bilingüe (español e inglés en el mismo documento), sin rutas por idioma. URL canónica: https://iaparaelbien.org/chaish/ — la raíz iaparaelbien.org y el subdominio chaish.iaparaelbien.org redirigen aquí.
 
+<!-- context7:llms:begin -->
+## Search
+
+This site has a search endpoint: https://context7.com/api/v2/ask?siteKey=ask_b1bd943202d5e59a5a562503&query=<URL-encoded question>. It returns documentation that answers the question, with a source link for each part. No API key is needed. If nothing matches, it says so.
+
+<!-- context7:llms:end -->
 ## Sitio canónico
 
 - [CHAISH — sitio principal](https://iaparaelbien.org/chaish/): página bilingüe ES/EN con ancla propia por sección.
