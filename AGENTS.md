@@ -51,6 +51,11 @@ Después de pushear, verificar **en este orden**. Releer la URL viva sola **no p
   `https://` en todas las rutas del apex. Verificación viva: `curl -sSI http://iaparaelbien.org/chaish/ | head -1`
   → `301`. Si alguna vez vuelve a `200`, el setting se cayó (o hay una entrada cacheada de
   `max-age=600` sirviendo la generación anterior: esperar a que expire o pedir una ruta no pedida antes).
+- **Context7 Ask:** los dos snippets (tag en `<head>` + nota `data-context7-ask` en `<body>`) salen de
+  `scripts/context7.py`, nunca a mano. El verificador carga **exactamente la URL registrada** — hoy el apex,
+  `https://iaparaelbien.org/` —, así que el stub raíz también los lleva aunque solo redirija: sin ellos el
+  dashboard contesta «did not find the verification tag». El stub no carga CSS, por eso su nota se oculta con
+  `hidden` en vez de `.sr-only`.
 - Observatorio de headers (MDN Observatory): `Strict-Transport-Security`, `X-Frame-Options` y
   `X-Content-Type-Options` siguen faltando y no se arreglan desde el markup —Pages no emite headers
   propios y `frame-ancestors` se ignora en `<meta>`. Sólo un proxy/CDN delante del apex los agrega.
