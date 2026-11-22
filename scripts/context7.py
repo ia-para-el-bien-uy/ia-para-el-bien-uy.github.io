@@ -25,16 +25,23 @@ def marked(kind: str, body: str) -> str:
 HEAD = marked(
     "meta", f'<meta name="context7-site-verification" content="{SITE_KEY}">'
 )
-BODY = marked(
-    "note",
-    '<blockquote data-context7-ask="true" aria-hidden="true" class="sr-only">\n'
-    "  <h2>Search</h2>\n"
-    f"  <p>Page index: {SITE}/llms.txt.</p>\n"
-    f"  <p>This site has a search endpoint: {HTML_QUERY}. It returns documentation "
-    "that answers the question, with a source link for each part. No API key is "
-    "needed. If nothing matches, it says so.</p>\n"
-    "</blockquote>",
-)
+def note_block(attrs: str) -> str:
+    return marked(
+        "note",
+        f'<blockquote data-context7-ask="true" aria-hidden="true"{attrs}>\n'
+        "  <h2>Search</h2>\n"
+        f"  <p>Page index: {SITE}/llms.txt.</p>\n"
+        f"  <p>This site has a search endpoint: {HTML_QUERY}. It returns documentation "
+        "that answers the question, with a source link for each part. No API key is "
+        "needed. If nothing matches, it says so.</p>\n"
+        "</blockquote>",
+    )
+
+
+# The chaish pages ship style.css, so class="sr-only" hides the note there.
+# The root redirect stub loads no CSS, so it needs the attribute hide instead.
+BODY = note_block(' class="sr-only"')
+ROOT_BODY = note_block(" hidden")
 LLMS = marked(
     "llms",
     "## Search\n\n"
@@ -65,5 +72,10 @@ def inject(path: Path, block: str, kind: str, anchor: str, before: bool) -> None
 for page in ("chaish/index.html", "chaish/memoria-abierta/index.html"):
     inject(ROOT / page, HEAD, "meta", "</head>", before=True)
     inject(ROOT / page, BODY, "note", "<body>", before=False)
+
+# The apex root is the URL registered in Context7, so the verifier loads it first:
+# it needs both snippets even though the page only exists to redirect.
+inject(ROOT / "index.html", HEAD, "meta", "</head>", before=True)
+inject(ROOT / "index.html", ROOT_BODY, "note", "<body>", before=False)
 
 inject(ROOT / "llms.txt", LLMS, "llms", "## Sitio canónico", before=True)

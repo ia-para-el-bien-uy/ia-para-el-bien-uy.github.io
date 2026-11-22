@@ -24,7 +24,7 @@ style.css               # Resto del sitio anterior; ninguna página lo enlaza
 .opengrep/rules.yaml    # Ruleset propio: 11 reglas, invariantes del sitio
 .semgrepignore
 scripts/scan.sh         # Runner del scan estático (local, WSL y CI)
-scripts/context7.py     # Genera los bloques de Context7 Ask (única fuente del endpoint)
+scripts/context7.py     # Genera los bloques de Context7 Ask (única fuente del endpoint; inyecta en index.html raíz, las dos páginas de chaish/ y llms.txt)
 .github/workflows/      # Gate de opengrep en push a main y en PRs
 ```
 
