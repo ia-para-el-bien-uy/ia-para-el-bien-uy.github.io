@@ -89,17 +89,24 @@ un `if` en el workflow.
 
 GitHub Pages no permite mandar `Content-Security-Policy` como header, así que la política vive en
 `<meta http-equiv="Content-Security-Policy">`, una por página: `chaish/index.html` con allowlist explícita
-(`default-src 'none'`, `script-src 'self'`, Google Fonts, YouTube-nocookie, `data:` para el SVG del
-subrayado), `chaish/memoria-abierta/index.html` con la misma allowlist **sin `frame-src`** (esa página no
-embebe videos) y `index.html` con la mínima, porque sólo redirige.
+(`default-src 'none'`, `script-src 'self'`, `style-src`/`font-src` en `'self'` porque las fuentes están
+self-hosteadas, YouTube-nocookie en `frame-src`, `data:` para el SVG del subrayado),
+`chaish/memoria-abierta/index.html` con la misma allowlist **sin `frame-src`** (esa página no embebe
+videos) y `index.html` con la mínima, porque sólo redirige. Estado medido de headers y transporte:
+`docs/HEADERS.md`.
 
 Reglas al tocar la página:
 
 - **Nada inline.** Un `style="..."` o un `<script>` inline rompe la política. Estilos → clase en
   `chaish/style.css` (así se sacó `style="max-width:22ch"`). El redirect del root es `<meta refresh>`,
   no JS.
-- **No agregar `upgrade-insecure-requests`.** Subiría el enlace `http://` de diputados.gub.uy a https,
-  y ese host tiene el TLS roto (`SEC_E_WRONG_PRINCIPAL`): el link dejaría de funcionar.
+- **No agregar `upgrade-insecure-requests`.** Ya no queda ningún `http://`: el enlace de
+  diputados.gub.uy (TLS roto, `SEC_E_WRONG_PRINCIPAL`) se reemplazó por el PDF del mismo proyecto en
+  `https://documentos.diputados.gub.uy/`. La directiva no aporta nada con `default-src 'none'`.
+- **Fuentes self-hosted, no terceros.** Las familias salen de `chaish/fonts.css` + `chaish/assets/fonts/`
+  (woff2, latin + latin-ext), así `style-src`/`font-src` quedan en `'self'`. No volver a linkear
+  `fonts.googleapis.com`: si hace falta una familia o un peso nuevo, se descarga el woff2 al repo y se
+  suma el `@font-face` al `fonts.css`.
 - **`frame-ancestors` y `report-uri` se ignoran en `<meta>`.** Si alguna vez importa el clickjacking,
   sólo se arregla con un proxy/CDN delante (Cloudflare ya está en los subdominios).
 - **Recurso externo nuevo = actualizar el allowlist** y este doc.
