@@ -1,0 +1,6 @@
+# Default owner for every path in this repository.
+#
+# Meaningful only when `main` requires pull-request review: this file then makes
+# that review mandatory from the repository owner. Enabling the branch
+# protection rule itself is a repository setting, not a file (see AGENTS.md).
+* @DiegoFleitas

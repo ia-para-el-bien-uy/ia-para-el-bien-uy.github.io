@@ -22,7 +22,9 @@ jobs:
   scan:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      # Pinned to a full commit SHA (OWASP GitHub Actions Security Cheat Sheet L157):
+      # a mutable tag can be repointed to run arbitrary code in this job.
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
       - name: Install opengrep (pinned + checksum)
         run: |
@@ -44,7 +46,7 @@ jobs:
 
       - name: Upload results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: opengrep-results
           path: ${{ runner.temp }}/opengrep*.json
