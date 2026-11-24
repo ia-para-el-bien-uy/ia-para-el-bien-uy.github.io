@@ -10,8 +10,16 @@ on:
   pull_request:
   workflow_dispatch:
 
+# Least privilege: the job only reads the tree. `pull_request` (never
+# `pull_request_target`) means fork PRs get a read-only token and no secrets;
+# the scan still runs PR-controlled code, so nothing writable may be in scope.
 permissions:
   contents: read
+
+# Superseded pushes to the same PR/branch do not need their own scan.
+concurrency:
+  group: opengrep-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 env:
   OPENGREP_VERSION: "1.33.1"
@@ -21,10 +29,15 @@ env:
 jobs:
   scan:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       # Pinned to a full commit SHA (OWASP GitHub Actions Security Cheat Sheet L157):
       # a mutable tag can be repointed to run arbitrary code in this job.
+      # persist-credentials: false keeps the job token out of .git/config so the
+      # PR-controlled steps cannot reuse it.
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
 
       - name: Install opengrep (pinned + checksum)
         run: |

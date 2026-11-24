@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- CSP: misma allowlist que chaish/index.html sin frame-src (esta página no
-     embebe videos). Mantener en sync con docs/OPENGREP.md. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+     embebe videos). Fuentes self-hosted, así que style-src/font-src son 'self'.
+     Mantener en sync con docs/OPENGREP.md. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Memoria abierta — Artículo 01 — CHAISH</title>
 <meta name="description" content="Artículo 01: una tesis de la Facultad de Ingeniería usa modelos abiertos para leer el Archivo Berrutti. Cómo funciona, qué límites tiene y de dónde sale cada dato.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../fonts.css">
 <link rel="stylesheet" href="../style.css">
 <link rel="stylesheet" href="dossier.css">
 <!-- impeccable-disable cramped-padding: filas editoriales del artículo (.pipe-step, .limit, .source-item, .card) usan padding vertical y hairlines como parte del estilo — ver DESIGN.md -->
